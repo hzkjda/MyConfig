@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://blog.licess.com/sshd_config/ -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>sshd_config配置 详解 - Licess's Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./sshd_config配置 详解 - Licess's Blog_files/style.css">
+<link rel="pingback" href="http://blog.licess.com/xmlrpc.php">
+
+<!-- All in One SEO Pack 2.3.4.2 by Michael Torbert of Semper Fi Web Design[68,112] -->
+<link rel="canonical" href="http://blog.licess.com/sshd_config/">
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="Licess&#39;s Blog » Feed" href="http://blog.licess.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Licess&#39;s Blog » 评论Feed" href="http://blog.licess.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Licess&#39;s Blog » sshd_config配置 详解评论Feed" href="http://blog.licess.com/sshd_config/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/blog.licess.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.2"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./sshd_config配置 详解 - Licess's Blog_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-recentcomments-css" href="./sshd_config配置 详解 - Licess's Blog_files/wp-recentcomments.css" type="text/css" media="screen">
+<link rel="stylesheet" id="tablepress-default-css" href="./sshd_config配置 详解 - Licess's Blog_files/default.min.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="http://blog.licess.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.licess.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.licess.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="newusers和chpasswd的用法" href="http://blog.licess.com/newusers-chpasswd/">
+<link rel="next" title="Linux VPS Nginx+PHP 安装ionCube" href="http://blog.licess.com/linux-vps-nginx-php-install-ioncube/">
+<meta name="generator" content="WordPress 4.5.2">
+<link rel="shortlink" href="http://blog.licess.com/?p=726">
+<link rel="alternate" type="application/json+oembed" href="http://blog.licess.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.licess.com%2Fsshd_config%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://blog.licess.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.licess.com%2Fsshd_config%2F&amp;format=xml">
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "http://blog.licess.com/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.6';
+	window._wp_rp_post_id = '726';
+	window._wp_rp_num_rel_posts = '5';
+	window._wp_rp_thumbnails = false;
+	window._wp_rp_post_title = 'sshd_config%E9%85%8D%E7%BD%AE+%E8%AF%A6%E8%A7%A3';
+	window._wp_rp_post_tags = ['ssh', 'sshd', '%3F%3F', 'linux%3F%3F', '1', 'rsa', 'kei', 'port', '21', 'pid', 'version', '2', '22', 'ip', 'ssh', 'privat', 'server'];
+	window._wp_rp_promoted_content = false;
+</script>
+<script type="text/javascript" src="./sshd_config配置 详解 - Licess's Blog_files/" async=""></script>
+<style type="text/css">
+.related_post_title {
+}
+ul.related_post {
+}
+ul.related_post li {
+}
+ul.related_post li a {
+}
+ul.related_post li img {
+}</style>
+<!-- wp thread comment 1.4.9.4.002 -->
+<style type="text/css" media="screen">
+.editComment, .editableComment, .textComment{
+	display: inline;
+}
+.comment-childs{
+	border: 1px solid #999;
+	margin: 5px 2px 2px 4px;
+	padding: 4px 2px 2px 4px;
+	background-color: white;
+}
+.chalt{
+	background-color: #E2E2E2;
+}
+#newcomment{
+	border:1px dashed #777;width:90%;
+}
+#newcommentsubmit{
+	color:red;
+}
+.adminreplycomment{
+	border:1px dashed #777;
+	width:99%;
+	margin:4px;
+	padding:4px;
+}
+.mvccls{
+	color: #999;
+}
+			
+</style>
+</head><style type="text/css" id="__tw7_success_css"></style>
+<body class="single single-post postid-726 single-format-standard">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="access" class="overflow" role="navigation">
+			<div class="menu"><ul><li><a href="http://blog.licess.com/">首页</a></li><li class="page_item page-item-2"><a href="http://blog.licess.com/about/">关于</a></li><li class="page_item page-item-687"><a href="http://blog.licess.com/daigou/">本站服务</a></li><li class="page_item page-item-500"><a href="http://blog.licess.com/usa-vps/">美国VPS主机推荐</a></li><li class="page_item page-item-460"><a href="http://blog.licess.com/guestbook/">留言本</a></li><li class="page_item page-item-389"><a href="http://blog.licess.com/links/">链接</a></li></ul></div>
+			<div id="search">
+				<form method="get" id="searchform" action="http://blog.licess.com/">
+					<p><input class="querytext" type="text" onfocus="if(value==&#39;输入搜索关键字后回车&#39;){this.value=&#39;&#39;};this.style.color=&#39;#666666&#39;;" onblur="if(this.value==&#39;&#39;){this.value=&#39;输入搜索关键字后回车&#39;};this.style.color=&#39;#DADFE3&#39;;" value="输入搜索关键字后回车" size="24" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="搜索" style="display: none;"></p>
+				</form>
+			</div><!-- #search -->
+		</div><!-- #access -->
+		<div id="masthead">
+			<div id="branding" role="banner">
+				<h2 id="site-title">
+					<span>
+						<a href="http://blog.licess.com/" title="Licess&#39;s Blog" rel="home">Licess's Blog</a>
+					</span>
+				</h2>
+				<div id="site-description">关注VPS Linux Nginx MySQL PHP WEB开发 系统管理 服务器架构 Debian CentOS</div>
+			</div><!-- #branding -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+	<div class="clearfix"></div>
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+						<div id="post-726" class="post-726 post type-post status-publish format-standard hentry category-linux tag-ssh tag-sshd tag-311">
+					<h1 class="entry-title">sshd_config配置 详解</h1>
+					<div class="entry-meta">
+						<span class="date-links">
+                        <a href="http://blog.licess.com/sshd_config/" title="5:30 下午" rel="bookmark">2010年01月21日</a>                        </span>
+													<span class="cat-links">
+								<a href="http://blog.licess.com/category/linux/" rel="category tag">Linux技术</a>							</span>
+						                                                    <span class="tag-links">
+                                <a href="http://blog.licess.com/tag/ssh/" rel="tag">ssh</a><a href="http://blog.licess.com/tag/sshd/" rel="tag">sshd</a><a href="http://blog.licess.com/tag/%e9%85%8d%e7%bd%ae/" rel="tag">配置</a>                            </span>
+                        						                        <span class="comments-link"><a href="http://blog.licess.com/sshd_config/#comments" rel="nofollow">1 Comment</a></span>
+					</div><!-- .entry-meta -->
+					<div class="entry-content">
+						<p>最近，一直再捣鼓LNMP已经Shell脚本方面、以及自动化方面的东西，整理一下发在这里。</p>
+<table border="1" width="600" bgcolor="#000000">
+<tbody>
+<tr>
+<td><span style="color: #ffffcc; font-family: SimSun;"># 1. 关于 SSH Server 的整体设定，包含使用的 port 啦，以及使用的密码演算方式</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">Port 22　　　　　　　　　　</span><span style="color: #ff6666;"># SSH 预设使用 22 这个 port，您也可以使用多的 port ！</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 亦即重复使用 port 这个设定项目即可！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">Protocol 2,1　　　　　　　 </span><span style="color: #ff6666;"># 选择的 SSH 协议版本，可以是 1 也可以是 2 ，</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 如果要同时支持两者，就必须要使用 2,1 这个分隔了！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">#ListenAddress 0.0.0.0　　 </span><span style="color: #ff6666;"># 监听的主机适配卡！举个例子来说，如果您有两个 IP，</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 分别是 192.168.0.100 及 192.168.2.20 ，那么只想要</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 开放 192.168.0.100 时，就可以写如同下面的样式：</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">ListenAddress 192.168.0.100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #ff6666;"># 只监听来自 192.168.0.100 这个 IP 的SSH联机。</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 如果不使用设定的话，则预设所有接口均接受 SSH</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PidFile /var/run/sshd.pid　　　　　</span><span style="color: #ff6666;">　# 可以放置 SSHD 这个 PID 的档案！左列为默认值</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">LoginGraceTime 600　　　　</span><span style="color: #ff6666;"> # 当使用者连上 SSH server 之后，会出现输入密码的画面，</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 在该画面中，在多久时间内没有成功连上 SSH server ，</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 就断线！时间为秒！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">Compression yes　　　　　</span><span style="color: #ff6666;">　# 是否可以使用压缩指令？当然可以啰！</span></span><br>
+<span style="font-family: SimSun;">　</span><br>
+<span style="color: #ffffcc; font-family: SimSun;"># 2. 说明主机的 Private Key 放置的档案，预设使用下面的档案即可！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">HostKey /etc/ssh/ssh_host_key　　　</span><span style="color: #ff6666;">　# SSH version 1 使用的私钥</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">HostKey /etc/ssh/ssh_host_rsa_key　</span><span style="color: #ff6666;">　# SSH version 2 使用的 RSA 私钥</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">HostKey /etc/ssh/ssh_host_dsa_key　</span><span style="color: #ff6666;">　# SSH version 2 使用的 DSA 私钥</span></span><p></p>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 2.1 关于 version 1 的一些设定！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">KeyRegenerationInterval 3600　 　　　</span><span style="color: #ff6666;"># 由前面联机的说明可以知道， version 1 会使用&nbsp;</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # server 的 Public Key ，那么如果这个 Public&nbsp;</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # Key 被偷的话，岂不完蛋？所以需要每隔一段时间</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 来重新建立一次！这里的时间为秒！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">ServerKeyBits 768 　　　　　　　　　</span><span style="color: #ff6666;"> # 没错！这个就是 Server key 的长度！</span></span></div>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 3. 关于登录文件的讯息数据放置与 daemon 的名称！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">SyslogFacility AUTH　　　　　　　　　</span><span style="color: #ff6666;"># 当有人使用 SSH 登入系统的时候，SSH会记录资</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 讯，这个信息要记录在什么 daemon name 底下？</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 预设是以 AUTH 来设定的，即是 /var/log/secure</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 里面！什么？忘记了！回到 <a href="http://linux.vbird.org/linux_basic/"><span style="color: #0000ff;">Linux 基础</span></a>去翻一下</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 其它可用的 daemon name 为：DAEMON,USER,AUTH,</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # LOCAL0,LOCAL1,LOCAL2,LOCAL3,LOCAL4,LOCAL5,</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">LogLevel INFO　　　　　　　　　　　</span><span style="color: #ff6666;">　# 登录记录的等级！嘿嘿！任何讯息！</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 同样的，忘记了就回去参考！</span></div>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 4. 安全设定项目！极重要！</span><br>
+<span style="color: #ffffcc; font-family: SimSun;"># 4.1 登入设定部分</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PermitRootLogin no　　 　</span><span style="color: #ff6666;">　# 是否允许 root 登入！预设是允许的，但是建议设定成 no！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">UserLogin no　　　　　　</span><span style="color: #ff6666;">　 # 在 SSH 底下本来就不接受 login 这个程序的登入！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">StrictModes yes　　　　　</span><span style="color: #ff6666;">　# 当使用者的 host key 改变之后，Server 就不接受联机，</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 可以抵挡部分的木马程序！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">#RSAAuthentication yes　</span><span style="color: #ff6666;">　 # 是否使用纯的 RSA 认证！？仅针对 version 1 ！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PubkeyAuthentication yes　 </span><span style="color: #ff6666;"># 是否允许 Public Key ？当然允许啦！只有 version 2</span></span><br>
+<span style="color: #ffff00; font-family: SimSun;">AuthorizedKeysFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .ssh/authorized_keys</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">　　　　　　　　　　　　　</span><span style="color: #ff6666;"> # 上面这个在设定若要使用不需要密码登入的账号时，那么那个</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 账号的存放档案所在档名！</span><br>
+<span style="color: #ffffcc; font-family: SimSun;"># 4.2 认证部分</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">RhostsAuthentication no　　</span><span style="color: #ff6666;"># 本机系统不止使用 .rhosts ，因为仅使用 .rhosts 太</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 不安全了，所以这里一定要设定为 no ！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">IgnoreRhosts yes　　　　　</span><span style="color: #ff6666;"> # 是否取消使用 ~/.ssh/.rhosts 来做为认证！当然是！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">RhostsRSAAuthentication no</span><span style="color: #ff6666;"> # 这个选项是专门给 version 1 用的，使用 rhosts 档案在</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # /etc/hosts.equiv配合 RSA 演算方式来进行认证！不要使用</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">HostbasedAuthentication no </span><span style="color: #ff6666;"># 这个项目与上面的项目类似，不过是给 version 2 使用的！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">IgnoreUserKnownHosts no　　</span><span style="color: #ff6666;"># 是否忽略家目录内的 ~/.ssh/known_hosts 这个档案所记录</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 的主机内容？当然不要忽略，所以这里就是 no 啦！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PasswordAuthentication yes </span><span style="color: #ff6666;"># 密码验证当然是需要的！所以这里写 yes 啰！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PermitEmptyPasswords no　　</span><span style="color: #ff6666;"># 若上面那一项如果设定为 yes 的话，这一项就最好设定</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　 # 为 no ，这个项目在是否允许以空的密码登入！当然不许！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">ChallengeResponseAuthentication yes&nbsp; </span><span style="color: #ff6666;"># 挑战任何的密码认证！所以，任何 login.conf&nbsp;</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 规定的认证方式，均可适用！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">#PAMAuthenticationViaKbdInt yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #ff6666;"> # 是否启用其它的 PAM 模块！启用这个模块将会</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　　　　　　 # 导致 PasswordAuthentication 设定失效！</span><br>
+<span style="font-family: SimSun;">　</span><br>
+<span style="color: #ffffcc; font-family: SimSun;"># 4.3 与 Kerberos 有关的参数设定！因为我们没有 Kerberos 主机，所以底下不用设定！</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#KerberosAuthentication no</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#KerberosOrLocalPasswd yes</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#KerberosTicketCleanup yes</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#KerberosTgtPassing no</span><br>
+<span style="font-family: SimSun;">　</span><br>
+<span style="color: #ffffcc; font-family: SimSun;"># 4.4 底下是有关在 X-Window 底下使用的相关设定！</span><br>
+<span style="color: #ffff00; font-family: SimSun;">X11Forwarding yes</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#X11DisplayOffset 10</span><br>
+<span style="color: #ffff00; font-family: SimSun;">#X11UseLocalhost yes</span></div>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 4.5 登入后的项目：</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PrintMotd no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #ff6666;"> # 登入后是否显示出一些信息呢？例如上次登入的时间、地点等</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 等，预设是 yes ，但是，如果为了安全，可以考虑改为 no ！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">PrintLastLog yes　　　　</span><span style="color: #ff6666;">　# 显示上次登入的信息！可以啊！预设也是 yes ！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">KeepAlive yes　　　　　　</span><span style="color: #ff6666;"> # 一般而言，如果设定这项目的话，那么 SSH Server 会传送</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# KeepAlive 的讯息给 Client 端，以确保两者的联机正常！</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 在这个情况下，任何一端死掉后， SSH 可以立刻知道！而不会</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 有僵尸程序的发生！</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">UsePrivilegeSeparation yes </span><span style="color: #ff6666;"># 使用者的权限设定项目！就设定为 yes 吧！</span></span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">MaxStartups 10　　　　　　</span><span style="color: #ff6666;"># 同时允许几个尚未登入的联机画面？当我们连上 SSH ，</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 但是尚未输入密码时，这个时候就是我们所谓的联机画面啦！</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 在这个联机画面中，为了保护主机，所以需要设定最大值，</span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 预设最多十个联机画面，而已经建立联机的不计算在这十个当中</span></div>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 4.6 关于使用者抵挡的设定项目：</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">DenyUsers *　　　　　　　</span><span style="color: #ff6666;"> # 设定受抵挡的使用者名称，如果是全部的使用者，那就是全部</span></span><br>
+<span style="color: #ff6666; font-family: SimSun;">　　　　　　　　　　　　　# 挡吧！若是部分使用者，可以将该账号填入！例如下列！</span><br>
+<span style="color: #ffff00; font-family: SimSun;">DenyUsers test</span><br>
+<span style="font-family: SimSun;"><span style="color: #ffff00;">DenyGroups test　　　　</span><span style="color: #ff6666;">　 # 与 DenyUsers 相同！仅抵挡几个群组而已！</span></span></div>
+<div><span style="color: #ffffcc; font-family: SimSun;"># 5. 关于 SFTP 服务的设定项目！</span><br>
+<span style="color: #ffff00; font-family: SimSun;">Subsystem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sftp&nbsp;&nbsp;&nbsp; /usr/lib/ssh/sftp-server</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div>　<br>
+基本上，在您的系统中，『<span style="color: #000066;">除非有必要，否则请不要更改 /etc/ssh/sshd_config 这个档案的设定值！</span>』因为预设的情况下通常都是最严密的 SSH 保护了，因此，可以不需要更动他！上面的说明仅是在让大家了解每个细项的一些基本内容而已！需要注意的是最后一项，如果您不愿意开放 SFTP 的话，将最后一行批注掉即可！<br>
+　<br>
+另外，如果您修改过上面这个档案(/etc/ssh/sshd_config)，那么就必需要重新启动一次 sshd 这个 daemon 才行！亦即是：<br>
+<span style="color: #000099; font-family: SimSun;">/etc/rc.d/init.d/sshd restart</span></div>
+<p>另外自己在网上找了几个doc：<a href="http://doc.licess.com/openssh/sshd_config.html">http://doc.licess.com/openssh/sshd_config.html</a> 方便以后查阅。</p>
+											</div><!-- .entry-content -->
+
+					<div id="copyright">
+							<strong>声明：</strong>本文采用<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/"><abbr title="署名-非商业性使用-相同方式共享">BY-NC-SA</abbr></a>协议进行授权，转载请注明转自：<a href="http://blog.licess.com/sshd_config/">sshd_config配置 详解</a>
+					</div>
+				</div><!-- #post-## -->
+
+
+
+				
+			<div id="comments">
+
+
+			<h3 id="comments-title">One Response to <em>sshd_config配置 详解</em></h3>
+
+
+			<ol class="commentlist">
+					<li class="post pingback">
+		<p>Pingback: <a href="http://www.hashei.me/2010/02/ssh%e7%9a%84%e4%b8%80%e4%ba%9b%e7%9f%a5%e8%af%86.html" rel="external nofollow" class="url">SSH的一些知识 | 聚沙成塔-小哈的记事薄</a></p>
+	</li><!-- #comment-## -->
+			</ol>
+
+
+				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.licess.com/sshd_config/#respond" style="display:none;">取消回复</a></small></h3>				<form action="http://blog.licess.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-form-comment"><label for="comment">评论</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><p class="comment-form-author"><input id="author" name="author" type="text" value="" size="30"><label for="author">姓名</label> <span class="required">(required)</span></p>
+<p class="comment-form-email"><input id="email" name="email" type="text" value="" size="30"><label for="email">电子邮件</label><span class="required">(required)(will not be published)</span></p>
+<p class="comment-form-url"><input id="url" name="url" type="text" value="" size="30"><label for="url">站点</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论"> <input type="hidden" name="comment_post_ID" value="726" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8319f79218"></p><p style="display: none;"></p><p><input type="hidden" id="comment_reply_ID" name="comment_reply_ID" value="0"><input type="hidden" id="comment_reply_dp" name="comment_reply_dp" value="0"></p><div id="cancel_reply" style="display:none;"><a href="javascript:void(0)" onclick="movecfm(null,0,1,null);" style="color:red;">点击取消回复</a></div><script type="text/javascript">
+/* <![CDATA[ */
+var commentformid = "commentform";
+var USERINFO = false;
+var atreply = "author";
+/* ]]> */
+</script>
+<script type="text/javascript" src="./sshd_config配置 详解 - Licess's Blog_files/wp-thread-comment.js.php"></script>
+				<input type="hidden" id="ak_js" name="ak_js" value="1490771895609"></form>
+					</div><!-- #respond -->
+		</div><!-- #comments -->
+
+			
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+<div id="primary" class="widget-area" role="complementary">
+	<ul class="xoxo">
+<li id="info">
+<h3 class="widget-title">订阅</h3>
+	<ul>
+	<a href="http://blog.licess.com/feed/" target="_blank" title="订阅 Licess&#39;s Blog"><img src="./sshd_config配置 详解 - Licess's Blog_files/subscribe.gif" alt="订阅 Licess&#39;s Blog"></a>
+	</ul>
+ </li>
+
+ <li id="info">
+<table border="0" aligen="left">
+  <tbody><tr>
+    <td><a href="http://www.diahosting.com/client/aff.php?aff=002" target="_blank"><img src="./sshd_config配置 详解 - Licess's Blog_files/diahosting100.png" alt="DiaHosting - 基于Xen，中文客服，支付宝支付，多机房选择" width="120" height="120" border="0"></a></td>
+    <td><a href="http://www.photonvps.com/billing/aff.php?aff=007" target="_blank"><img src="./sshd_config配置 详解 - Licess's Blog_files/photonvps100.png" alt="PhotonVPS - 基于OpenVZ/Xen，中文客服，Paypal/支付宝支付，针对电信联通优化" width="120" height="120" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://vps.im/aoyo" target="_blank"><img src="./sshd_config配置 详解 - Licess's Blog_files/aoyohost100.gif" alt="遨游主机(Aoyohost)是澳大利亚注册公司 (澳洲工商可查)，由知名技术论坛LOC 害羞哥为首等多位技术达人于2010年合作成立，专营海外 Xen VPS 的服务商，基于XenServer，有洛杉矶UBI和MC机房可供选择。" width="120" height="120" border="0"></a></td>
+    <td><a href="https://bandwagonhost.com/aff.php?aff=186" target="_blank"><img src="./sshd_config配置 详解 - Licess's Blog_files/bwg120.png" alt="BandWagonHost是一家国外VPS服务商，主要提供基于OpenVZ的Linux VPS。机房有洛杉矶、凤凰城，支持支付宝、Paypal付款，性价比高。提供完全的root权限，仅有Linux系统，支持一键VPN、Shadowsocks，性价比很高。" width="120" height="120" border="0"></a></td>
+  </tr>
+</tbody></table>
+</li>
+
+ <li id="info">
+    <ul>
+美国VPS/域名/服务器/VPN等代购：<a href="http://shop63846532.taobao.com/" target="_blank">http://shop63846532.taobao.com</a>
+    </ul>
+</li>
+		<!--<li id="info">
+			<a id="rss" title="rss" href="http://feed.willerce.com" target="_blank">rss</a>
+			<a id="twitter" title="Follow Me In Twitter" href="http://twitter.com/willerce" target="_blank">Twitter</a>
+			<a id="flickr" title="My Flickr" href="http://www.flickr.com/photos/willerce" target="_blank">My Flickr</a>
+			<a id="t_qq" title="Follow Me In Tencent Tweets" href="http://t.qq.com/willerce" target="_blank">QQ Tweets</a>
+		</li>-->
+	
+		<!-- categories -->
+		<li id="widget-categories" class="widget-container">
+			<h3 class="widget-title">文章分类</h3>
+			<ul>
+					<li class="cat-item cat-item-298"><a href="http://blog.licess.com/category/firefox/">Firefox</a>
+</li>
+	<li class="cat-item cat-item-422"><a href="http://blog.licess.com/category/git-2/">Git</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blog.licess.com/category/linux/">Linux技术</a>
+</li>
+	<li class="cat-item cat-item-462"><a href="http://blog.licess.com/category/mac/" title="Mac相关的东东">Mac</a>
+</li>
+	<li class="cat-item cat-item-152"><a href="http://blog.licess.com/category/nginx/">Nginx</a>
+</li>
+	<li class="cat-item cat-item-447"><a href="http://blog.licess.com/category/openwrt-2/">OpenWRT</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://blog.licess.com/category/php/">PHP技术</a>
+</li>
+	<li class="cat-item cat-item-344"><a href="http://blog.licess.com/category/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-433"><a href="http://blog.licess.com/category/raspberry-pi/">Raspberry Pi</a>
+</li>
+	<li class="cat-item cat-item-50"><a href="http://blog.licess.com/category/seo/">SEO学习笔记</a>
+</li>
+	<li class="cat-item cat-item-414"><a href="http://blog.licess.com/category/vps-3/">VPS</a>
+</li>
+	<li class="cat-item cat-item-378"><a href="http://blog.licess.com/category/vps-2/">VPS相关</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.licess.com/category/web/">Web相关</a>
+</li>
+	<li class="cat-item cat-item-105"><a href="http://blog.licess.com/category/wordpress/" title="WordPress">WordPress</a>
+</li>
+	<li class="cat-item cat-item-241"><a href="http://blog.licess.com/category/domain-hosting/">域名空间</a>
+</li>
+	<li class="cat-item cat-item-180"><a href="http://blog.licess.com/category/works/">我的作品</a>
+</li>
+	<li class="cat-item cat-item-186"><a href="http://blog.licess.com/category/database/">数据库相关</a>
+</li>
+	<li class="cat-item cat-item-220"><a href="http://blog.licess.com/category/%e6%97%b6%e9%97%b4%e7%ae%a1%e7%90%86/">时间管理</a>
+</li>
+	<li class="cat-item cat-item-171"><a href="http://blog.licess.com/category/life/">生活琐碎</a>
+</li>
+	<li class="cat-item cat-item-175"><a href="http://blog.licess.com/category/security/">网络安全</a>
+</li>
+	<li class="cat-item cat-item-172"><a href="http://blog.licess.com/category/development/">软件开发</a>
+</li>
+	<li class="cat-item cat-item-174"><a href="http://blog.licess.com/category/software/">软件测评</a>
+</li>
+			</ul>
+			<div class="clearfix"></div>
+		</li>
+		<!-- posts -->
+				<li id="widget-posts" class="widget-container">
+			<h3 class="widget-title">最近文章</h3>
+			<ul>
+				<li><a href="http://blog.licess.com/lnmp-v1-3/">LNMP一键安装包 V1.3 正式版发布，六一儿童节快乐</a></li><li><a href="http://blog.licess.com/lnmp-v1-2/">LNMP一键安装包 V1.2 发布,六一快乐</a></li><li><a href="http://blog.licess.com/lnmp-v1-1/">LNMP一键安装包1.1 发布</a></li><li><a href="http://blog.licess.com/vnc-viewer-shantui/">VNC Viewer 连接成功后闪退的解决方法</a></li><li><a href="http://blog.licess.com/how-to-install-command-line-tools-in-osx-10-9-mavericks/">OS X 10.9 Mavericks下如何安装Command Line Tools(命令行工具)</a></li><li><a href="http://blog.licess.com/disable-mac-os-x-auto-upgrade/">Mac OS X下关闭Chrome自动更新</a></li><li><a href="http://blog.licess.com/qiniu/">七牛云存储 - 云存储,CDN加速 免费10GB空间,10GB/月流量</a></li><li><a href="http://blog.licess.com/lnmp-v1-0/">LNMP一键安装包 V1.0 发布</a></li><li><a href="http://blog.licess.com/windows-dig/">Windows 系统下安装 dig 命令</a></li><li><a href="http://blog.licess.com/upyun-wordpress-jscdn-jquery/">使用又拍云(upyun)JS库CDN加速wordpress jquery</a></li>			</ul>
+		</li>
+
+        		<!-- recent comments -->
+        <li id="widget-comments" class="widget-container">
+            <h3 class="widget-title">最近评论</h3>
+            <ul>
+                
+        <li>
+            <b><a href="http://blog.licess.com/nginx-pdf-download/#comment-150938" title="">aarondd</a>:</b><br>
+            <span>可以下载？...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/lnmp-v1-2/#comment-142831" title="">lazy</a>:</b><br>
+            <span>thx...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/vnc-viewer-shantui/#comment-142531" title="">semirHR</a>:</b><br>
+            <span>管用！3Q...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/transfer-domain-name-from-godaddy-to-name-com/#comment-139715" title="">licess</a>:</b><br>
+            <span>@knd2, 转入是续一年...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/how-to-install-command-line-tools-in-osx-10-9-mavericks/#comment-139665" title="">不能安装该软件因为目前不可在软件更新服务器</a>:</b><br>
+            <span>不能安装该软件因为目前不可在软件更新服务器
+安装一会出现这个错误，请问这个是怎么回事呢？
+10....</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/transfer-domain-name-from-godaddy-to-name-com/#comment-138394" title="">knd2</a>:</b><br>
+            <span>你好，楼主，我在godaddy上的域名还有3个月到期，现在转到name是不是这3个月就失效了。还有我...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/lnmp-v1-1/#comment-134510" title="">zhaiblog</a>:</b><br>
+            <span>lnmp安装Pureftpd后新建用户，然后连接，无法获取目录列表！...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/ol-ocr/#comment-134398" title="">chongdata</a>:</b><br>
+            <span>感觉 chongdata.com/ocr 识别率还算不错，也没有任何注册...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/linux-memory/#comment-134167" title="">chuntsky</a>:</b><br>
+            <span>学习了！...</span>
+        </li>
+        
+        <li>
+            <b><a href="http://blog.licess.com/qiniu/#comment-133618" title="">licess</a>:</b><br>
+            <span>@louis, s3没用过，国内用的话可能不大稳定...</span>
+        </li>
+                    </ul>
+        </li>
+        
+        		<!-- Archive -->
+		
+			</ul>
+</div><!-- #primary .widget-area -->
+    <div class="clearfix"></div>
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+			<div id="site-info">
+				Copyright © 2007-2015 Licess's Blog.
+				<span>Prower by <a id="powered" href="http://wordpress.org/" rel="nofollow">WordPress</a>.</span>
+			</div>
+			<div id="theme-info">
+				<span>Themes by <a href="http://willerce.com/" title="Themes author" rel="nofollow">Willerce</a>.</span>
+				<span>Valid <a href="http://validator.w3.org/check?uri=referer" rel="nofollow">XHTML 1.1</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" rel="nofollow">CSS 3</a> | </span>
+                				<span><a href="http://blog.licess.com/wp-login.php">登录</a></span>
+				
+			</div><!-- site-info-->
+                <div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_366105'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D366105' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_366105"><a href="http://www.cnzz.com/stat/website.php?web_id=366105" target="_blank" title="站长统计">站长统计</a></span><script src="./sshd_config配置 详解 - Licess's Blog_files/stat.php" type="text/javascript"></script><script src="./sshd_config配置 详解 - Licess's Blog_files/core.php" charset="utf-8" type="text/javascript"></script></div>
+	</div><!-- #colophon -->
+</div><!-- #footer -->
+</div><!--#Wrapper -->
+<script>
+/* <![CDATA[ */
+var rcGlobal = {
+	serverUrl		:'http://blog.licess.com',
+	infoTemp		:'%REVIEWER% 在 %POST%',
+	loadingText		:'正在加载',
+	noCommentsText	:'没有任何评论',
+	newestText		:'&laquo; 最新的',
+	newerText		:'&laquo; 上一页',
+	olderText		:'下一页 &raquo;',
+	showContent		:'',
+	external		:'',
+	avatarSize		:'32',
+	avatarPosition	:'left',
+	anonymous		:'匿名'
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./sshd_config配置 详解 - Licess's Blog_files/form.js"></script>
+<script type="text/javascript" src="./sshd_config配置 详解 - Licess's Blog_files/wp-recentcomments.js"></script>
+<script type="text/javascript" src="./sshd_config配置 详解 - Licess's Blog_files/wp-embed.min.js"></script>
+
+
+</body></html>

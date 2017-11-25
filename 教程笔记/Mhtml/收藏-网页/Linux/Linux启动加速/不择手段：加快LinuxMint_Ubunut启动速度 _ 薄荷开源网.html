@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mintos.org/skill/fast-boot.html -->
+<html lang="zh-CN" mode="normal" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width initial-scale=1.0, user-scalable=yes">
+<title>不择手段：加快LinuxMint/Ubunut启动速度 | 薄荷开源网</title>
+<meta name="description" content="前文《多快好省：10个技巧加速你的LinuxMint/Ubuntu》中，介绍了一些关于优化系统速度的设置。可能在系统优化设置方面，开机启动速度是最为人所关注的问题。君不见，现在不少广告宣传“x秒开机”、“0秒等待”。">
+<meta name="keywords" content="Linux,启动">
+<link rel="shortcut icon" href="http://www.mintos.org/wp-content/themes/Ality/img/favicon.ico">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.mintos.org/wp-content/themes/Ality/img/favicon.png">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.mintos.org/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://www.mintos.org/wp-content/themes/Ality/js/html5-css3.js"></script>
+<![endif]-->
+<!--[if lt IE 7]><script src="http://www.mintos.org/wp-content/themes/Ality/js/ie6.js" type="text/javascript"></script><![endif]-->
+<!--[if lt IE 8]><link rel="stylesheet" href="http://www.mintos.org/wp-content/themes/Ality/css/ie7/ie7.css" /><![endif]-->
+
+<!-- All in One SEO Pack 2.3.11.1 by Michael Torbert of Semper Fi Web Design[155,193] -->
+<meta name="description" content="前文《多快好省：10个技巧加速你的LinuxMint/Ubuntu》中，介绍了一些关于优化系统速度的设置。可能在系统优化设置方面，开机启动速度是最为人所关注的问题。本文作为前文的补充篇，介绍一些优化系统启动速度的设置。优化系统启动速度，除了在“启动应用程序”中取消不必要的自启动软件等常规设置外，还有“非常规手段”。">
+
+<meta name="keywords" content="启动,速度,linux,mint,ubuntu">
+
+<link rel="canonical" href="http://www.mintos.org/skill/fast-boot.html">
+			<script async="" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/analytics.js"></script><script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-35201649-1', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.mintos.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.5"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="style-css" href="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediaqueries-css" href="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/mediaqueries.css" type="text/css" media="all">
+<link rel="stylesheet" id="highlight-css" href="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/highlight.css" type="text/css" media="all">
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/jquery.min.js"></script><style id="night_mode">html[mode="night"] { -webkit-filter: contrast(47%) brightness(105%) invert(); }html[mode="night"] img, html[mode="night"] i span, html[mode="night"] i, html[mode="night"] video { -webkit-filter: invert(); }html[mode="night"][data-player-size="fullscreen"] .html5-video-container {-webkit-filter: invert();}html[mode="night"] object[type="application/x-shockwave-flash"], html[mode="night"] object[type="application/x-shockwave-flash"] { -webkit-filter: invert();  !important; }html[mode="night"] embed[type="application/x-shockwave-flash"], html[mode="night"] embed[type="application/x-shockwave-flash"] { -webkit-filter: invert();  !important; }</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpl_ajax_url = "http:\/\/www.mintos.org\/wp-admin\/admin-ajax.php";
+/* ]]> */
+</script>
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/script.js"></script>
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/jquery.fancybox.js"></script>
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/comments-ajax.js"></script>
+<link rel="https://api.w.org/" href="http://www.mintos.org/wp-json/">
+<link rel="alternate" type="application/json+oembed" href="http://www.mintos.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">
+<link rel="alternate" type="text/xml+oembed" href="http://www.mintos.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html&amp;format=xml">
+<script src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/share.js"></script><style type="text/css">.fancybox-margin{margin-right:0px;}</style><link rel="stylesheet" href="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/share_style1_16.css"></head>
+<body class="single single-post postid-3026 single-format-standard">
+<div id="page" class="page-site">
+	<div id="header-top" class="" style="position: fixed; top: 0px;">
+		<nav id="top-nav" class="main-nav">
+			<div class="home_h"><i class="icon-home_h"><a href="http://www.mintos.org/" title="返回首页"></a></i></div>
+			<div class="menu-topmenu-container"><ul id="menu-topmenu" class="menu"><li id="menu-item-8716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8716"><a href="http://www.mintos.org/about">联系我们</a></li>
+<li id="menu-item-8715" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8715"><a href="http://www.mintos.org/donate">捐助本站</a></li>
+<li id="menu-item-9568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9568"><a href="http://www.mintos.org/mintgroup">薄荷群组</a></li>
+</ul></div>			<div class="clear"></div>
+		</nav>
+	</div>
+	<div id="simple-top">
+	<a id="simple-menu" href="http://www.mintos.org/skill/fast-boot.html#sidr"><i class="icon-simple-menu"></i></a>
+	</div>
+		<header id="header">
+			<div class="header-clear"></div>
+			<div class="main-header">
+					<hgroup class="logo-main"><a href="http://www.mintos.org/" rel="home" title="薄荷开源网"><h1 class="logo">薄荷开源网</h1></a></hgroup>
+				<div id="set-main">
+	<div id="nav-search">
+		<a class="menu-search" href="http://www.mintos.org/skill/fast-boot.html#"><i class="icon-search"></i></a>
+	</div>
+	<div id="nav-login">
+		<a href="http://www.mintos.org/skill/fast-boot.html#login" class="flatbtn" id="login-main"><i class="icon-login"></i></a>
+	</div>
+</div>									<div id="bulletin_div" class="bulletin_div">
+	<div id="bulletin_begin">
+		<ul>
+						<li><a href="http://www.mintos.org/bulletin/%e6%84%9f%e8%b0%a2" target="_blank" title="查看感谢"><i class="icon-bulletin"></i>感谢热心网友 温度 amo***@sina.com 资助！
+</a></li>
+						<li><a href="http://www.mintos.org/bulletin/mintos-price" target="_blank" title="查看薄荷定制版定价"><i class="icon-bulletin"></i>为避免误解，特此声明：薄荷定制版定价均为ISO一次性出售价格，不包括技术服务。购买一个IS...</a></li>
+								</ul>
+	</div>
+	<div id="bulletin_end">
+		<ul>
+						<li><a href="http://www.mintos.org/bulletin/%e6%84%9f%e8%b0%a2" target="_blank" title="查看感谢"><i class="icon-bulletin"></i>感谢热心网友 温度 amo***@sina.com 资助！
+</a></li>
+						<li><a href="http://www.mintos.org/bulletin/mintos-price" target="_blank" title="查看薄荷定制版定价"><i class="icon-bulletin"></i>为避免误解，特此声明：薄荷定制版定价均为ISO一次性出售价格，不包括技术服务。购买一个IS...</a></li>
+								</ul>
+	</div>
+</div>
+<script type="text/javascript">ScrollImgLeft();</script>							</div>
+			<div class="clear"></div>
+			<nav id="site-nav" class="main-nav">
+				<div class="menu-catenavi-container"><ul id="menu-catenavi" class="menu"><li id="menu-item-8643" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-8643"><a href="http://www.mintos.org/">首页</a></li>
+<li id="menu-item-7364" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7364"><a href="http://www.mintos.org/category/review">资讯杂谈</a></li>
+<li id="menu-item-8297" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8297"><a href="http://www.mintos.org/category/distros">系统评测</a></li>
+<li id="menu-item-7362" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-7362"><a href="http://www.mintos.org/category/skill">软件技巧</a></li>
+<li id="menu-item-9217" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9217"><a href="http://www.mintos.org/category/hardware">硬件配置</a></li>
+<li id="menu-item-7367" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7367"><a href="http://www.mintos.org/category/promote">推广应用</a></li>
+<li id="menu-item-8432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8432"><a href="http://www.mintos.org/about">联系我们</a></li>
+<li id="menu-item-9479" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9479"><a href="http://www.mintos.org/donate">捐助本站</a></li>
+</ul></div>				<ul><li class="fill"></li></ul>
+			</nav>
+			<!-- #site-nav -->
+			<div class="clear"></div>
+		</header>
+		<!-- #header -->
+
+	<div id="main" class="wrapper">
+		<div id="search-main">
+			<div id="searchbar">
+	<form method="get" id="searchform" action="http://www.mintos.org/">
+		<div><input type="text" value="" name="s" id="s" placeholder="输入搜索内容" required="">
+		<input type="submit" id="searchsubmit" value="搜索">
+		</div>
+	</form>
+</div>			<form action="http://www.baidu.com/baidu" target="_blank">
+	<input name="word" class="swap_value" placeholder="百度站内搜索" required="">
+	<input type="submit" class="submit" name="submit" id="searchsubmit" value="百度">
+	<input name="tn" type="hidden" value="bds">
+	<input name="cl" type="hidden" value="3">
+	<input name="ct" type="hidden" value="2097152">
+	<input name="si" type="hidden" value="mintos.org">
+	<input name="si" type="hidden" value="">
+</form>		</div>
+
+		<nav class="crumbs">现在位置： <a title="返回首页" href="http://www.mintos.org/">首页</a> &gt; <a href="http://www.mintos.org/category/skill" rel="category tag">软件技巧</a> &gt;  正文 </nav>
+				<div id="primary" class="site-content">
+		<div class="single-content">
+		
+<article id="post-3026" class="post-3026 post type-post status-publish format-standard has-post-thumbnail hentry category-skill tag-linux tag-63">
+	<div class="fontsize"><span class="smaller">A-</span><span class="bigger">A+</span></div>
+	<header class="single-header">
+		<h1 class="single-title">不择手段：加快LinuxMint启动速度补充篇</h1>
+		<div class="single-meta">
+			<span class="date"><i class="icon-date"></i>2013年03月07日</span>
+			<span class="cat"><i class="icon-cat"></i><a href="http://www.mintos.org/category/skill" rel="category tag">软件技巧</a></span>
+			<span class="comment"><i class="icon-comment"></i><a href="http://www.mintos.org/skill/fast-boot.html#comments">评论 7 条</a></span>
+			<span class="views"><i class="icon-views"></i>阅读 12,615 views 次</span>					</div>
+		<!-- .entry-meta -->
+	</header>
+	<!-- .single-header -->
+
+			
+			<div id="g-single">
+	<div class="g-single-main g-main" style="text-align: center;">
+		<div class="forum-20151009175438"><script charset="utf-8" language="JavaScript" type="text/javascript" src="https://adman.henghost.com/data/forum-20151009175438.js"></script></div>	</div>
+</div>	
+	<div class="single-main">
+		<div class="content-main">
+			<p>前文<a title="多快好省：10个技巧加速你的LinuxMint/Ubuntu" href="http://www.mintos.org/archives/speedup-mint.html" target="_blank">《多快好省：10个技巧加速你的LinuxMint/Ubuntu》<i class="icon-link"></i></a>中，介绍了一些关于优化系统速度的设置。可能在系统优化设置方面，开机启动速度是最为人所关注的问题。君不见，现在不少广告宣传“x秒开机”、“0秒等待”。</p>
+<p>本文作为前文的补充篇，介绍一些优化系统启动速度的设置。需要声明的是：下列操作对于系统具有较大影响，切记谨慎行事，评估风险，做好备份。否则系统被损坏了，薄荷开源网小编可担待不起啊，呵呵。</p>
+<p>优化系统启动速度，除了在“启动应用程序”中取消不必要的自启动软件等常规设置外，还有以下“非常规手段”。</p>
+<p><strong>1.文字启动</strong><br>
+似乎Linux系统启动时，满屏字符跑动的情形已是10年以前的事情了。现在的Linux启动也像Windows一样，有一个漂亮的<a title="为Linuxmint 13设置启动splash图片" href="http://www.mintos.org/archives/mint13-splash.html" target="_blank">Splash<i class="icon-link"></i></a>界面。然而，美丽总是有代价的，那就是得牺牲一定的性能。如果你为了追求这点速度，不妨让它返璞归真。<br>
+以管理员身份编辑grub配置文件：<br>
+sudo gedit /etc/default/grub<br>
+找到这一行：<br>
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"<br>
+按照小编的理解，quiet即静默模式，就是不显示启动过程；splash即显示预设的启动画面。<br>
+我们把quiet和splash都去掉，改成如下样式：<br>
+GRUB_CMDLINE_LINUX_DEFAULT="profile"<br>
+把quiet和splash改为profile后，即概括式启动（小编个人理解）。如此修改后，第一次启动时，系统反而会更慢。不过不要紧，因为正在搜集、准备启动所需的环境，从第二次开始，启动速度就会有所改善了。<br>
+<a href="http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot.jpeg" class="cboxElement" rel="example_group" 3026=""><img class="alignnone size-medium wp-image-3030" title="01-fast-boot" data-original="http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot-600x280.jpeg" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/01-fast-boot-600x280.jpeg" alt="" width="600" height="280" srcset="http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot-600x280.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot.jpeg 883w" sizes="(max-width: 600px) 100vw, 600px" style="display: inline; opacity: 1;"></a><br>
+<noscript>&lt;img class="alignnone size-medium wp-image-3030" title="01-fast-boot" src="http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot-600x280.jpeg" alt="" width="600" height="280" srcset="http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot-600x280.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/01-fast-boot.jpeg 883w" sizes="(max-width: 600px) 100vw, 600px" /&gt;&lt;/a&gt;&lt;br /&gt;</noscript>
+修改完grub配置文件后，记得更新一下grub，然后重启：<br>
+sudo update-grub2</p>
+<p><strong>2.取消磁盘检查</strong><br>
+注意：本操作对于启动速度改善较为明显，但危险性较高，切记慎行！！！<br>
+以管理员身份编辑fstab文件：<br>
+sudo gedit /etc/fstab<br>
+找到你的Linux系统/所在的分区，大概是这样的：<br>
+UUID=2a3f1cfb-b5f6-4b48-a7c8-1a7f7efc2bbb&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; ext4&nbsp;&nbsp;&nbsp; errors=remount-ro&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp; 1<br>
+上述这行中尾部的数字1表示每次开机都要检查该磁盘分区。检查磁盘分区比较耗费时间，启动速度如何能快？所以只要改为0（不检查）即可。<br>
+<a href="http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot.jpeg" class="cboxElement" rel="example_group" 3026=""><img class="alignnone size-medium wp-image-3035" title="02-fast-boot" data-original="http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot-600x295.jpeg" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/02-fast-boot-600x295.jpeg" alt="" width="600" height="295" srcset="http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot-600x295.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot.jpeg 901w" sizes="(max-width: 600px) 100vw, 600px" style="display: inline; opacity: 1;"></a><br>
+<noscript>&lt;img class="alignnone size-medium wp-image-3035" title="02-fast-boot" src="http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot-600x295.jpeg" alt="" width="600" height="295" srcset="http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot-600x295.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/02-fast-boot.jpeg 901w" sizes="(max-width: 600px) 100vw, 600px" /&gt;&lt;/a&gt;&lt;br /&gt;</noscript>
+如果你的fstab中还有其他磁盘分区，如swap、home等默认设置也是1（检查磁盘），也一律设置为0（不检查）即可。</p>
+<p><strong>3.进一步取消不必要的自启动软件</strong><br>
+“启动应用程序”中只能取消那些当前用户登录时的自启动软件，对于系统启动时全局性的自启动软件却无可奈何。我们安装bum（Boot Up Manager启动管理器）即可进行设置。在“软件管理器”或终端中安装bum：<br>
+sudo apt-get install bum<br>
+如图所示，在bum中请自行斟酌，取消那些确定不需要的软件。（没有把握的，最好先保留着。）<br>
+<a href="http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot.jpeg" class="cboxElement" rel="example_group" 3026=""><img class="alignnone size-medium wp-image-3032" title="03-fast-boot" data-original="http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot-600x400.jpeg" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/03-fast-boot-600x400.jpeg" alt="" width="600" height="400" srcset="http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot-600x400.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot.jpeg 715w" sizes="(max-width: 600px) 100vw, 600px" style="display: inline; opacity: 1;"></a></p>
+<noscript>&lt;img class="alignnone size-medium wp-image-3032" title="03-fast-boot" src="http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot-600x400.jpeg" alt="" width="600" height="400" srcset="http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot-600x400.jpeg 600w, http://www.mintos.org/wp-content/uploads/2013/03/03-fast-boot.jpeg 715w" sizes="(max-width: 600px) 100vw, 600px" /&gt;&lt;/a&gt;&lt;/p&gt;</noscript>
+<p><strong>4.绘制启动图表</strong><br>
+有个软件叫作Bootcharts:。顾名思义，就是启动图表。它可以在后台详细纪录你的系统启动过程，供用户查阅分析，到底是哪些软件导致启动速度慢。在“软件管理器”或终端中安装之：<br>
+sudo apt-get install bootchart<br>
+重启之后，在/var/log/bootchart中即可看到关于本次启动的详细纪录。</p>
+<p>关于系统启动速度的优化，一般PC而言，到此也算折腾到家了。如果还不知足，那恐怕得像嵌入式设备一样，专门编译、定制系统内核啦。</p>
+		</div>
+								<div class="clear"></div>
+	</div>
+	<!-- .single-content -->
+</article>
+
+		<div id="social">
+	<div class="social-main">
+		<span class="like">
+	         <a href="javascript:;" data-action="ding" data-id="3026" title="我赞" class="favorite"><i class="icon-zan"></i>喜欢 <i class="count">
+	            5</i>
+	        </a>
+		</span>
+		<span class="comment-s"><i class="icon-comment"></i><a href="http://www.mintos.org/skill/fast-boot.html#comments">评论 7 </a></span>
+		<span class="share-s"><a href="http://www.mintos.org/skill/fast-boot.html#share" id="share-main-s" title="分享"><i class="icon-share"></i>分享</a></span>
+	</div>
+	<div class="clear"></div>
+</div>	</div>
+	<div class="single-tag">标签：<a href="http://www.mintos.org/tag/linux" rel="tag">Linux</a><a href="http://www.mintos.org/tag/%e5%90%af%e5%8a%a8" rel="tag">启动</a></div>
+	<!-- #content -->
+	<div class="authorbio">
+		<img src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/4893a40fb68b8150dc175272bd908592" class="avatar avatar-128" height="128" width="128"><ul class="spostinfo">
+		<li><strong>版权声明：</strong>本站原创文章，由<a href="http://www.mintos.org/author/huyidao" title="由还魂草发布" rel="author">还魂草</a>发表在<a href="http://www.mintos.org/category/skill" rel="category tag">软件技巧</a>分类下，于2013年07月15日最后更新</li>
+	<li><strong>转载请注明：</strong><a href="http://www.mintos.org/skill/fast-boot.html" rel="bookmark" title="本文固定链接 http://www.mintos.org/skill/fast-boot.html">不择手段：加快LinuxMint启动速度补充篇 | 薄荷开源网</a><a href="http://www.mintos.org/skill/fast-boot.html#" onclick="copy_code(&#39;http://www.mintos.org/skill/fast-boot.html&#39;); return false;"> +复制链接</a></li>
+	</ul>	</div>
+	
+	<div id="single-widget">
+		<aside id="related_post-2" class="widget widget_related_post"><h3 class="widget-title"><div class="s-icon"></div>关联阅读</h3>
+<div id="related_post_widget">
+	<ul>
+				<li><a href="http://www.mintos.org/skill/nitroshare-all-platforms.html"><i class="icon-li"></i>NitroShare:跨平台内网文件共享</a></li>
+				<li><a href="http://www.mintos.org/distros/zorin12-review-skill.html"><i class="icon-li"></i>Zorin OS：漂亮的左邻与若干技巧</a></li>
+				<li><a href="http://www.mintos.org/skill/linux-gnome-twitch.html"><i class="icon-li"></i>GNOME Twitch：Linux下观赏游戏直播</a></li>
+			</ul>
+</div>
+
+<div class="clear"></div></aside><aside id="random_post-2" class="widget widget_random_post"><h3 class="widget-title"><div class="s-icon"></div>随机推荐</h3>
+<div id="random_post_widget">
+	<ul>
+					<li><a href="http://www.mintos.org/skill/jstock.html" rel="bookmark" title="详细阅读 财源滚滚：开源股票软件Jstock"><i class="icon-li"></i>财源滚滚：开源股票软件Jstock</a></li>
+					<li><a href="http://www.mintos.org/distros/mint-rafaela-review.html" rel="bookmark" title="详细阅读 改进明显：LinuxMint 17.2 Cinnamon新鲜测试"><i class="icon-li"></i>改进明显：LinuxMint 17.2 Cinnamon新鲜测试</a></li>
+					<li><a href="http://www.mintos.org/hardware/lmde-nvidia.html" rel="bookmark" title="详细阅读 物尽其用：LMDE安装Nvidia闭源驱动"><i class="icon-li"></i>物尽其用：LMDE安装Nvidia闭源驱动</a></li>
+					</ul>
+</div>
+
+<div class="clear"></div></aside>		<div class="clear"></div>
+	</div>
+
+	<nav class="nav-single">
+		【上篇】<a href="http://www.mintos.org/skill/dukto.html" rel="prev">飞鸽传书：Win8风格的局域网通讯工具Dukto</a><br>【下篇】<a href="http://www.mintos.org/skill/cinnamon-applets.html" rel="next">精彩无限：Cinnamon之Top 10有用小程序</a>	</nav>
+	
+<!-- 引用 -->
+<div id="comments" class="comments-area">
+		<h2 class="comments-title">
+		7 条留言&nbsp;&nbsp;访客：5 条&nbsp;&nbsp;博主：2 条 			</h2>
+
+	<ol class="comment-list">
+			<div id="anchor"><div id="comment-24044"></div></div>
+	<li class="comment byuser comment-author-sandy even thread-even depth-1" id="comment-24044">
+			<div id="div-comment-24044" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/fd2d4d875b74f061d8c46c47e1d4281f" alt="avatar" data-original="https://secure.gravatar.com/avatar/fd2d4d875b74f061d8c46c47e1d4281f?s=128" style="display: block;">		<!--<cite class="fn">Sandy</cite> <span class="says">:</span>-->
+		<strong>Sandy</strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-24044"></a>
+			<span class="comment-aux">
+				2014年07月03日 14:14												<span class="floor">
+					&nbsp;-47楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>自从默认挂载Win下D盘E盘，启动速度慢得跟Win7一样，找个时间对着这教程作死一下～</p>
+			</div>
+	</li><!-- #comment-## -->
+	<div id="anchor"><div id="comment-24047"></div></div>
+	<li class="comment byuser comment-author-sandy odd alt thread-odd thread-alt depth-1" id="comment-24047">
+			<div id="div-comment-24047" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/fd2d4d875b74f061d8c46c47e1d4281f" alt="avatar" data-original="https://secure.gravatar.com/avatar/fd2d4d875b74f061d8c46c47e1d4281f?s=128" style="display: block;">		<!--<cite class="fn">Sandy</cite> <span class="says">:</span>-->
+		<strong>Sandy</strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-24047"></a>
+			<span class="comment-aux">
+				2014年07月03日 22:17												<span class="floor">
+					&nbsp;-46楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>bootchart画的图好难懂啊，只知道启动时间内CPU和磁盘的活动程度。文字启动，额，还是漂亮点好吧</p>
+			</div>
+	</li><!-- #comment-## -->
+	<div id="anchor"><div id="comment-24050"></div></div>
+	<li class="comment byuser comment-author-sandy even thread-even depth-1" id="comment-24050">
+			<div id="div-comment-24050" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/gravatar.png" alt="avatar" data-original="https://secure.gravatar.com/avatar/fd2d4d875b74f061d8c46c47e1d4281f?s=128">		<!--<cite class="fn">Sandy</cite> <span class="says">:</span>-->
+		<strong>Sandy</strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-24050"></a>
+			<span class="comment-aux">
+				2014年07月03日 22:45												<span class="floor">
+					&nbsp;-45楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>bootchart画的图好难懂啊，只知道启动时间内CPU和磁盘的活动程度。文字启动，额，还是漂亮点好吧。第二次启动，图标显示启动时间好像缩短了10秒（原来50左右）</p>
+			</div>
+	</li><!-- #comment-## -->
+	<div id="anchor"><div id="comment-24052"></div></div>
+	<li class="comment byuser comment-author-huyidao bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-24052">
+			<div id="div-comment-24052" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/gravatar.png" alt="avatar" data-original="https://secure.gravatar.com/avatar/4893a40fb68b8150dc175272bd908592?s=128">		<!--<cite class="fn"><a href='http://weibo.com/mintos' rel='external nofollow' class='url'>还魂草</a></cite> <span class="says">:</span>-->
+		<strong><a href="http://weibo.com/mintos" rel="external nofollow" target="_blank" class="url">还魂草</a></strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-24052"></a>
+			<span class="comment-aux">
+				2014年07月04日 07:51												<span class="floor">
+					&nbsp;-44楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>你每次都是集中折腾一番吧，呵呵</p>
+			</div>
+	</li><!-- #comment-## -->
+	<div id="anchor"><div id="comment-25272"></div></div>
+	<li class="comment even thread-even depth-1 parent" id="comment-25272">
+			<div id="div-comment-25272" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/gravatar.png" alt="avatar" data-original="https://secure.gravatar.com/avatar/?s=128">		<!--<cite class="fn">浊</cite> <span class="says">:</span>-->
+		<strong>浊</strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-25272"></a>
+			<span class="comment-aux">
+				2015年04月19日 05:37												<span class="floor">
+					&nbsp;-43楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>请问站长，xfce真的比cinnamon快好多么？感觉cinnamon确实有点慢，不论是软件管理器还是开机什么的。。</p>
+			</div>
+	<ul class="children">
+	<div id="anchor"><div id="comment-25276"></div></div>
+	<li class="comment byuser comment-author-huyidao bypostauthor odd alt depth-2" id="comment-25276">
+			<div id="div-comment-25276" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/gravatar.png" alt="avatar" data-original="https://secure.gravatar.com/avatar/4893a40fb68b8150dc175272bd908592?s=128">		<!--<cite class="fn"><a href='http://weibo.com/mintos' rel='external nofollow' class='url'>还魂草</a></cite> <span class="says">:</span>-->
+		<strong><a href="http://weibo.com/mintos" rel="external nofollow" target="_blank" class="url">还魂草</a></strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-25276"></a>
+			<span class="comment-aux">
+				2015年04月19日 10:36												<span class="floor">
+										&nbsp;地下1层				</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>稍微快一点。最快的还是LXDE。不过我觉得cinnamon也还好吧，没觉得很慢</p>
+			</div>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<div id="anchor"><div id="comment-25776"></div></div>
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-25776">
+			<div id="div-comment-25776" class="comment-body">
+		<div class="comment-author vcard">
+		<img class="avatar" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/gravatar.png" alt="avatar" data-original="https://secure.gravatar.com/avatar/?s=128">		<!--<cite class="fn">LinuxFant</cite> <span class="says">:</span>-->
+		<strong>LinuxFant</strong>
+		<span class="comment-meta commentmetadata">
+			<a href="http://www.mintos.org/skill/fast-boot.html#comment-25776"></a>
+			<span class="comment-aux">
+				2015年07月17日 09:46												<span class="floor">
+					&nbsp;-42楼									</span>
+			</span>
+			<span class="reply">&nbsp;<a rel="nofollow" class="comment-reply-login" href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">登录以回复</a></span>
+		</span>
+	</div>
+	<p>优客助手似乎有用。</p>
+			</div>
+	</li><!-- #comment-## -->
+	</ol><!-- .comment-list -->
+
+	
+	
+		
+		
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">给我留言<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.mintos.org/skill/fast-boot.html#respond" style="display:none;">取消回复</a></small></h3>
+			
+							<p>您必须<a href="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html">  登录  </a>才能发表留言！</p>
+					</div>
+		</div>
+<!-- #comments -->	</div>
+<!-- #primary -->
+<div id="sidebar" class="widget-area">
+				<aside id="search-3" class="widget widget_search"><h3 class="widget-title"><p><i class="icon-st"></i></p>站内搜索</h3><div id="searchbar">
+	<form method="get" id="searchform" action="http://www.mintos.org/">
+		<div><input type="text" value="" name="s" id="s" placeholder="输入搜索内容" required="">
+		<input type="submit" id="searchsubmit" value="搜索">
+		</div>
+	</form>
+</div><div class="clear"></div></aside><aside id="hot_post-5" class="widget widget_hot_post"><h3 class="widget-title"><p><i class="icon-st"></i></p>点击排行</h3>
+<div id="hot_post_widget">
+	<ul>
+	     
+	    <li><span id="li-icon" class="ago-icon">1</span><a href="http://www.mintos.org/distros/zorin12-review-skill.html">Zorin OS：漂亮的左邻与若干技巧</a></li><li><span id="li-icon" class="ago-icon">2</span><a href="http://www.mintos.org/skill/chrome-extension-uget.html">Chrome/Chromium调用uGet下载</a></li><li><span id="li-icon" class="ago-icon">3</span><a href="http://www.mintos.org/distros/mintos-airy-serena.html">薄荷定制：LinuxMint 18.1无忧版发布</a></li><li><span id="li-icon" class="after-icon">4</span><a href="http://www.mintos.org/distros/zorin-airy-welfare.html">薄荷福利：ZorinOS 12无忧版免费派送</a></li><li><span id="li-icon" class="after-icon">5</span><a href="http://www.mintos.org/promote/mintos-four-years.html">薄荷开源网四周年了</a></li><li><span id="li-icon" class="after-icon">6</span><a href="http://www.mintos.org/skill/wire-message.html">主打安全：Wire即时通讯软件介绍</a></li><li><span id="li-icon" class="after-icon">7</span><a href="http://www.mintos.org/skill/nitroshare-all-platforms.html">NitroShare:跨平台内网文件共享</a></li><li><span id="li-icon" class="after-icon">8</span><a href="http://www.mintos.org/review/henghost-newyear.html">优惠主机分享：恒创跨年促销，主机...</a></li>	    			</ul>
+</div>
+<script type="text/javascript">
+function setSN(e){
+	var ul = document.getElementById(e);
+	var lis= ul.getElementsByTagName('li');
+		for(var i=0,l=lis.length;i<3;i++){
+			var tHTML = lis[i].innerHTML
+			lis[i].innerHTML = '<span id="li-icon" class="ago-icon">'+(i+1)+'</span>'+tHTML;
+		}
+		for(var i=3,l=lis.length;i<l;i++){
+			var tHTML = lis[i].innerHTML
+			lis[i].innerHTML = '<span id="li-icon" class="after-icon">'+(i+1)+'</span>'+tHTML;
+		}
+}
+setSN('hot_post_widget');
+</script>
+
+<div class="clear"></div></aside><aside id="meta-3" class="widget widget_meta"><h3 class="widget-title"><p><i class="icon-st"></i></p>登录入口</h3>			<ul>
+			<li><a href="http://www.mintos.org/wp-login.php?action=register">注册</a></li>			<li><a href="http://www.mintos.org/wp-login.php">登录</a></li>
+			<li><a href="http://www.mintos.org/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.mintos.org/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			<div class="clear"></div></aside>		<div class="sidebar-roll" style="position: static; top: 716px;">
+					</div>
+		</div>
+<div class="clear"></div>
+<footer id="footer">
+	<div class="site-info">
+		Copyright © 薄荷开源网  保留所有权利.&nbsp;&nbsp;
+		<span class="info-add">
+			Theme&nbsp;&nbsp;<a title="主题设计：知更鸟" href="http://zmingcx.com/" target="_blank">Ality</a>
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254821043'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1254821043%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1254821043"><a href="http://www.cnzz.com/stat/website.php?web_id=1254821043" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/pic.gif"></a></span><script src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/z_stat.php" type="text/javascript"></script><script src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/core.php" charset="utf-8" type="text/javascript"></script>					</span>
+	</div>
+	<!-- .site-info -->
+<div id="sidr" style="display: none;" class="sidr left"><a id="simple-menu-s" href="http://www.mintos.org/skill/fast-boot.html#sidr"><i class="icon-close"></i></a><div class="menu-topmenu-container"><ul id="menu-topmenu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8716"><a href="http://www.mintos.org/about">联系我们</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8715"><a href="http://www.mintos.org/donate">捐助本站</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9568"><a href="http://www.mintos.org/mintgroup">薄荷群组</a></li>
+</ul></div></div>
+
+<div id="login">
+	<h1>用户登录</h1>
+	<form action="http://www.mintos.org/wp-login.php?redirect_to=http%3A%2F%2Fwww.mintos.org%2Fskill%2Ffast-boot.html" method="post" id="loginform">
+		<fieldset id="inputs">
+			<input id="username" type="text" name="log" placeholder="名称" required="">
+			<input id="password" type="password" name="pwd" placeholder="密码" required="">
+		</fieldset>
+		<fieldset id="actions">
+		<input type="submit" id="submit" value="登录">
+		<input type="hidden" name="redirect_to" value="/skill/fast-boot.html">
+		<label><input type="checkbox" name="rememberme" id="modlogn_remember" value="yes" checked="checked" alt="Remember Me">记住登录信息</label>
+		</fieldset>
+	</form>
+</div>
+<ul id="scroll">
+	<li><a class="scroll_t" title="返回顶部"><i class="icon-scroll_t"></i></a></li>
+			<li><a href="http://www.mintos.org/skill/fast-boot.html#share" id="share-main" title="分享"><i class="icon-share"></i></a></li>
+	
+			<li><a class="scroll_c" title="查看评论"><i class="icon-scroll_c"></i></a></li>
+		<li><a class="scroll_b" title="转到底部"><i class="icon-scroll_b"></i></a></li>
+</ul>
+<div id="share">
+	<h4>分享到：</h4>
+	<div class="bdsharebuttonbox bdshare-button-style1-16" data-bd-bind="1483609433379">
+		<a title="分享到QQ空间" href="http://www.mintos.org/skill/fast-boot.html#" class="icon-qzone" data-cmd="qzone"></a>
+		<a title="分享到新浪微博" href="http://www.mintos.org/skill/fast-boot.html#" class="icon-tsina" data-cmd="tsina"></a>
+		<a title="分享到腾讯微博" href="http://www.mintos.org/skill/fast-boot.html#" class="icon-tqq" data-cmd="tqq"></a>
+		<a title="分享到人人网" href="http://www.mintos.org/skill/fast-boot.html#" class="icon-renren" data-cmd="renren"></a>
+		<a title="分享到微信" href="http://www.mintos.org/skill/fast-boot.html#" class="icon-weixin" data-cmd="weixin"></a>
+		<a href="http://www.mintos.org/skill/fast-boot.html#" class="icon-more" data-cmd="more"></a>
+	</div>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</footer>
+<!-- #footer -->
+</div><!-- #main -->
+</div><!-- #page -->
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/jquery.sidr.min.js"></script>
+<script type="text/javascript" src="./不择手段：加快LinuxMint_Ubunut启动速度 _ 薄荷开源网_files/wp-embed.min.js"></script>
+
+<div id="lean_overlay"></div><div id="lean_overlay"></div><div id="lean_overlay"></div><div id="lean_overlay"></div></body></html>

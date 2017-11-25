@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="client-js" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Very Secure FTP Daemon (简体中文) - ArchWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Very_Secure_FTP_Daemon_(简体中文)","wgTitle":"Very Secure FTP Daemon (简体中文)","wgCurRevisionId":474217,"wgRevisionId":474217,"wgArticleId":11528,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["File Transfer Protocol (简体中文)","Pages with broken package links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Very_Secure_FTP_Daemon_(简体中文)","wgRelevantArticleId":11528,"wgRequestId":"ed8289fc1cbc5c5339145dea","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","mediawiki.skinning.content.externallinks":"ready","skins.archlinux.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1p88237",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Very%20Secure%20FTP%20Daemon%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load.css">
+<script async="" src="Very%20Secure%20FTP%20Daemon%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load_002.php"></script>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/ArchLinux/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/ArchLinux/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Very%20Secure%20FTP%20Daemon%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load_002.css">
+<style></style>
+<meta name="generator" content="MediaWiki 1.28.2">
+<link rel="shortcut icon" href="https://wiki.archlinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.archlinux.org/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<script src="Very%20Secure%20FTP%20Daemon%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Very_Secure_FTP_Daemon_简体中文 rootpage-Very_Secure_FTP_Daemon_简体中文 skin-archlinux action-view feature-footer-v2">
+		<div id="archnavbar"><!-- Arch Linux global navigation bar -->
+			<div id="archnavbarlogo">
+				<p><a id="logo" href="https://www.archlinux.org/"></a></p>
+			</div>
+			<div id="archnavbarmenu">
+				<ul id="archnavbarlist">
+					<li id="anb-home"><a href="https://www.archlinux.org/">Home</a></li><li id="anb-packages"><a href="https://www.archlinux.org/packages/">Packages</a></li><li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li><li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li><li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li><li id="anb-security"><a href="https://security.archlinux.org/">Security</a></li><li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li><li id="anb-download"><a href="https://www.archlinux.org/download/">Download</a></li>				</ul>
+			</div>
+		</div><!-- #archnavbar -->
+
+		<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Very Secure FTP Daemon (简体中文)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ArchWiki</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> 翻译状态： </strong>本文是英文页面 <a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon" title="Very Secure FTP Daemon">Very Secure FTP Daemon</a> 的<a href="https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="ArchWiki Translation Team (简体中文)">翻译</a>，最后翻译时间：2017-04-08，点击<a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&amp;diff=0&amp;oldid=464942">这里</a>可以查看翻译后英文页面的改动。</div>
+<p><b>vsftpd</b> (Very Secure FTP Daemon) 是一个为UNIX类系统开发的轻量,稳定和安全的FTP服务器端.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.AE.89.E8.A3.85"><span class="tocnumber">1</span> <span class="toctext">安装</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E9.85.8D.E7.BD.AE"><span class="tocnumber">2</span> <span class="toctext">配置</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.85.81.E8.AE.B8.E4.B8.8A.E4.BC.A0"><span class="tocnumber">2.1</span> <span class="toctext">允许上传</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E6.9C.AC.E5.9C.B0.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95"><span class="tocnumber">2.2</span> <span class="toctext">本地用户登录</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.E5.8C.BF.E5.90.8D.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95"><span class="tocnumber">2.3</span> <span class="toctext">匿名用户登录</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Chroot_.E9.99.90.E5.88.B6"><span class="tocnumber">2.4</span> <span class="toctext">Chroot 限制</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E9.99.90.E5.88.B6.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95"><span class="tocnumber">2.5</span> <span class="toctext">限制用户登录</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E9.99.90.E5.88.B6.E8.BF.9E.E6.8E.A5.E6.95.B0"><span class="tocnumber">2.6</span> <span class="toctext">限制连接数</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E4.BD.BF.E7.94.A8_xinetd"><span class="tocnumber">2.7</span> <span class="toctext">使用 xinetd</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#.E4.BD.BF.E7.94.A8_SSL_.E4.BD.BF_FTP_.E5.AE.89.E5.85.A8"><span class="tocnumber">2.8</span> <span class="toctext">使用 SSL 使 FTP 安全</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E5.8A.A8.E6.80.81_DNS"><span class="tocnumber">2.9</span> <span class="toctext">动态 DNS</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.E7.AB.AF.E5.8F.A3.E9.85.8D.E7.BD.AE"><span class="tocnumber">2.10</span> <span class="toctext">端口配置</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.E9.85.8D.E7.BD.AE_iptables"><span class="tocnumber">2.11</span> <span class="toctext">配置 iptables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#.E5.B0.8F.E6.8A.80.E5.B7.A7"><span class="tocnumber">3</span> <span class="toctext">小技巧</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84PAM.E8.AE.A4.E8.AF.81"><span class="tocnumber">3.1</span> <span class="toctext">虚拟用户的PAM认证</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#.E4.B8.BA.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.9B.AE.E5.BD.95"><span class="tocnumber">3.1.1</span> <span class="toctext">为虚拟用户创建私有目录</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3"><span class="tocnumber">4</span> <span class="toctext">问题解决</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service"><span class="tocnumber">4.1</span> <span class="toctext">vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29"><span class="tocnumber">4.2</span> <span class="toctext">vsftpd: refusing to run with writable root inside chroot()</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL"><span class="tocnumber">4.3</span> <span class="toctext">FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#vsftpd.service_fails_to_run_on_boot"><span class="tocnumber">4.4</span> <span class="toctext">vsftpd.service fails to run on boot</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6"><span class="tocnumber">4.5</span> <span class="toctext">ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#.E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90"><span class="tocnumber">5</span> <span class="toctext">更多资源</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".E5.AE.89.E8.A3.85">安装</span></h2>
+<p><a href="https://wiki.archlinux.org/index.php/%E5%AE%89%E8%A3%85" class="mw-redirect" title="安装">安装</a> <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=vsftpd">vsftpd</a></span>.
+</p><p><a href="https://wiki.archlinux.org/index.php/Systemd_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83" title="Systemd (简体中文)">启动/启用</a> <code>vsftpd.service</code> 守护程序。
+</p><p>有关通过 xinetd 使用 vsftpd 的过程，请参阅 <a href="#.E4.BD.BF.E7.94.A8_xinetd">#使用 xinetd</a>。
+</p>
+<h2><span class="mw-headline" id=".E9.85.8D.E7.BD.AE">配置</span></h2>
+<p>vsftpd 的大多数配置都可以通过编辑 <code>/etc/vsftpd.conf</code> 文件实现。 该文件本身自带大量注释说明，所以这一章节只就一些重要的配置予以说明。 有关所有可用选项和文档，请参阅 vsftpd.conf(5) 或 <a rel="nofollow" class="external text" href="https://security.appspot.com/vsftpd/vsftpd_conf.html">在线查看</a> 手册页。默认情况下，由 <code>/srv/ftp</code> 提供文件。
+</p><p>允许的连接 <code>/etc/hosts.allow</code>：
+</p>
+<pre># 允许所有连接
+vsftpd: ALL
+# IP地址范围
+vsftpd: 10.0.0.0/255.255.255.0
+</pre>
+<h3><span class="mw-headline" id=".E5.85.81.E8.AE.B8.E4.B8.8A.E4.BC.A0">允许上传</span></h3>
+<p>需要将 <code>/etc/vsftpd.conf</code> 中的 <code>write_enable</code> 值设为YES，以便允许修改文件系统（如上传）:
+</p>
+<pre>write_enable=YES
+</pre>
+<h3><span class="mw-headline" id=".E6.9C.AC.E5.9C.B0.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95">本地用户登录</span></h3>
+<p>需要修改 <code>/etc/vsftpd.conf</code> 中的如下值，以便允许 <code>/etc/passwd</code> 中的用户登录:
+</p>
+<pre>local_enable=YES
+</pre>
+<h3><span class="mw-headline" id=".E5.8C.BF.E5.90.8D.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95">匿名用户登录</span></h3>
+<p>以下行控制匿名用户是否可以登录。默认情况下，匿名登录只能从 <code>/srv/ftp</code> 下载：
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/vsftpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">...
+# 允许匿名FTP？ （当心 - 默认情况下允许除非您将其注释）。
+anonymous_enable=YES
+...
+# 取消注释以允许匿名FTP用户上传文件。
+# 只有上述全局写入被激活，才会有效果。
+# 另外，你显然需要创建FTP用户有写权限的目录。
+# anon_upload_enable=YES
+#
+# 如果您希望匿名FTP用户能够创建新目录，请取消注释。
+# anon_mkdir_write_enable=YES
+...</pre>
+<p>您也可以添加以下选项（详见 <code> man vsftpd.conf</code>）：
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/vsftpd.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"># 匿名登录不需要密码
+no_anon_password=YES
+
+# 匿名客户端的最大传输速率（以 Bytes/秒 为单位）
+anon_max_rate=30000
+
+# 用于匿名登录的目录
+anon_root=/example/directory/</pre>
+<h3><span class="mw-headline" id="Chroot_.E9.99.90.E5.88.B6">Chroot 限制</span></h3>
+<p>为了阻止用户离开家目录，可以设置 chroot 环境。要启用此功能，请在 <code>/etc/vsftpd.conf</code> 中添加以下行：
+</p>
+<pre>chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd.chroot_list
+</pre>
+<p><code>chroot_list_file</code> 定义了被 chroot 限制的用户列表。
+</p><p>对于更严格的环境，请指定以下行：
+</p>
+<pre>chroot_local_user=YES
+</pre>
+<p>这将默认为所有用户启用 chroot 环境。 在这种情况下，<code>chroot_list_file</code> 定义了<b>不受</b> chroot 限制的用户列表。
+</p>
+<h3><span class="mw-headline" id=".E9.99.90.E5.88.B6.E7.94.A8.E6.88.B7.E7.99.BB.E5.BD.95">限制用户登录</span></h3>
+<p>可以通过在 <code>/etc/vsftpd.conf</code> 中添加以下两行来阻止特定用户登录FTP服务器：
+</p>
+<pre>userlist_enable=YES
+userlist_file=/etc/vsftpd.user_list
+</pre>
+<p><code>userlist_file</code> 文件列出<b>不允许</b>登录的用户。
+</p><p>如果您只想允许特定的用户登录，请添加以下行：
+</p>
+<pre>userlist_deny=NO
+</pre>
+<p>此时 <code>userlist_file</code> 文件指定<b>允许</b>登录的用户。
+</p>
+<h3><span class="mw-headline" id=".E9.99.90.E5.88.B6.E8.BF.9E.E6.8E.A5.E6.95.B0">限制连接数</span></h3>
+<p>可以通过在 <code>/etc/vsftpd.conf</code> 中添加如下信息来限制本地用户的数据传输速率：
+</p>
+<pre>local_max_rate=1000000 # 最大数据传输速率（单位: Bytes/秒）
+max_clients=50 # 可以同时连接的最大客户端数
+max_per_ip=2 # 每个 IP 允许的最大连接数
+</pre>
+<h3><span class="mw-headline" id=".E4.BD.BF.E7.94.A8_xinetd">使用 xinetd</span></h3>
+<p>Xinetd提供增强的监控和控制连接功能。对于基本的可以工作的 vsftpd-server 是不必要的
+</p><p>安装 vsftpd 将会添加必要的服务文件 <code>/etc/xinetd.d/vsftpd</code>， 默认情况下，服务被禁用。
+</p><p>启用ftp服务：
+</p>
+<pre>service ftp
+{
+        socket_type             = stream
+        wait                    = no
+        user                    = root
+        server                  = /usr/sbin/vsftpd
+        log_on_success  += HOST DURATION
+        log_on_failure  += HOST
+        disable                 = no
+}
+</pre>
+<p>如果您将vsftpd守护程序设置为以独立模式运行，而不是启动 vsftpd 守护程序和 <a href="https://wiki.archlinux.org/index.php/Enable" class="mw-redirect" title="Enable">enable</a> <code> xinetd.service</code>，请在 <code>/etc/vsftpd.conf</code> 中进行以下更改：
+</p>
+<pre>listen=NO
+</pre>
+<p>否则连接将失败：
+</p>
+<pre>500 OOPS: could not bind listening IPv4 socket
+</pre>
+<h3><span class="mw-headline" id=".E4.BD.BF.E7.94.A8_SSL_.E4.BD.BF_FTP_.E5.AE.89.E5.85.A8">使用 SSL 使 FTP 安全</span></h3>
+<p>生成一个SSL证书，如这样：
+</p>
+<pre># cd /etc/ssl/certs
+# openssl req -x509 -nodes -days 7300 -newkey rsa:2048 -keyout /etc/ssl/certs/vsftpd.pem -out /etc/ssl/certs/vsftpd.pem
+# chmod 600 /etc/ssl/certs/vsftpd.pem
+</pre>
+<p>您将被询问有关您公司等的许多问题，如果您的证书是不需要信任的，那么您填写的内容并不重要。但是您将使用这些内容加密！如果您计划在使用此功能方面取得信任，则可以从 CA 如 thawte,verisign 获得一个。
+</p><p>编辑您的配置 <code>/etc/vsftpd.conf</code>
+</p>
+<pre>#这个很重要
+ssl_enable=YES
+
+
+#选择你想要的
+# 如果你接受 anon-connections 你可能要启用这个
+# allow_anon_ssl=NO
+
+#选择你想要的
+# 我猜这是一个性能上的问题
+# force_local_data_ssl=NO
+
+#选择你想要的
+force_local_logins_ssl=YES
+
+#你至少应该启用这个如果你启用 ssl...
+ssl_tlsv1=YES
+#选择你想要的
+ssl_sslv2=YES
+#选择你想要的
+ssl_sslv3=YES
+#给出您当前生成的 *.pem 文件的正确路径
+rsa_cert_file=/etc/ssl/certs/vsftpd.pem
+# *.pem 文件包含密钥和证书
+rsa_private_key_file=/etc/ssl/certs/vsftpd.pem
+</pre>
+<h3><span class="mw-headline" id=".E5.8A.A8.E6.80.81_DNS">动态 DNS</span></h3>
+<p>确保在 <code>/etc/vsftpd.conf</code> 中放入以下两行：
+</p>
+<pre>pasv_addr_resolve=YES
+pasv_address=yourdomain.noip.info
+</pre>
+<p>定期更新 pasv_address 并重新启动服务器的脚本是<b>不必要</b>的，因为它可以在别处被找到！
+</p>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> 注意: </strong>您将无法通过 LAN 连接到被动模式。尝试在局域网 PC 的 FTP 客户端上的活动模式。</div>
+<h3><span class="mw-headline" id=".E7.AB.AF.E5.8F.A3.E9.85.8D.E7.BD.AE">端口配置</span></h3>
+<p>特别是对于暴露于 Web 的私有 FTP 服务器，建议将监听端口更改为标准端口 21 以外的其他服务器。可以使用 <code>/etc/vsftpd.conf</code> 中的以下行来完成此操作：
+</p>
+<pre>listen_port=2211
+</pre>
+<p>此外，定制的端口范围可以由以下行给出：
+</p>
+<pre>pasv_min_port=49152
+pasv_max_port=65534
+</pre>
+<h3><span class="mw-headline" id=".E9.85.8D.E7.BD.AE_iptables">配置 iptables</span></h3>
+<p>通常，运行FTP守护进程的服务器受 <a href="https://wiki.archlinux.org/index.php/Iptables_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="Iptables (简体中文)">Iptables (简体中文)</a> 防火墙的保护。要允许访问FTP服务器，需要打开相应的端口，如：
+</p>
+<pre># iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
+</pre>
+<p>本文不会提供有关如何设置iptables的任何说明，但这里是一个例子：<a href="https://wiki.archlinux.org/index.php/Simple_stateful_firewall_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="Simple stateful firewall (简体中文)">Simple stateful firewall (简体中文)</a>。
+</p><p>有一些内核模块需要在这里引用的 iptables 正确的处理 FTP 连接。 其中特别是 <i>nf_conntrack_ftp</i>。这是需要的，因为FTP使用给定的 <i>listen_port</i>（默认为21） 仅用于命令; 所有的数据传输都是通过不同的端口完成的。 这些端口由FTP守护程序为每个会话随机选择（也取决于是使用主动还是被动模式）。要告诉 iptables 应该接受端口上的数据包，需要 <i>nf_conntrack_ftp</i>。要在启动时自动加载，请在 <code>/etc/modules-load.d</code> 中创建新文件，例如：
+</p>
+<pre># echo nf_conntrack_ftp &gt; /etc/modules-load.d/nf_conntrack_ftp.conf
+</pre>
+<p>如果内核 &gt;= 4.7，您需要通过 <i>sysctl</i> 设置 <i>net.netfilter.nf_conntrack_helper = 1</i>，如：
+</p>
+<pre># echo net.netfilter.nf_conntrack_helper=1 &gt; /etc/sysctl.d/70-conntrack.conf
+</pre>
+<p>或使用
+</p>
+<pre># iptables -A PREROUTING -t raw -p tcp --dport 21 -j CT --helper ftp
+</pre>
+<h2><span class="mw-headline" id=".E5.B0.8F.E6.8A.80.E5.B7.A7">小技巧</span></h2>
+<h3><span class="mw-headline" id=".E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84PAM.E8.AE.A4.E8.AF.81">虚拟用户的PAM认证</span></h3>
+<p>由于 <a href="https://wiki.archlinux.org/index.php/PAM_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="PAM (简体中文)">PAM (简体中文)</a> 不再提供 <code>pam_userdb.so</code> 另一个简单的方法是使用 <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/libpam_pwdfile/">libpam_pwdfile</a></span><sup><small>AUR</small></sup>。对于具有许多用户的环境，另一个选项可能是 <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/pam_mysql/">pam_mysql</a></span><sup><small>AUR</small></sup> <sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests">broken link</a>: archived in <a rel="nofollow" class="external text" href="https://github.com/felixonmars/aur3-mirror/tree/master/pam_mysql">aur-mirror</a>]</sup>。但是，本节仅限于解释如何通过 <code>pam_pwdfile.so</code> 配置chroot环境和身份验证。
+</p><p>在此示例中，我们创建目录 <code>vsftpd</code>：
+</p>
+<pre># mkdir /etc/vsftpd
+</pre>
+<p>创建和存储用户名和密码的一个选择是使用 Apache 的生成器 htpasswd：
+</p>
+<pre># htpasswd -c /etc/vsftpd/.passwd
+</pre>
+<p>上述命令的一个问题是 vsftpd 可能无法读取生成的 MD5 散列密码。如果使用 -d 开关运行相同的命令，则使用 crypt() 
+加密，vsftpd 的密码变得可读，但其缺点是安全性较低，密码限制为8个字符。 Openssl 可用于使用算法1生成基于 MD5 的 BSD 
+密码：
+</p>
+<pre># openssl passwd -1
+</pre>
+<p>无论那个解决方案 <code>/etc/vsftpd/.passwd</code> 应该如下所示：
+</p>
+<pre>username1:hashed_password1
+username2:hashed_password2
+...
+</pre>
+<p>接下来，您需要使用 <code>pam_pwdfile.so</code> 和生成的 <code>/etc/vsftpd/.passwd</code> 文件创建PAM服务。在本例中，我们为 <i>vsftpd</i> 创建了一个PAM策略，其中包含以下内容：
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/pam.d/vsftpd</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">auth required pam_pwdfile.so pwdfile /etc/vsftpd/.passwd
+account required pam_permit.so</pre>
+<p>现在是为虚拟用户创建一个 home 的时候了。在示例中，决定用 <code>/srv/ftp</code> 为虚拟用户托管数据，这也反映了Arch的默认目录结构。首先创建 virtual 用户并使 <code>/srv/ftp</code> 成为它的 home：
+</p>
+<pre># useradd -d /srv/ftp virtual
+</pre>
+<p>让 virtual 成为所有者
+</p>
+<pre># chown virtual:virtual /srv/ftp
+</pre>
+<p>一个基本的没有私人文件夹配置的 /etc/vsftpd，默认的虚拟用户的 home 文件夹:
+</p>
+<pre># 指向正确的PAM服务文件
+pam_service_name=vsftpd
+write_enable=YES
+hide_ids=YES
+listen=YES
+connect_from_port_20=YES
+anonymous_enable=NO
+local_enable=YES
+dirmessage_enable=YES
+xferlog_enable=YES
+chroot_local_user=YES
+guest_enable=YES
+guest_username=virtual
+virtual_use_local_privs=YES
+</pre>
+<p>您自己的设置可能不需要一些参数。如果您希望chroot环境可写，您将需要将以下内容添加到配置文件中：
+</p>
+<pre>allow_writeable_chroot = YES
+</pre>
+<p>否则 vsftpd 的默认安全设置会抱怨，如果它检测到chroot是可写的。
+</p><p><a href="https://wiki.archlinux.org/index.php/Start" class="mw-redirect" title="Start">Start</a> <code>vsftpd.service</code>。
+</p><p>您现在应该可以使用存储在 <code>/etc/vsftpd/.passwd</code> 中的任何用户和密码从FTP客户端登录。
+</p>
+<h4><span class="mw-headline" id=".E4.B8.BA.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.9B.AE.E5.BD.95">为虚拟用户创建私有目录</span></h4>
+<p>首先创建用户文件夹
+</p>
+<pre># mkdir /srv/ftp/user1
+# mkdir /srv/ftp/user2
+# chown virtual:virtual /srv/ftp/user?/
+</pre>
+<p>随后, 在<code>/etc/vsftpd.conf</code>增加如下行:
+</p>
+<pre>local_root=/srv/ftp/$USER
+user_sub_token=$USER
+</pre>
+<h2><span class="mw-headline" id=".E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3">问题解决</span></h2>
+<h3><span class="mw-headline" id="vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service">vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service</span></h3>
+<p>将其添加到您的 <code>/etc/vsftpd.conf</code>：
+</p>
+<pre>seccomp_sandbox=NO
+</pre>
+<h3><span class="mw-headline" id="vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29">vsftpd: refusing to run with writable root inside chroot()</span></h3>
+<p>从 vsftpd 2.3.5 开始，用户被锁定的 chroot 目录不可写。这是为了防止安全漏洞。
+</p><p>允许上传的安全方法是保持 chroot 启用，并配置您的 FTP 目录。
+</p>
+<pre>local_root=/srv/ftp/user
+</pre>
+<pre># mkdir -p /srv/ftp/user/upload
+#
+# chmod 550 /srv/ftp/user
+# chmod 750 /srv/ftp/user/upload
+</pre>
+<p>如果你必须这么做：
+</p><p>您可以将其放入您的 <code>/etc/vsftpd.conf</code> 以解决此安全性增强（自vsftpd 3.0.0;从<a rel="nofollow" class="external text" href="http://www.benscobie.com/fixing-500-oops-vsftpd-refusing-to-run-with-writable-root-inside-chroot/">Fixing 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()</a>)：
+</p>
+<pre>allow_writeable_chroot=YES
+</pre>
+<p>或者：
+</p><p>安装 <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/vsftpd-ext/">vsftpd-ext</a></span><sup><small>AUR</small></sup> <sup>[<a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links" title="ArchWiki:Requests">broken link</a>: archived in <a rel="nofollow" class="external text" href="https://github.com/felixonmars/aur3-mirror/tree/master/vsftpd-ext">aur-mirror</a>]</sup> 并在 conf 文件中设置
+</p>
+<pre>allow_writable_chroot=YES
+</pre>
+<h3><span class="mw-headline" id="FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL">FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL</span></h3>
+<p>vsftpd 尝试在 SSL 会话中显示纯文本错误消息。 为了进行调试，暂时禁用加密，您将看到正确的错误消息。<a rel="nofollow" class="external autonumber" href="http://ramblings.linkerror.com/?p=45">[1]</a> <a rel="nofollow" class="external autonumber" href="https://serverfault.com/questions/772494/vsftpd-list-causes-gnutls-error-15">[2]</a>
+</p>
+<h3><span class="mw-headline" id="vsftpd.service_fails_to_run_on_boot">vsftpd.service fails to run on boot</span></h3>
+<p>如果您启用了vsftpd服务，并且无法在启动时运行，请确保它已在服务文件中设置为在 network.target 之后加载：
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/usr/lib/systemd/system/vsftpd.service</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">[Unit]
+Description=vsftpd daemon
+After=network.target</pre>
+<h3><span class="mw-headline" id="ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6">ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6</span></h3>
+<p>你很有可能已经注释了这一行
+</p>
+<pre># When "listen" directive is enabled, vsftpd runs in standalone mode and
+# listens on IPv4 sockets. This directive cannot be used in conjunction
+# with the listen_ipv6 directive.
+#listen=YES
+#
+# This directive enables listening on IPv6 sockets. To listen on IPv4 and IPv6
+# sockets, you must run two copies of vsftpd with two configuration files.
+# Make sure, that one of the listen options is commented&nbsp;!!
+listen_ipv6=YES
+</pre>
+<p>而不是设置
+</p>
+<pre># When "listen" directive is enabled, vsftpd runs in standalone mode and
+# listens on IPv4 sockets. This directive cannot be used in conjunction
+# with the listen_ipv6 directive.
+listen=NO
+</pre>
+<h2><span class="mw-headline" id=".E6.9B.B4.E5.A4.9A.E8.B5.84.E6.BA.90">更多资源</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://vsftpd.beasts.org/">vsftpd official homepage</a></li>
+<li> <a rel="nofollow" class="external text" href="http://vsftpd.beasts.org/vsftpd_conf.html">vsftpd.conf man page</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20170527063415
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.017 seconds
+Real time usage: 0.017 seconds
+Preprocessor visited node count: 541/1000000
+Preprocessor generated node count: 1482/1000000
+Post‐expand include size: 5961/2097152 bytes
+Template argument size: 2712/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    9.286      1 - -total
+ 30.08%    2.794     37 - Template:Ic
+ 10.81%    1.004      1 - Template:TranslationStatus_(简体中文)
+ 10.06%    0.934      2 - Template:META_Box_Blue
+  7.82%    0.726      2 - Template:Broken_package_link
+  7.19%    0.668      4 - Template:Hc
+  6.50%    0.604      2 - Template:META_Box
+  6.24%    0.580      1 - Template:注意
+  4.80%    0.446      3 - Template:AUR
+  2.85%    0.265      1 - Template:Pkg
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:11528-0!*!0!!en!*!* and timestamp 20170527063415 and revision id 474217
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;oldid=474217">https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_(简体中文)&amp;oldid=474217</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.archlinux.org/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.archlinux.org/index.php/Category:File_Transfer_Protocol_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="Category:File Transfer Protocol (简体中文)">File Transfer Protocol (简体中文)</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden category: <ul><li><a href="https://wiki.archlinux.org/index.php/Category:Pages_with_broken_package_links" title="Category:Pages with broken package links">Pages with broken package links</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.archlinux.org/index.php?title=Talk:Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [Alt+Shift+t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Very+Secure+FTP+Daemon+%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Very+Secure+FTP+Daemon+%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://wiki.archlinux.org/index.php/Main_page" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage-description"><a href="https://wiki.archlinux.org/index.php/Main_page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li>
+											<li id="n-categories"><a href="https://wiki.archlinux.org/index.php/Table_of_contents">Categories</a></li>
+											<li id="n-portal"><a href="https://wiki.archlinux.org/index.php/Getting_involved" title="Various ways Archers can contribute to the community">Getting involved</a></li>
+											<li id="n-currentevents"><a href="https://wiki.archlinux.org/index.php/ArchWiki:News" title="The latest lowdown on the wiki">Wiki news</a></li>
+											<li id="n-randompage"><a href="https://wiki.archlinux.org/index.php/Special:Random" title="Load a random page [Alt+Shift+x]" accesskey="x">Random page</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/index.php" id="searchform">
+					<input name="title" value="Special:Search" type="hidden">
+					<input name="search" placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off" type="search">
+					<input name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton" type="submit">&nbsp;
+						<input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit">
+				</form>
+
+							</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-interaction" role="navigation">
+		<h3>interaction</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-help"><a href="https://wiki.archlinux.org/index.php/Category:Help" title="Wiki navigation, reading, and editing help">Help</a></li>
+											<li id="n-Contributing"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Contributing">Contributing</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li>
+											<li id="n-Recent-talks"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges?namespace=0&amp;invert=1" rel="nofollow">Recent talks</a></li>
+											<li id="n-newpages"><a href="https://wiki.archlinux.org/index.php/Special:NewPages">New pages</a></li>
+											<li id="n-Statistics"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Statistics">Statistics</a></li>
+											<li id="n-Reports"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Reports">Reports</a></li>
+											<li id="n-Requests"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests">Requests</a></li>
+									</ul>
+					</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.archlinux.org/index.php/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;printable=yes" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;oldid=474217" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=info" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+				<div id="p-lang" class="portlet" role="navigation">
+				<h3>In other languages</h3>
+
+				<div class="pBody">
+					<ul>
+													<li class="interlanguage-link interwiki-cs"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon_%28%C4%8Cesky%29" title="Very Secure FTP Daemon – čeština" hreflang="cs" class="interlanguage-link-target" lang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-en"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon" title="Very Secure FTP Daemon – English" hreflang="en" class="interlanguage-link-target" lang="en">English</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon_%28Espa%C3%B1ol%29" title="Very Secure FTP Daemon – español" hreflang="es" class="interlanguage-link-target" lang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon_%28Italiano%29" title="Very Secure FTP Daemon – italiano" hreflang="it" class="interlanguage-link-target" lang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="https://wiki.archlinuxjp.org/index.php/Very_Secure_FTP_Daemon" title="Very Secure FTP Daemon – 日本語" hreflang="ja" class="interlanguage-link-target" lang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="https://wiki.archlinux.org/index.php/Very_Secure_FTP_Daemon_%28%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%29" title="Very Secure FTP Daemon – русский" hreflang="ru" class="interlanguage-link-target" lang="ru">Русский</a></li>
+											</ul>
+
+									</div>
+			</div>
+				</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<ul id="f-list">
+									<li id="lastmod"> This page was last modified on 15 April 2017, at 14:42.</li>
+									<li id="copyright">Content is available under <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+									<li id="privacy"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy" class="mw-redirect" title="ArchWiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="https://wiki.archlinux.org/index.php/ArchWiki:About" title="ArchWiki:About">About ArchWiki</a></li>
+									<li id="disclaimer"><a href="https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer" title="ArchWiki:General disclaimer">Disclaimers</a></li>
+									<li id="mobileview"><a href="https://wiki.archlinux.org/index.php?title=Very_Secure_FTP_Daemon_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":33});});</script>
+
+<div style="display: none; font-size: 11.4667px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body><!-- Cached/compressed 20170527063415 --></html>

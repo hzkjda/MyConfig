@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.cnblogs.com/allforone/p/3991539.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/bundle-SimpleBlue.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/bundle-SimpleBlue-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/allforone/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/allforone/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/allforone/wlwmanifest.xml">
+<script src="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'allforone', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/allforone/">all_forone</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/allforone/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/all_forone">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/allforone/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/allforone/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-21&nbsp;
+文章-2&nbsp;
+评论-5&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/allforone/p/3991539.html">ArchLinux最小化安装 必备库 常用命令</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><div class="articalTitle">
+<h2 id="t_69e5d8400101405k" class="titName SG_txta">&nbsp;</h2>
+</div>
+<div id="sina_keyword_ad_area2" class="articalContent   ">
+<p><span style="color: #000000; font-size: large;"><strong>铸成强大的工作站环境——ArchLinux最小化安装<br></strong></span></p>
+<p>所有问题归结起来，只是一个问题：ArchLinux最小化安装，需要安装哪些包？</p>
+<p>1.bash//最基本的Bash Shell<span style="color: #ff0000;">（必须）<br></span>2.bzip2//提供bzip2压缩与解压缩功能（非必须，但就算不选它，系统也会自动将其装上）<br>3.coreutils//提供GNU环境下最基本的工具与命令<span style="color: #ff0000;">（必须）<br></span>4.dnsutils//DNS工具<span style="color: #ff0000;">（必须）<br></span>5.file//文件类型识别工具<span style="color: #ff0000;">（必须）<br></span>6.filesystem//提供基本的文件系统结构<span style="color: #ff0000;">（必须）<br></span>7.findutils//用于查找相关文件（非必须）<br>8.gawk//GNU 版本的awk，查找数据库信息的实用小程序（非必须，但就算不选它，系统也会自动将其装上）<br>9.grep//基于正则表达式的，强大的字符串搜索工具（非必须，但就算不选它，系统也会自动将其装上）<br>10.grub//功能强大的引导工具<span style="color: #ff0000;">（必须）<br></span>11.gzip//GNU 压缩工具（非必须，但就算不选它，系统也会自动将其装上）<br>12.initscripts//系统初始化脚本，提供以下文件：<span style="color: #ff0000;">（必须）</span><br>13.iptables//IP过滤工具，其实就是防火墙。（非必须）<br>14.iputils//IP配置工具，提供了ping与tftpd以及traceroute等，网络常用命令。（非必须）<br>15.less//用于查看文本文件（可以翻页）（非必须）<br>16.linux//Linux内核及模块<span style="color: #ff0000;">（必须）</span><br>17.logrotate//系统日志记录工具（非必须）<br>20.mkinitcpio//<span style="color: #ff0000;">（必须）</span><br>21.mlocate//用于快速查找系统内的文件（使用locate命令前需要先用updatedb命令更新相关数据库）（非必须）<br>22.nano或者vi//简单易用的编辑器（非必须）<br>23.ncurses//在终端中提供类似GUI的界面，提供了清屏命令clear等东西（非必须）<br>24.net-tools//Linux网络配置工具，提供netstat/arp/ifconfig等命令（非必须，但迟早会用到，所以还是安上算了）<br>25.openssh//SSH连接工具（非必须，但就算不选它，系统也会自动将其装上）<br>26.pacman（pacman-key命令由更新之后的pacman包提供）//Arch Linux的默认包管理工具<span style="color: #ff0000;">（必须）<br></span>27.pacman-mirrorlist//Arch Linux镜像列表<span style="color: #ff0000;">（必须）</span><br>28.procps（更新之后的包名叫procps-ng）//系统、进程监控工具<span style="color: #ff0000;">（必须）</span><br>29.reiserfsprogs//Reiserfs 文件系统工具<span style="color: #ff0000;">（必须）</span><br>30.sed//GNU stream editor（也就是文本流编辑工具，妙的是，这个工具没有界面，只使用参数）（非必须）<br>31.syslog-ng//带高级网络和过滤功能的下一代syslogd<span style="color: #ff0000;">（必须）</span><br>32.sysvinit//Linux System V Init，提供/init/poweroff/reboot/shutdown等东东，这个当然是必须品&nbsp;<span style="color: #ff0000;">（必须）</span><br>33.tar//压缩与打包的工具（非必须，但就算不选它，系统也会自动将其装上）<br>34.wget//Shell下的下载工具（非必须）<br>35.which//显示命令的全路径的工具（非必须）<br>36.xz //使用 LZMA压缩算法的无损数据压缩文件格式。和gzip与bzip2一样（非必须，但就算不选它，系统也会自动将其装上）<br><br><span style="color: #ff0000;">要想系统最小，当然是只用openbox，但从方便起见，则安LXDE，那么，LXDE的相关组件，如下：<br></span><br>&nbsp;&nbsp;&nbsp;&nbsp;PCManFM: 是一个快速且轻巧的档案管理器，其特点如支援拖曳、分页浏览（类似 Firefox），内建档案搜寻工具、快速读取大型目录、应用程式关联支援（默认开启程式）、显示影像缩图、支援书签、正确处理非 UTF-8 编码的档案名称等。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXPanel: 桌面面板，它可以从 *.desktop 档案自动制造出选单，也有 GUI 的偏好设定对话框（因此不需要手动修改设定档）。这个元件也提供拥有自动完成选单的“执行”对话框。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXSession: 作业阶段管理器，当使用者启动作业阶段时，建立桌面环境并自动启动程式的工具。另外，作业阶段管理器可以记住您登出时所开启的程式，并在使用者再度登入时启动。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXAppearance: LXAppearance是一个新的很有特色的GTK+ 主题更换和调节工具，他可以修改GTK＋的主题、图表主题以及应用程序使用的字体等。<br>&nbsp;&nbsp;&nbsp;&nbsp;Openbox: 轻量级的符合国际标准的窗口管理器，具备高度的自定义特性(此组件并非LXDE Project所开发,但是作为默认的窗口管理器组件被包含).<br>&nbsp;&nbsp;&nbsp;&nbsp;GPicView: 非常简单、快速的轻量级图片查看工具<br>&nbsp;&nbsp;&nbsp;&nbsp;Leafpad: 轻量级的简单的文本编辑器<br>&nbsp;&nbsp;&nbsp;&nbsp;LXSession Edit, LXDE 可以改变的视窗管理员，有能力打开失效的应用程式。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXTerminal, 终端机模拟器。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXTask, 工作管理员/系统监控。<br>&nbsp;&nbsp;&nbsp;&nbsp;LXRandr, 支援设定萤幕分辨率与多萤幕的显示管理器。<br><br><span style="color: #ff0000;">工具软件与命令：<br></span>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;useradd -m 用户名<br>&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;passwd 用户名<br>&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;usermod -a -G video,audio,lp,wheel,optical,storage,power,scanner,users 用户名<br>&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;vi /etc/rc.conf 修改编码方式为中文zh_CN.UTF-8<br>&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;locale-gen //更新编码方式<br>&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;pacman -S firefox firefox-i18n-zh-cn<br>&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;pacman -S leafpad //最小巧的文本编辑器，其实也可以用<span style="color: #ff0000;">蓝鱼</span>来代替，因为要用PHP所以后面必然会安<span style="color: #ff0000;">蓝鱼</span>。此外，也可以使用gedit，那么就同时相当于leafpad与蓝鱼了，不过gedit相对显得体积大了些。<br>&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;pacman -S gpicview//最小巧的图片查看器。<br>&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;pacman -S ibus ibus-pinyin wqy-zenhei wqy-bitmapfont flashplugin ibus-table//字体与输入法<br>&nbsp;&nbsp;&nbsp;26&nbsp;&nbsp;df -h<br>&nbsp;&nbsp;&nbsp;27&nbsp;&nbsp;free -m//这两条命令，是用于查看系统资源当前的使用情况<br>&nbsp;&nbsp;&nbsp;34&nbsp;&nbsp;fdisk -l<br>&nbsp;&nbsp;&nbsp;35&nbsp;&nbsp;mount -l<br>&nbsp;&nbsp;&nbsp;38&nbsp;&nbsp;mkdir /mnt/a1<br>&nbsp;&nbsp;&nbsp;39&nbsp;&nbsp;mkdir /mnt/a2<br>&nbsp;&nbsp;&nbsp;40&nbsp;&nbsp;mkdir /mnt/a3<br>&nbsp;&nbsp;&nbsp;41&nbsp;&nbsp;mount -r -t vfat /dev/sda1 /mnt/a1<br>&nbsp;&nbsp;&nbsp;42&nbsp;&nbsp;mount -r -t ntfs /dev/sda5 /mnt/a2<br>&nbsp;&nbsp;&nbsp;44&nbsp;&nbsp;mount -r -t vfat /dev/sda6 /mnt/a3<br>&nbsp;&nbsp;&nbsp;46&nbsp;&nbsp;pacman -S apache php php-apache mysql<br>&nbsp;&nbsp;&nbsp;48&nbsp;&nbsp;/etc/rc.d/mysqld restart<br>&nbsp;&nbsp;&nbsp;49&nbsp;&nbsp;mysqladmin -u root password&nbsp;密码 //修改mysql的根密码，这个当然极为重要</p>
+<p>&nbsp;&nbsp;&nbsp;50&nbsp;&nbsp;/etc/rc.d/mysqld restart<br>&nbsp;&nbsp;&nbsp;51&nbsp;&nbsp;vi /etc/rc.conf //加入httpd与mysqld两个服务<br>&nbsp;&nbsp;&nbsp;52&nbsp;&nbsp;/etc/rc.d/httpd restart<br>&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;vi /etc/httpd/conf/httpd.conf<br>&nbsp;&nbsp;&nbsp;56&nbsp;&nbsp;/etc/rc.d/httpd restart<br>&nbsp;&nbsp;&nbsp;61&nbsp;&nbsp;cd /srv/http<br>&nbsp;&nbsp;&nbsp;62&nbsp;&nbsp;vi index.php&nbsp;&nbsp;//随便写点什么就行<br>&nbsp;&nbsp;&nbsp;63&nbsp;&nbsp;/etc/rc.d/httpd restart<br>&nbsp;&nbsp;&nbsp;65&nbsp;&nbsp;vi /etc/php/php.ini<br>&nbsp;&nbsp;&nbsp;66&nbsp;&nbsp;/etc/rc.d/httpd restart<br>&nbsp;&nbsp;&nbsp;69&nbsp;&nbsp;pacman -S ntfs-3g<br>&nbsp;&nbsp;&nbsp;70&nbsp;&nbsp;mount -r -t vfat /dev/sda1 /mnt/a1<br>&nbsp;&nbsp;&nbsp;71&nbsp;&nbsp;mount -r -t ntfs /dev/sda5 /mnt/a2<br>&nbsp;&nbsp;&nbsp;72&nbsp;&nbsp;mount -r -t vfat /dev/sda6 /mnt/a3<br>&nbsp;&nbsp;&nbsp;74&nbsp;&nbsp;pacman -S xarchiver//归档文件管理器，但不知为何，这个东东安装失败，最后还是只得安了 file-roller，如下面第80条所示<br>&nbsp;&nbsp;&nbsp;77&nbsp;&nbsp;pacman -S lxtask lxrandr<br>&nbsp;&nbsp;&nbsp;80&nbsp;&nbsp;pacman -S file-roller unrar zip unzip p7zip arj unace<br>&nbsp;&nbsp;&nbsp;81&nbsp;&nbsp;cd /home/个人目录/<br>&nbsp;&nbsp;&nbsp;82&nbsp;&nbsp;ls -s<br>&nbsp;&nbsp;&nbsp;83&nbsp;&nbsp;cd ibus-table-chinese-1.3.4-Source<br>&nbsp;&nbsp;&nbsp;84&nbsp;&nbsp;ibus-table-createdb -s wubi-jidian86.txt<br>&nbsp;&nbsp;&nbsp;85&nbsp;&nbsp;cp wubi-jidian86.db /usr/share/ibus-table/tables<br>&nbsp;&nbsp;&nbsp;86&nbsp;&nbsp;cp wubi-jidian86.svg /usr/share/ibus-table/tables<br>&nbsp;&nbsp;&nbsp;87&nbsp;&nbsp;cp wubi-jidian86.svg /usr/share/ibus-table/icons<br>&nbsp;&nbsp;&nbsp;88&nbsp;&nbsp;cd<br>&nbsp;&nbsp;&nbsp;91&nbsp;&nbsp;pacman -S gnome-system-monitor evince<br>&nbsp;&nbsp;&nbsp;96&nbsp;&nbsp;clear<br>&nbsp;&nbsp;&nbsp;97&nbsp;&nbsp;ifconfig<br>&nbsp;&nbsp;&nbsp;98&nbsp;&nbsp;arp<br>&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;sed<br>&nbsp;&nbsp;108&nbsp;&nbsp;chmod 777 -R /srv/http/<br>&nbsp;&nbsp;127&nbsp;&nbsp;pacman -Syu<br>&nbsp;&nbsp;132&nbsp;&nbsp;pacman -S ttf-dejavu artwiz-fonts//安这两个字体，是避免安下面的画图工具时，菜单栏显示不正常<br>&nbsp;&nbsp;134&nbsp;&nbsp;pacman -S inkscape //强大的矢量作图工具，不多说。<br>&nbsp;&nbsp;139&nbsp;&nbsp;cp /etc/xdg/openbox/{rc.xml,menu.xml,autostart,environment} /home/liu/.config/openbox //个人openbox的设置<br>&nbsp;&nbsp;142&nbsp;&nbsp;pacman -S gimp //试了N个其它工具之后，得出结论，图像处理还是这个东东好用。<br>&nbsp;&nbsp;145&nbsp;&nbsp;pacman -S gnochm //CHM查看器，最后结论是没必要安这个东东<br>&nbsp;&nbsp;149&nbsp;&nbsp;pacman -S bluefish&nbsp;&nbsp;//编写PHP或者CSS的利器。<br>&nbsp;&nbsp;151&nbsp;&nbsp;pacman -S net-tools&nbsp;&nbsp;//一系列网络命令<br>&nbsp;&nbsp;155&nbsp;&nbsp;history &gt;&gt;ccc.txt</p>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/allforone/tag/archlinux%E6%9C%80%E5%B0%8F%E5%AE%89%E8%A3%85/">archlinux最小安装</a>, <a href="http://www.cnblogs.com/allforone/tag/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(3991539,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;4f902944-d840-e411-b908-9dcfd8948a71&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/allforone/" target="_blank"><img src="./ArchLinux最小化安装 必备库 常用命令 - all_forone - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/allforone/">all_forone</a><br>
+            <a href="http://home.cnblogs.com/u/allforone/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/allforone/followers">粉丝 - 0</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;4f902944-d840-e411-b908-9dcfd8948a71&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(3991539,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(3991539,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/allforone/p/3991517.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/allforone/p/3991517.html" title="发布于2014-09-24 20:46">archlinux  yaourt安装 以及出错细节 database file for "archlinuxfr" does not exist.</a><br><a href="http://www.cnblogs.com/allforone/p/3998713.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/allforone/p/3998713.html" title="发布于2014-09-28 17:40">Jetty的JNDI数据源</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2014-09-24 20:57</span> <a href="http://www.cnblogs.com/allforone/">all_forone</a> 阅读(<span id="post_view_count">321</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=3991539" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/allforone/p/3991539.html#" onclick="AddToWz(3991539);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=198836,cb_entryId=3991539,cb_blogApp=currentBlogApp,cb_blogUserGuid='4f902944-d840-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2014/9/24 20:57:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/allforone/p/3991539.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/allforone/p/3991539.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/560567/" target="_blank">年度“音乐日历大晒”开始了，一起多秀歌单，少晒账单吧</a><br> ·  <a href="http://news.cnblogs.com/n/560566/" target="_blank">年末如何让团队发挥Deadline战斗力？看看科学家的Slack工作指南</a><br> ·  <a href="http://news.cnblogs.com/n/560565/" target="_blank">百度机器人对战人类最强大脑，赢在了小数点后第二位</a><br> ·  <a href="http://news.cnblogs.com/n/560564/" target="_blank">MIT发明的材料是目前已知的强度最大、最轻的材料之一</a><br> ·  <a href="http://news.cnblogs.com/n/560561/" target="_blank">华为消费者业务2016战绩：收入1780亿 大涨42%</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/556770/" target="_blank">写给未来的程序媛</a><br> ·  <a href="http://kb.cnblogs.com/page/558087/" target="_blank">高质量的工程代码为什么难写</a><br> ·  <a href="http://kb.cnblogs.com/page/555750/" target="_blank">循序渐进地代码重构</a><br> ·  <a href="http://kb.cnblogs.com/page/554496/" target="_blank">技术的正宗与野路子</a><br> ·  <a href="http://kb.cnblogs.com/page/553682/" target="_blank">陈皓：什么是工程师文化？</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/allforone/">all_forone</a><br>园龄：<a href="http://home.cnblogs.com/u/allforone/" title="入园时间：2014-09-20">2年3个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/allforone/followers/">0</a><br>关注：<a href="http://home.cnblogs.com/u/allforone/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;4f902944-d840-e411-b908-9dcfd8948a71&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar"><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2016/12/01&#39;);return false;">&lt;</a></td><td align="center">2017年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/02/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td></tr><tr><td class="CalWeekendDay" align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td class="CalTodayDay" align="center">7</td></tr><tr><td class="CalWeekendDay" align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td class="CalWeekendDay" align="center">14</td></tr><tr><td class="CalWeekendDay" align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td class="CalWeekendDay" align="center">21</td></tr><tr><td class="CalWeekendDay" align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td class="CalWeekendDay" align="center">28</td></tr><tr><td class="CalWeekendDay" align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/allforone/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/allforone/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/allforone/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/allforone/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/allforone/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/allforone/tag/java%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/">java文件无法删除</a>(2)</li><li><a href="http://www.cnblogs.com/allforone/tag/java%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8/">java文件占用</a>(2)</li><li><a href="http://www.cnblogs.com/allforone/tag/java%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/">java无法删除</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/java%E5%8E%8B%E7%BC%A9/">java压缩</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/Jetty/">Jetty</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/jetty-env/">jetty-env</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/jetty%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/">jetty文件无法删除</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/jetty%E5%8D%A0%E7%94%A8%E6%96%87%E4%BB%B6/">jetty占用文件</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/JNDI%E6%95%B0%E6%8D%AE%E6%BA%90/">JNDI数据源</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/JSON%E8%BF%94%E5%9B%9E%E6%9C%89%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">JSON返回有解析问题</a>(1)</li><li><a href="http://www.cnblogs.com/allforone/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/allforone/archive/2015/04.html">2015年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/allforone/archive/2015/01.html">2015年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/allforone/archive/2014/12.html">2014年12月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/allforone/archive/2014/11.html">2014年11月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/allforone/archive/2014/10.html">2014年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/allforone/archive/2014/09.html">2014年9月 (6)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/allforone/p/4108862.html#3579113">1. Re:Spring注入service为null另类解决办法   工具类 一般类 静态 非controller</a></li>
+        <li class="recent_comment_body">一开始觉得工具类不需要使用@Component注解实例化，实际试了一下发现必须实例化，否则依赖注入不进来，多谢。</li>
+        <li class="recent_comment_author">--_hwx</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/allforone/p/4108862.html#3472662">2. Re:Spring注入service为null另类解决办法   工具类 一般类 静态 非controller</a></li>
+        <li class="recent_comment_body">这个的实现原理是啥呀？能说明下吗？</li>
+        <li class="recent_comment_author">--Lanye534</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/allforone/p/4146346.html#3380475">3. Re:poi 处理excel 小数问题 整数不保留小数位 整数多.0</a></li>
+        <li class="recent_comment_body">说的好!</li>
+        <li class="recent_comment_author">--fairy1674</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/allforone/p/3986682.html#3033055">4. Re:java zip压缩优化版  解决压缩后文件一直被占用无法删除</a></li>
+        <li class="recent_comment_body">@摩箜贼已经修改了，不知道为什么粘过来就变形了...</li>
+        <li class="recent_comment_author">--all_forone</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/allforone/p/3986682.html#3032698">5. Re:java zip压缩优化版  解决压缩后文件一直被占用无法删除</a></li>
+        <li class="recent_comment_body">这代码好乱啊，影响阅读哦</li>
+        <li class="recent_comment_author">--摩箜贼</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/allforone/p/4108862.html">1. Spring注入service为null另类解决办法   工具类 一般类 静态 非controller(2175)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4146346.html">2. poi 处理excel 小数问题 整数不保留小数位 整数多.0(1281)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4123971.html">3. You're trying to decode an invalid JSON String  JSON返回有解析问题(1190)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4184632.html">4. 解决对象不支持“getElementsByClassName”属性或方法 ie兼容性(1166)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4064383.html">5. 启用了不安全的HTTP方法解决办法  IBM APPSCAN(730)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/allforone/p/3986682.html">1. java zip压缩优化版  解决压缩后文件一直被占用无法删除(2)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4108862.html">2. Spring注入service为null另类解决办法   工具类 一般类 静态 非controller(2)</a></li><li><a href="http://www.cnblogs.com/allforone/p/4146346.html">3. poi 处理excel 小数问题 整数不保留小数位 整数多.0(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap" style="display: none;">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2017 all_forone
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

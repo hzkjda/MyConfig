@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.douban.com/group/topic/15558388/ -->
+<html lang="zh-cmn-Hans" class="ua-windows ua-webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="always">
+    <title>
+    VirtualBox虚拟机网络设置（四种方式）
+</title>
+    
+    
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    
+
+    <meta name="mobile-agent" content="format=html5; url=https://m.douban.com/group/topic/15558388/">
+
+    <script type="text/javascript" defer="" async="" src="./VirtualBox虚拟机网络设置（四种方式）_files/piwik.js"></script><script type="text/javascript" src="./VirtualBox虚拟机网络设置（四种方式）_files/ad.js" async="true"></script><script>var _head_start = new Date();</script>
+    <script src="./VirtualBox虚拟机网络设置（四种方式）_files/jquery.min.js"></script>
+    <script src="./VirtualBox虚拟机网络设置（四种方式）_files/douban.js"></script>
+    <link href="./VirtualBox虚拟机网络设置（四种方式）_files/douban.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+        
+
+    
+
+    </style>
+    
+<link rel="stylesheet" type="text/css" href="./VirtualBox虚拟机网络设置（四种方式）_files/dialog.css">
+<link rel="stylesheet" type="text/css" href="./VirtualBox虚拟机网络设置（四种方式）_files/tooltip.css">
+
+<script type="text/javascript" src="./VirtualBox虚拟机网络设置（四种方式）_files/dialog.js"></script>
+<style type="text/css">
+.dui-dialog .bd { padding: 40px; font-size: 10pt; }
+.dui-dialog .ft { background: #e4e4e4; height: 40px; }
+.dui-dialog .ft div { padding-top: 15px; }
+.dui-dialog .dui-dialog-prompt { float: left; }
+.dui-dialog.group-promote-dialog .bn-flat { color: #ffffff; float:right; width: 50px; cursor:pointer;}
+.dui-dialog .btn-ok { background: #6fb45d; }
+.dui-dialog .btn-cancel { background: #999999; }
+.aside .mod { margin-bottom: 20px; }
+
+.topic-doc,.reply-doc{position: relative;}
+.topic-doc .via,.reply-doc .via{color: #bbb;position: absolute;left: 0;bottom: 0;font-size: 12px;}
+.topic-doc .via a,.reply-doc .via a{color:#bbb;}
+.topic-doc .via a:hover,.reply-doc .via a:hover{color: #FFF;background-color: #bbb;}
+.topic-doc .fix{bottom:-40px;}
+.topic-reply li .reply-doc p{padding-bottom:10px;}
+</style>
+
+    <link rel="stylesheet" href="./VirtualBox虚拟机网络设置（四种方式）_files/160b6943213ebadc.css">
+    <script></script>
+
+
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+<script src="./VirtualBox虚拟机网络设置（四种方式）_files/ga.js" async="true"></script></head><style type="text/css" id="__tw7_success_css"></style>
+
+<body>
+  
+    
+    <script type="text/javascript">var _body_start = new Date();</script>
+    
+   
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+
+
+
+
+
+<div class="top-nav-info">
+      
+      <a href="https://www.douban.com/accounts/login?source=group" class="nav-login" rel="nofollow">登录</a>
+      <a href="https://www.douban.com/accounts/register?source=group" class="nav-register" rel="nofollow">注册</a>
+</div>
+
+
+    <div class="top-nav-doubanapp">
+        
+        <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+        <div id="top-nav-appintro" class="more-items">
+            <p class="appintro-title">豆瓣</p>
+            <p class="slogan">我们的精神角落</p>
+            <p class="qrcode">
+                扫码直接下载
+            </p>
+            <div class="download">
+                <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=iOS">iPhone</a>
+                <span>·</span>
+                <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=Android" class="download-android">Android</a>
+            </div>
+        </div>
+        <div id="doubanapp-tip" style="display: block;">
+            <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 4.0 全新发布</a>
+            <a href="javascript: void 0;" class="tip-close">×</a>
+        </div>
+    </div>
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="">
+            <a href="https://www.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              豆瓣
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://book.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              读书
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://movie.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              电影
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://music.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              音乐
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://www.douban.com/location/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              同城
+            </a>
+            </li>
+          
+            
+            <li class="on">
+            <a href="https://www.douban.com/group/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              小组
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              阅读
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              FM
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://dongxi.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-commodity&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              东西
+            </a>
+            </li>
+          
+            
+            <li class="">
+            <a href="https://market.douban.com/?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">
+              市集
+            </a>
+            </li>
+          
+            <li>
+              <a href="https://www.douban.com/group/topic/15558388/#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tbody><tr><td><a href="https://moment.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-moment&quot;,&quot;uid&quot;:&quot;0&quot;}">一刻</a></td></tr>
+                    
+                    <tr><td><a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a></td></tr>
+                </tbody></table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+<div id="db-nav-group" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary clearfix">
+    <div class="nav-logo">
+      <a href="https://www.douban.com/group/">豆瓣小组</a>
+    </div>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="https://www.douban.com/group/explore">精选</a></li>
+      <li><a href="https://www.douban.com/group/explore/culture">文化</a></li>
+      <li><a href="https://www.douban.com/group/explore/travel">行摄</a></li>
+      <li><a href="https://www.douban.com/group/explore/ent">娱乐</a></li>
+      <li><a href="https://www.douban.com/group/explore/fashion">时尚</a></li>
+      <li><a href="https://www.douban.com/group/explore/life">生活</a></li>
+      <li><a href="https://www.douban.com/group/explore/tech">科技</a></li>
+   </ul>
+   </div>
+
+    <div class="nav-search">
+      <form id="form" action="https://www.douban.com/group/search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          
+          <input type="hidden" name="cat" value="1019">
+          <label for="inp-query" style="display: none;">小组、话题</label>
+          <div class="inp"><input id="inp-query" name="q" size="22" maxlength="60" value="" placeholder="小组、话题"></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<script>
+Do(function(){
+  var nav = $('#db-nav-group');
+  var inp=$("#inp-query"),label=inp.closest(".nav-search").find("label");"placeholder"in inp[0]?(label.hide(),inp.attr("placeholder",label.text())):(""!==inp.val()&&label.hide(),inp.parent().click(function(){inp.focus(),label.hide()}).end().focusin(function(){label.hide()}).focusout(function(){""===$.trim(this.value)?label.show():label.hide()}).keydown(function(){label.hide()})),inp.parents("form").submit(function(){if(!$.trim(inp.val()).length)return!1}),nav.find(".lnk-more, .lnk-account").click(function(n){n.preventDefault();var i,e=$(this),t=e.hasClass("lnk-more")?$("#db-productions"):$("#db-usr-setting");t.data("init")||(i=e.offset(),t.css({"margin-left":i.left-$(window).width()/2-t.width()+e.width()+parseInt(e.css("padding-right"),10)+"px",left:"50%",top:i.top+e.height()+"px"}),t.data("init",1),t.hide(),$("body").click(function(n){var i=$(n.target);i.hasClass("lnk-more")||i.hasClass("lnk-account")||i.closest("#db-usr-setting").length||i.closest("#db-productions").length||t.hide()})),"none"===t.css("display")?($(".dropdown").hide(),t.show()):$(".dropdown").hide()});
+
+});
+</script>
+
+
+
+
+    <div id="wrapper" class="landing">
+        
+
+        
+<div id="content">
+    
+    <h1>
+    VirtualBox虚拟机网络设置（四种方式）
+</h1>
+
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+               
+
+    
+
+    
+
+    
+    <input type="hidden" id="start" value="0">
+    <div class="topic-content clearfix">
+        <div class="user-face">
+            <a href="https://www.douban.com/people/2513889/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u2513889-22.jpg" alt=""></a>
+        </div>
+        <div class="topic-doc">
+            <h3>
+                <span class="from">来自: <a href="https://www.douban.com/people/2513889/"></a></span>
+                <span class="color-green">2010-11-10 23:30:11</span>
+            </h3>
+
+            
+            <div id="link-report" class="">
+
+                <div class="topic-content">
+                          
+                          <p>VirtualBox的提供了四种网络接入模式，它们分别是：
+<br>1、NAT    网络地址转换模式(NAT,Network Address Translation)
+<br>2、Bridged Adapter    桥接模式
+<br>3、Internal    内部网络模式
+<br>4、Host-only Adapter  主机模式
+<br>
+<br>第一种 NAT模式
+<br>解释：
+<br>NAT模式是最简单的实现虚拟机上网的方式，你可以这样理解：Vhost访问网络的所有数据都是由主机提供的，vhost并不真实存在于网络中，主机与网络中的任何机器都不能查看和访问到Vhost的存在。
+<br>虚拟机与主机关系：
+<br>只能单向访问，虚拟机可以通过网络访问到主机，主机无法通过网络访问到虚拟机。
+<br>虚拟机与网络中其他主机的关系：
+<br>只能单向访问，虚拟机可以访问到网络中其他主机，其他主机不能通过网络访问到虚拟机。
+<br>虚拟机与虚拟机之间的关系：
+<br>相互不能访问，虚拟机与虚拟机各自完全独立，相互间无法通过网络访问彼此。
+<br>IP:10.0.2.15
+<br>网关：10.0.2.2
+<br>DNS：10.0.2.3
+<br>一台虚拟机的多个网卡可以被设定使用 NAT， 第一个网卡连接了到专用网 10.0.2.0，第二个网卡连接到专用网络 10.0.3.0，等等。默认得到的客户端ip（IP Address）是10.0.2.15，网关（Gateway）是10.0.2.2，域名服务器（DNS）是10.0.2.3，可以手动参考这个进行修改。
+<br>NAT方案优缺点：
+<br>笔记本已插网线时： 虚拟机可以访问主机，虚拟机可以访问互联网，在做了端口映射后（最后有说明），主机可以访问虚拟机上的服务（如数据库）。
+<br>笔记本没插网线时： 主机的“本地连接”有红叉的，虚拟机可以访问主机，虚拟机不可以访问互联网，在做了端口映射后，主机可以访问虚拟机上的服务（如数据库）。
+<br>
+<br>第二种 Bridged Adapter模式
+<br>解释：
+<br>网桥模式是我最喜欢的用的一种模式，同时，模拟度也是相当完美。你可以这样理解，它是通过主机网卡，架设了一条桥，直接连入到网络中了。因此，它使得虚拟机能被分配到一个网络中独立的IP，所有网络功能完全和在网络中的真实机器一样。
+<br>虚拟机与主机关系：
+<br>可以相互访问，因为虚拟机在真实网络段中有独立IP，主机与虚拟机处于同一网络段中，彼此可以通过各自IP相互访问。
+<br>虚拟机于网络中其他主机关系：
+<br>可以相互访问，同样因为虚拟机在真实网络段中有独立IP，虚拟机与所有网络其他主机处于同一网络段中，彼此可以通过各自IP相互访问。
+<br>虚拟机于虚拟机关系：
+<br>可以相互访问，原因同上。
+<br>IP：一般是DHCP分配的，与主机的“本地连接”的IP 是同一网段的。虚拟机就能与主机互相通信。
+<br>笔记本已插网线时：（若网络中有DHCP服务器）主机与虚拟机会通过DHCP分别得到一个IP，这两个IP在同一网段。 主机与虚拟机可以ping通，虚拟机可以上互联网。
+<br>笔记本没插网线时：主机与虚拟机不能通信。主机的“本地连接”有红叉，就不能手工指定IP。虚拟机也不能通过DHCP得到IP地址，手工指定IP后，也无法与主机通信，因为主机无IP。
+<br>这时主机的VirtualBox Host-Only Network 网卡是有ip的，192.168.56.1。虚拟机就算手工指定了IP 192.168.56.*，也ping不能主机。
+<br>
+<br>第三种 Internal模式
+<br>解释：
+<br>内网模式，顾名思义就是内部网络模式，虚拟机与外网完全断开，只实现虚拟机于虚拟机之间的内部网络模式。
+<br>虚拟机与主机关系：
+<br>不能相互访问，彼此不属于同一个网络，无法相互访问。
+<br>虚拟机与网络中其他主机关系：
+<br>不能相互访问，理由同上。
+<br>虚拟机与虚拟机关系：
+<br>可以相互访问，前提是在设置网络时，两台虚拟机设置同一网络名称。如上配置图中，名称为intnet。
+<br>IP: VirtualBox的DHCP服务器会为它分配IP ，一般得到的是192.168.56.101，因为是从101起分的，也可手工指定192.168.56.*。
+<br>笔记本已插网线时：虚拟机可以与主机的VirtualBox Host-Only Network 网卡通信
+<br>这种方案不受主机本地连接（网卡）是否有红叉的影响。
+<br>
+<br>第四种 Host-only Adapter模式
+<br>解释：
+<br>主机模式，这是一种比较复杂的模式，需要有比较扎实的网络基础知识才能玩转。可以说前面几种模式所实现的功能，在这种模式下，通过虚拟机及网卡的设置都可以被实现。
+<br>我们可以理解为Vbox在主机中模拟出一张专供虚拟机使用的网卡，所有虚拟机都是连接到该网卡上的，我们可以通过设置这张网卡来实现上网及其他很多功能，比如（网卡共享、网卡桥接等）。
+<br>虚拟机与主机关系
+<br>默认不能相互访问，双方不属于同一IP段，host-only网卡默认IP段为192.168.56.X 子网掩码为255.255.255.0，后面的虚拟机被分配到的也都是这个网段。通过网卡共享、网卡桥接等，可以实现虚拟机于主机相互访问。
+<br>虚拟机与网络主机关系
+<br>默认不能相互访问，原因同上，通过设置，可以实现相互访问。
+<br>虚拟机与虚拟机关系
+<br>默认可以相互访问，都是同处于一个网段。
+<br>虚拟机访问主机 用的是主机的VirtualBox Host-Only Network网卡的IP：192.168.56.1  ，不管主机“本地连接”有无红叉，永远通。
+<br>主机访问虚拟机，用是的虚拟机的网卡3的IP： 192.168.56.101  ，不管主机“本地连接”有无红叉，永远通。
+<br>虚拟机访问互联网，用的是自己的网卡2， 这时主机要能通过“本地连接”有线上网，（无线网卡不行）
+<br>
+<br>通过对以上几种网络模式的了解，我们就可以灵活运用，模拟组建出我们所想要的任何一种网络环境了。
+<br>比如我想模拟出来一个一台主机，监控一个局域网上网情况的网络环境。
+<br>首先我开启了两台虚拟机vhost1与vhost2，当然如果硬件允许，我同样可以再增加vhost3、vhost4…
+<br>所有的vhost我都设置成internat内网模式，网络名称为intnal，网关为192.168.56.100，意思就是通过 192.168.56.100网卡上网。其中有一台vhost1我设置为双网卡，一张为内网模式（192.168.56.100），一张为网桥模式（192.168.1.101）。两张网卡设置双网卡共享上网
+<br>虚拟机之间为局域网，其中有一台虚拟机vhost1通过与外网相连，所有局域网中的虚拟机又通过vhost1来实现上外网。这样vhost1就可以监控整个虚拟机局域网上网情况了。
+<br>
+<br>NAT 设置端口映射
+<br><a href="https://www.douban.com/link2/?url=http%3A%2F%2Fhuzhangsheng.blog.163.com%2Fblog%2Fstatic%2F34787784200802801435931%2F" target="_blank" rel="nofollow">http://huzhangsheng.<wbr>blog.163.com/blog/st<wbr>atic/347877842008028<wbr>01435931/</a>
+<br>你可以设置一个虚拟机的服务（比如 WEB  服务），通过使用命令行工具 VboxManage 代理。你需要知道虚拟机的服务使用哪个端口，然后决定在主机上使用哪个端口（通常但不总是想要使虚拟机和主机使用同一个端口）。在主机上提供一个服务需要使用一个端口，你能使用在主机上没有准备用来提供服务的任何端口。一个怎样设置新的 NAT 例子，在虚拟机上连接到一个 ssh 服务器，需要下面的三个命令：
+<br>VBoxManage setextradata 'Linux Guest' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/guestssh/Protocol' TCP
+<br>VBoxManage setextradata 'Linux Guest' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/guestssh/GuestPort' 22
+<br>VBoxManage setextradata 'Linux Guest' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/guestssh/HostPort' 2222
+<br>说明：VboxManage 是一个命令行程序，请查询你的 VirtualBox 安装目录，'Linux Guest' 是虚拟主机名。guestssh 是一个自定义的名称，你可以任意设置，通过上面的三个命令，把虚拟机的 22 端口 转发到主机的 2222 端口。
+<br>又比如，我在虚拟机 debian 上安装了 apache2 服务器，使用 80 端口，映射到主机的 80 端口。使用下面的命令。
+<br>'C:\Program Files\innotek VirtualBox\VBoxManage.exe' setextradata 'debian' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/huzhangsheng/Protocol' TCP
+<br>'C:\Program Files\innotek VirtualBox\VBoxManage.exe' setextradata 'debian' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/huzhangsheng/GuestPort' 80
+<br>'C:\Program Files\innotek VirtualBox\VBoxManage.exe' setextradata 'debian' 'VBoxInternal/Devices/pcnet/0/LUN#0/Config/huzhangsheng/HostPort' 80
+<br>注意：要使设置生效，请关掉 VirtualBox 再运行虚拟机，我把 VirtualBox 安装在 winxp 上，在虚拟机中安装 debian 4.02r ，虚拟机名是 debian ，并安装了 apache2 php5 mysql-server ，在主机上用IE浏览 http://localhost，成功转发到虚拟机 debian 的 apache2 web 服务器上
+<br>
+<br>上文出处：<a href="http://www.cnblogs.com/coltiam/archive/2010/03/26/1696939.html" target="_blank" rel="nofollow">http://www.cnblogs.c<wbr>om/coltiam/archive/2<wbr>010/03/26/1696939.ht<wbr>ml</a>
+<br>
+<br>个人感觉通过使用端口映射的方式很不爽，还不如直接桥接来的快，现在多数情况下连接到网络是没问题的，端口映射还需要在宿主跟虚拟机都额外开某个服务，感觉不爽。
+<br>  
+<br> “网络”配置页面有4个方案：
+<br>
+<br>1：NAT  网络地址转换（Network Address Translation）
+<br>
+<br>2：Birdged Network  桥接
+<br>
+<br>3：Internal Network  内部网络（可以是虚拟机与虚拟机之间）
+<br>
+<br>4：Host-Only     只与主机通信（大概吧）
+<br>
+<br>安装完VirtualBox2.2后，主机多了一个“VirtualBox Host-Only Network ”本地网卡。
+<br>
+<br>--------------------------------------------------------------------
+<br>
+<br>我的网络环境：
+<br>
+<br>主机：
+<br>
+<br>系统：xp
+<br>
+<br>“本地连接”的IP：由于是笔记本，经常换工作网络环境，都是通过DHCP分配的，有时候还无网络，“本地连接”有红叉（对主机与虚拟机通信有影响）。
+<br>
+<br>“VirtualBox Host-Only Network网卡”IP：192.168.56.1  ,因为VirtualBox的DHCP服务器IP是192.168.56.100，要在同一网段。
+<br>
+<br>虚拟机：要能与主机互相通信，要能访问互联网（不须要被互联网访问）。
+<br>
+<br>系统：win2003
+<br>
+<br>网卡1，网卡2，网卡3   后面说各网卡的配置情况
+<br>
+<br>----------------------------------------------------------------------
+<br>
+<br>---------------------------  各网卡的配置情况   --------------------------------------------
+<br>
+<br>网卡1： 用NAT方案
+<br>
+<br>IP:10.0.2.15
+<br>
+<br>网关：10.0.2.2
+<br>
+<br>DNS：10.0.2.3
+<br>
+<br>
+<br>为什么这样配置？因为VirtualBox的帮助中，有以下一段说明（英译汉）:
+<br>
+<br>一台虚拟机的多个网卡可以被设定使用 NAT， 第一个网卡连接了到专用网 10.0.2.0，第二个网卡连接到专用网络 10.0.3.0，等等。默认得到的客户端ip（IP Address）是10.0.2.15，网关（Gateway）是10.0.2.2，域名服务器（DNS）是10.0.2.3，可以手动参考这个进行修改。
+<br>
+<br>
+<br>NAT方案优缺点：
+<br>
+<br>笔记本已插网线时： 虚拟机可以访问主机，虚拟机可以访问互联网，在做了端口映射后（最后有说明），主机可以访问虚拟机上的服务（如数据库）。
+<br>
+<br>笔记本没插网线时： 主机的“本地连接”有红叉的，虚拟机可以访问主机，虚拟机不可以访问互联网，在做了端口映射后，主机可以访问虚拟机上的服务（如数据库）。
+<br>
+<br>
+<br>网卡2：用Birdged Network  方案
+<br>
+<br>IP：一般是DHCP分配的，与主机的“本地连接”的IP 是同一网段的。虚拟机就能与主机互相通信。
+<br>
+<br>笔记本已插网线时：（若网络中有DHCP服务器）主机与虚拟机会通过DHCP分别得到一个IP，这两个IP在同一网段。 主机与虚拟机可以ping通，虚拟机可以上互联网。
+<br>
+<br>笔记本没插网线时：主机与虚拟机不能通信。主机的“本地连接”有红叉，就不能手工指定IP。虚拟机也不能通过DHCP得到IP地址，手工指定IP后，也无法与主机通信，因为主机无IP。
+<br>
+<br>这时主机的VirtualBox Host-Only Network 网卡是有ip的，192.168.56.1。虚拟机就算手工指定了IP 192.168.56.*，也ping不能主机。
+<br>
+<br>网卡3：   用Host-Only     方案
+<br>
+<br>ip: VirtualBox的DHCP服务器会为它分配IP ，一般得到的是192.168.56.101，因为是从101起分的，也可手工指定192.168.56.*。
+<br>
+<br>笔记本已插网线时：虚拟机可以与主机的VirtualBox Host-Only Network 网卡通信
+<br>
+<br>笔记本没插网线时：虚拟机可以与主机的VirtualBox Host-Only Network 网卡通信
+<br>
+<br>这种方案不受主机本地连接（网卡）是否有红叉的影响。
+<br>
+<br>
+<br>------------------------------------------------------------------
+<br>
+<br>以上三种方案，可以右击虚拟机窗口最下边 两个小电视 的图标快速切换。满足各种网络环境。
+<br>
+<br>关于Internal Network  方案，我也没试。
+<br>
+<br>
+<br>上面三种方案的总结
+<br>
+<br>
+<br>同进启用下面两个方案：
+<br>
+<br>网卡2：用Birdged Network  方案
+<br>
+<br>网卡3：   用Host-Only     方案
+<br>
+<br>虚拟机访问主机 用的是主机的VirtualBox Host-Only Network网卡的IP：192.168.56.1  ，不管主机“本地连接”有无红叉，永远通。
+<br>
+<br>主机访问虚拟机，用是的虚拟机的网卡3的IP： 192.168.56.101  ，不管主机“本地连接”有无红叉，永远通。
+<br>
+<br>虚拟机访问互联网，用的是自己的网卡2， 这时主机要能通过“本地连接”有线上网，（无线网卡不行）</p>
+              </div>
+
+            
+
+            </div>
+            
+
+        </div>
+
+
+
+        <div class="sns-bar" id="sep">
+            <div class="sns-bar-rec">
+            </div>
+            <div class="sns-bar-fav">
+                
+
+
+
+
+
+
+<span class="fav-num" data-tid="15558388" data-tkind="1013">
+      <a href="https://www.douban.com/group/topic/15558388/?type=like#sep">137人</a>
+  喜欢
+</span>
+
+    <a class="fav-add btn-fav j a_show_login" title="标为喜欢？" href="https://www.douban.com/accounts/register?reason=like" data-tid="15558388" data-tkind="1013">喜欢</a>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+<div class="tabs" id="reviews">
+  <a href="https://www.douban.com/group/topic/15558388/#sep" class="on">回应</a>
+    <a href="https://www.douban.com/group/topic/15558388/?type=rec#sep">推荐</a>
+  <a href="https://www.douban.com/group/topic/15558388/?type=like#sep">喜欢</a>
+
+        <span style="float:right">
+            <a href="https://www.douban.com/group/topic/15558388/?author=1#sep">只看楼主</a>
+        </span>
+</div>
+    
+
+                        
+    <h3 class="popular-hd">最赞回应</h3>
+    <ul class="topic-reply popular-bd">
+        
+
+<li class="clearfix comment-item" id="473351738" data-cid="473351738">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/biaobiaoqi/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u42071652-4.jpg" alt="biaobiaoqi"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/biaobiaoqi/" class="">biaobiaoqi</a>
+              <span class="pubtime">2013-05-11 19:12:59</span>
+          </h4>
+        </div>
+        
+        <p class="">lz您好，有些细节知识点有疑问的。<br><br>在NAT的介绍里，“虚拟机与虚拟机之间的关系： <br>相互不能访问，虚拟机与虚拟机各自完全独立，相互间无法通过网络访问彼此。 ”<br><br>NAT网络中，如果几台虚拟机连接在同一网段，虚拟机之间是可以访问的。</p>
+
+        <div class="operation_div" id="42071652">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=473351738#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞 (2)</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="473351738" class="lnk-delete-comment" title="真的要删除biaobiaoqi的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+    </ul>
+
+                    
+    <ul class="topic-reply" id="comments">
+        
+
+<li class="clearfix comment-item" id="174793514" data-cid="174793514">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/yayaglimmer/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u46265172-4.jpg" alt="glimmer"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/yayaglimmer/" class="">glimmer</a> (奋斗|人生在于折腾)
+              <span class="pubtime">2010-11-10 23:31:27</span>
+          </h4>
+        </div>
+        
+        <p class="">正好了解一下，顶起</p>
+
+        <div class="operation_div" id="46265172">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=174793514#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="174793514" class="lnk-delete-comment" title="真的要删除glimmer的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="201058228" data-cid="201058228">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/paulguo/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u2215863-6.jpg" alt="破锣锅"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/paulguo/" class="">破锣锅</a> (完美，是一种无法弥补的缺陷。)
+              <span class="pubtime">2011-02-05 01:17:05</span>
+          </h4>
+        </div>
+        
+        <p class="">标记！刚刚需要。</p>
+
+        <div class="operation_div" id="2215863">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=201058228#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="201058228" class="lnk-delete-comment" title="真的要删除破锣锅的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="201163001" data-cid="201163001">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/shane_wayne/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u40607699-9.jpg" alt="shane"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/shane_wayne/" class="">shane</a> (EVEN NO WARNING)
+              <span class="pubtime">2011-02-05 16:20:39</span>
+          </h4>
+        </div>
+        
+        <p class="">不错不错。</p>
+
+        <div class="operation_div" id="40607699">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=201163001#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="201163001" class="lnk-delete-comment" title="真的要删除shane的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="249129109" data-cid="249129109">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/zoneland/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u49156675-11.jpg" alt="Michael.杰"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/zoneland/" class="">Michael.杰</a>
+              <span class="pubtime">2011-06-22 22:57:28</span>
+          </h4>
+        </div>
+        
+        <p class="">very good!</p>
+
+        <div class="operation_div" id="49156675">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=249129109#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="249129109" class="lnk-delete-comment" title="真的要删除Michael.杰的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="265598695" data-cid="265598695">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/37942876/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u37942876-1.jpg" alt="wtq"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/37942876/" class="">wtq</a>
+              <span class="pubtime">2011-08-09 16:57:13</span>
+          </h4>
+        </div>
+        
+        <p class="">非常好，很不错，谢谢了。</p>
+
+        <div class="operation_div" id="37942876">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=265598695#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="265598695" class="lnk-delete-comment" title="真的要删除wtq的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="274542402" data-cid="274542402">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/39001281/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="凸you"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/39001281/" class="">凸you</a>
+              <span class="pubtime">2011-09-08 15:06:40</span>
+          </h4>
+        </div>
+        
+        <p class="">刚好需要，谢谢了！</p>
+
+        <div class="operation_div" id="39001281">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=274542402#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="274542402" class="lnk-delete-comment" title="真的要删除凸you的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="285192597" data-cid="285192597">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/49707370/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u49707370-4.jpg" alt="Leon"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/49707370/" class="">Leon</a>
+              <span class="pubtime">2011-10-17 10:34:20</span>
+          </h4>
+        </div>
+        
+        <p class="">讲的很详细，赞一个</p>
+
+        <div class="operation_div" id="49707370">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=285192597#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="285192597" class="lnk-delete-comment" title="真的要删除Leon的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="329557536" data-cid="329557536">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/13450599/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u13450599-2.jpg" alt="暗暗风飘"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/13450599/" class="">暗暗风飘</a>
+              <span class="pubtime">2012-03-24 19:51:08</span>
+          </h4>
+        </div>
+        
+        <p class="">mark</p>
+
+        <div class="operation_div" id="13450599">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=329557536#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="329557536" class="lnk-delete-comment" title="真的要删除暗暗风飘的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="332741886" data-cid="332741886">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/60087125/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="dancesky"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/60087125/" class="">dancesky</a>
+              <span class="pubtime">2012-04-05 11:10:44</span>
+          </h4>
+        </div>
+        
+        <p class="">很好，mark</p>
+
+        <div class="operation_div" id="60087125">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=332741886#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="332741886" class="lnk-delete-comment" title="真的要删除dancesky的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="332832923" data-cid="332832923" style="&#39;display:none&#39;">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/45435997/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="[已注销]"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/45435997/" class="">[已注销]</a>
+              <span class="pubtime">2012-04-05 16:40:41</span>
+          </h4>
+        </div>
+        
+        <p class="">mark</p>
+
+        <div class="operation_div" id="45435997">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=332832923#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="332832923" class="lnk-delete-comment" title="真的要删除[已注销]的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="341834531" data-cid="341834531">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/d7ku/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u52346988-4.jpg" alt="才疏学浅一码农"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/d7ku/" class="">才疏学浅一码农</a> (笑容 你快回来)
+              <span class="pubtime">2012-05-05 20:46:20</span>
+          </h4>
+        </div>
+        
+        <p class="">mark</p>
+
+        <div class="operation_div" id="52346988">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=341834531#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="341834531" class="lnk-delete-comment" title="真的要删除才疏学浅一码农的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="342554812" data-cid="342554812">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/Chenkun0128/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u35555475-6.jpg" alt="Chenkun"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/Chenkun0128/" class="">Chenkun</a> (simple is best)
+              <span class="pubtime">2012-05-08 09:46:12</span>
+          </h4>
+        </div>
+        
+        <p class="">mark</p>
+
+        <div class="operation_div" id="35555475">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=342554812#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="342554812" class="lnk-delete-comment" title="真的要删除Chenkun的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="343554712" data-cid="343554712">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/yanziye163/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u52532837-11.jpg" alt="清潭"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/yanziye163/" class="">清潭</a> (顺从但好斗，教养但残忍)
+              <span class="pubtime">2012-05-11 11:26:23</span>
+          </h4>
+        </div>
+        
+        <p class="">进来广告一下 青岛的VMWARE培训 需要的豆邮我</p>
+
+        <div class="operation_div" id="52532837">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=343554712#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="343554712" class="lnk-delete-comment" title="真的要删除清潭的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="354481456" data-cid="354481456">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/big_SB/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u4299916-18.jpg" alt="小王"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/big_SB/" class="">小王</a>
+              <span class="pubtime">2012-06-15 10:57:53</span>
+          </h4>
+        </div>
+        
+        <p class="">吊爆</p>
+
+        <div class="operation_div" id="4299916">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=354481456#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="354481456" class="lnk-delete-comment" title="真的要删除小王的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="360983365" data-cid="360983365">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/FEI27/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u46796368-2.jpg" alt="FEIYU"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/FEI27/" class="">FEIYU</a> (此去经年，应是良辰美景虚设)
+              <span class="pubtime">2012-07-07 14:22:12</span>
+          </h4>
+        </div>
+        
+        <p class="">Mark</p>
+
+        <div class="operation_div" id="46796368">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=360983365#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="360983365" class="lnk-delete-comment" title="真的要删除FEIYU的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="376262676" data-cid="376262676">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/danjiang/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u3018021-41.jpg" alt="但江"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/danjiang/" class="">但江</a>
+              <span class="pubtime">2012-08-27 10:32:51</span>
+          </h4>
+        </div>
+        
+        <p class="">理解了，也用了Bridged Adapter模式</p>
+
+        <div class="operation_div" id="3018021">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=376262676#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="376262676" class="lnk-delete-comment" title="真的要删除但江的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="382517372" data-cid="382517372">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/48994841/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u48994841-2.jpg" alt="lostory"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/48994841/" class="">lostory</a> (冬眠~~~)
+              <span class="pubtime">2012-09-16 15:56:31</span>
+          </h4>
+        </div>
+        
+        <p class="">马克</p>
+
+        <div class="operation_div" id="48994841">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=382517372#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="382517372" class="lnk-delete-comment" title="真的要删除lostory的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="387403855" data-cid="387403855">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/60019996/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="风残月"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/60019996/" class="">风残月</a>
+              <span class="pubtime">2012-10-03 19:54:41</span>
+          </h4>
+        </div>
+        
+        <p class="">不错，不过我们用校园网的就悲剧了……</p>
+
+        <div class="operation_div" id="60019996">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=387403855#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="387403855" class="lnk-delete-comment" title="真的要删除风残月的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="388752351" data-cid="388752351">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/65230879/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="dong"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/65230879/" class="">dong</a>
+              <span class="pubtime">2012-10-08 16:29:01</span>
+          </h4>
+        </div>
+        
+        <p class="">很好，很详细！</p>
+
+        <div class="operation_div" id="65230879">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=388752351#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="388752351" class="lnk-delete-comment" title="真的要删除dong的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="389488580" data-cid="389488580">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/65289769/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="1213"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/65289769/" class="">1213</a>
+              <span class="pubtime">2012-10-10 21:04:24</span>
+          </h4>
+        </div>
+        
+        <p class="">哎，写的挺详细。让我了解了不少。嘿嘿，但我还是不太明白。<br>我想问个问题：主机系统：win7<br>                         用的是校园网<br><br><br>                      虚拟机系统：XP和server 2003<br>                      不想用校园网，想用宽带连接。<br><br>就是让主机继续用校园网，虚拟机用宽带连接，该怎么设置呢？就是相当于拥有两台主机吧。嘿嘿，急，希望哪位大牛能够教教我怎么设置，谢谢咯</p>
+
+        <div class="operation_div" id="65289769">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=389488580#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="389488580" class="lnk-delete-comment" title="真的要删除1213的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="391253919" data-cid="391253919">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/55754541/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u55754541-2.jpg" alt="xiaoyao3857"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/55754541/" class="">xiaoyao3857</a>
+              <span class="pubtime">2012-10-16 16:20:00</span>
+          </h4>
+        </div>
+        
+        <p class="">"安装完VirtualBox2.2后，主机多了一个“VirtualBox Host-Only Network ”本地网卡。 "知道了这个，才知道后面讲的，包括什么几个网卡以及为什么如果只用主机只用无线网那么客户机之上的问题，这些细节倒是很容易忽视</p>
+
+        <div class="operation_div" id="55754541">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=391253919#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="391253919" class="lnk-delete-comment" title="真的要删除xiaoyao3857的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="406917201" data-cid="406917201">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/35944195/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="[已注销]"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/35944195/" class="">[已注销]</a>
+              <span class="pubtime">2012-12-03 10:26:38</span>
+          </h4>
+        </div>
+        
+        <p class="">没说第二种怎么实现啊</p>
+
+        <div class="operation_div" id="35944195">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=406917201#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="406917201" class="lnk-delete-comment" title="真的要删除[已注销]的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="410479583" data-cid="410479583">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/64279962/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u64279962-7.jpg" alt="a"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/64279962/" class="">a</a> (别问我是谁，请与我相恋)
+              <span class="pubtime">2012-12-13 14:09:37</span>
+          </h4>
+        </div>
+        
+        <p class="">你好！NAS实验。使用一个双网卡Linux为路由器(NAT网关)，对一个内部局域网的网络访问进行控制，内网用户需要使用帐号/口令登录路由器(网关)才能访问外网。这样的一个题目，那么Linux是否应该设置两个网卡，Windows设置一个网卡？Linux应该设置一个NAT，还有一个呢？Windows应该设置什么网卡？拜托了！！！</p>
+
+        <div class="operation_div" id="64279962">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=410479583#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="410479583" class="lnk-delete-comment" title="真的要删除a的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="410479835" data-cid="410479835">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/64279962/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u64279962-7.jpg" alt="a"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/64279962/" class="">a</a> (别问我是谁，请与我相恋)
+              <span class="pubtime">2012-12-13 14:10:20</span>
+          </h4>
+        </div>
+        
+        <p class="">同学都用的vmware，我用virtualbox，然后就不知道该怎么办了</p>
+
+        <div class="operation_div" id="64279962">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=410479835#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="410479835" class="lnk-delete-comment" title="真的要删除a的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="446465096" data-cid="446465096">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/Isophy/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u46208895-17.jpg" alt="瘪叁的叁"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/Isophy/" class="">瘪叁的叁</a>
+              <span class="pubtime">2013-03-17 04:27:37</span>
+          </h4>
+        </div>
+        
+        <p class="">太好了，用来PTP同步一看IP怎么觉着不对呢</p>
+
+        <div class="operation_div" id="46208895">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=446465096#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="446465096" class="lnk-delete-comment" title="真的要删除瘪叁的叁的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="446940757" data-cid="446940757">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/67904921/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u67904921-4.jpg" alt="yugong"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/67904921/" class="">yugong</a> (渴望雄鹰般的翱翔~)
+              <span class="pubtime">2013-03-18 10:05:07</span>
+          </h4>
+        </div>
+        
+        <p class="">解决了一直以来的虚拟局域网下子机无法联网的问题.还是中文资料来的快啊!看了老半天manual头大了.感谢LZ</p>
+
+        <div class="operation_div" id="67904921">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=446940757#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="446940757" class="lnk-delete-comment" title="真的要删除yugong的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="449201680" data-cid="449201680">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/3904822/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u3904822-10.jpg" alt="呼呼~"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/3904822/" class="">呼呼~</a>
+              <span class="pubtime">2013-03-22 20:48:45</span>
+          </h4>
+        </div>
+        
+        <p class="">讲得确实不错，不过后面还是有不明白的。Host-only模式怎么就强大了？host-only模式和内部网络模式有什么不同？</p>
+
+        <div class="operation_div" id="3904822">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=449201680#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="449201680" class="lnk-delete-comment" title="真的要删除呼呼~的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="471949427" data-cid="471949427">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/72274810/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="Skipper"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/72274810/" class="">Skipper</a>
+              <span class="pubtime">2013-05-08 22:40:50</span>
+          </h4>
+        </div>
+        
+        <p class="">我用了桥接的  虚拟机上装了linux 最近想用ssh登录虚拟机的ssh发现登不上，很神奇的是我的linux和windows7都可以上网，但是我的windows不可以ping虚拟机的linux，但linux可以ping我windows  求解</p>
+
+        <div class="operation_div" id="72274810">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=471949427#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="471949427" class="lnk-delete-comment" title="真的要删除Skipper的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="473351738" data-cid="473351738">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/biaobiaoqi/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u42071652-4.jpg" alt="biaobiaoqi"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/biaobiaoqi/" class="">biaobiaoqi</a>
+              <span class="pubtime">2013-05-11 19:12:59</span>
+          </h4>
+        </div>
+        
+        <p class="">lz您好，有些细节知识点有疑问的。<br><br>在NAT的介绍里，“虚拟机与虚拟机之间的关系： <br>相互不能访问，虚拟机与虚拟机各自完全独立，相互间无法通过网络访问彼此。 ”<br><br>NAT网络中，如果几台虚拟机连接在同一网段，虚拟机之间是可以访问的。</p>
+
+        <div class="operation_div" id="42071652">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=473351738#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞 (2)</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="473351738" class="lnk-delete-comment" title="真的要删除biaobiaoqi的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="473363167" data-cid="473363167">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/biaobiaoqi/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u42071652-4.jpg" alt="biaobiaoqi"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/biaobiaoqi/" class="">biaobiaoqi</a>
+              <span class="pubtime">2013-05-11 19:43:59</span>
+          </h4>
+        </div>
+        
+        <p class="">是vmware和virtualbox之间的不同么？我用的vmware</p>
+
+        <div class="operation_div" id="42071652">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=473363167#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="473363167" class="lnk-delete-comment" title="真的要删除biaobiaoqi的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="482894541" data-cid="482894541">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/KayGuoWhu/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u53940808-15.jpg" alt="一只冷不丁"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/KayGuoWhu/" class="">一只冷不丁</a> (文艺不死，年轻一枚)
+              <span class="pubtime">2013-05-30 16:48:36</span>
+          </h4>
+        </div>
+        
+        <p class="">刚好接触到虚拟机网络配置，学习了！没想到豆瓣小组也有很不错的技术贴！</p>
+
+        <div class="operation_div" id="53940808">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=482894541#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="482894541" class="lnk-delete-comment" title="真的要删除一只冷不丁的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="487734616" data-cid="487734616">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/73617678/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="frank.zq"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/73617678/" class="">frank.zq</a>
+              <span class="pubtime">2013-06-09 00:18:35</span>
+          </h4>
+        </div>
+        
+        <div class="reply-quote">
+            <span class="short">我用了桥接的  虚拟机上装了linux 最近想用ssh登录虚拟机的ssh发现登不上，很神奇的是我的linux</span>
+            <span class="all">我用了桥接的  虚拟机上装了linux 最近想用ssh登录虚拟机的ssh发现登不上，很神奇的是我的linux和windows7都可以上网，但是我的windows不可以ping虚拟机的linux，但linux可以ping我windows  求解</span>
+        <a href="https://www.douban.com/group/topic/15558388/#" class="toggle-reply">
+            <span class="expaned">...</span>
+        </a><span class="pubdate"><a href="https://www.douban.com/people/72274810/">Skipper</a></span></div>
+        
+        <p class="">偶是反过来ping不通</p>
+
+        <div class="operation_div" id="73617678">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=487734616#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="487734616" class="lnk-delete-comment" title="真的要删除frank.zq的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="494095201" data-cid="494095201">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/51932603/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="imsdff"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/51932603/" class="">imsdff</a>
+              <span class="pubtime">2013-06-21 14:12:24</span>
+          </h4>
+        </div>
+        
+        <p class="">顶，虚拟机网络终于弄好了</p>
+
+        <div class="operation_div" id="51932603">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=494095201#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="494095201" class="lnk-delete-comment" title="真的要删除imsdff的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="506651031" data-cid="506651031">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/fred42/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u3528544-15.jpg" alt="42.7z"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/fred42/" class="">42.7z</a>
+              <span class="pubtime">2013-07-16 13:23:00</span>
+          </h4>
+        </div>
+        
+        <p class="">技术贴永生！</p>
+
+        <div class="operation_div" id="3528544">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=506651031#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="506651031" class="lnk-delete-comment" title="真的要删除42.7z的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="528260799" data-cid="528260799">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/76567055/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u76567055-6.jpg" alt="读书写字"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/76567055/" class="">读书写字</a> (细雨绵绵才是最美好的日子)
+              <span class="pubtime">2013-08-26 08:23:05</span>
+          </h4>
+        </div>
+        
+        <p class="">pingping更健康</p>
+
+        <div class="operation_div" id="76567055">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=528260799#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="528260799" class="lnk-delete-comment" title="真的要删除读书写字的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="571082161" data-cid="571082161">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/62861912/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u62861912-3.jpg" alt="木登乐一"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/62861912/" class="">木登乐一</a> (太阳当空照！花儿对我笑...)
+              <span class="pubtime">2013-11-24 20:31:06</span>
+          </h4>
+        </div>
+        
+        <p class="">很厉害，但是我的virtualbox的网络设置里面还有一种通用驱动的模式，这种模式可以也介绍一下吗？</p>
+
+        <div class="operation_div" id="62861912">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=571082161#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="571082161" class="lnk-delete-comment" title="真的要删除木登乐一的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="609388953" data-cid="609388953">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/mcstrong/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u3148875-4.jpg" alt="迷失"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/mcstrong/" class="">迷失</a>
+              <span class="pubtime">2014-02-10 15:19:45</span>
+          </h4>
+        </div>
+        
+        <p class="">想在里面装routeros。搞的一头污水</p>
+
+        <div class="operation_div" id="3148875">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=609388953#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="609388953" class="lnk-delete-comment" title="真的要删除迷失的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="609818757" data-cid="609818757">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/64347731/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u64347731-2.jpg" alt="秋尽西风"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/64347731/" class="">秋尽西风</a> (面对现在 面向未来)
+              <span class="pubtime">2014-02-11 09:28:17</span>
+          </h4>
+        </div>
+        
+        <div class="reply-quote">
+            <span class="short">想在里面装routeros。搞的一头污水</span>
+            <span class="all">想在里面装routeros。搞的一头污水</span>
+        <a href="https://www.douban.com/group/topic/15558388/#" class="toggle-reply">
+        </a><span class="pubdate"><a href="https://www.douban.com/people/mcstrong/">迷失</a></span></div>
+        
+        <p class="">最主要的是你要设置好桥接的虚拟网卡，不然无法通过web访问你虚拟机里面的 ros。<br><br>我没在虚拟机里面装过 ros 但是我弄过海蜘蛛。</p>
+
+        <div class="operation_div" id="64347731">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=609818757#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="609818757" class="lnk-delete-comment" title="真的要删除秋尽西风的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="629929126" data-cid="629929126">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/84890612/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="小李子"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/84890612/" class="">小李子</a>
+              <span class="pubtime">2014-03-17 17:34:29</span>
+          </h4>
+        </div>
+        
+        <p class="">不错，受教了</p>
+
+        <div class="operation_div" id="84890612">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=629929126#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="629929126" class="lnk-delete-comment" title="真的要删除小李子的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="868884545" data-cid="868884545">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/qisan/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u2074346-2.jpg" alt="一米七三"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/qisan/" class="">一米七三</a> (是骡子是马,牵出来拍拍)
+              <span class="pubtime">2015-02-22 22:12:04</span>
+          </h4>
+        </div>
+        
+        <p class="">mark</p>
+
+        <div class="operation_div" id="2074346">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=868884545#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="868884545" class="lnk-delete-comment" title="真的要删除一米七三的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="959127004" data-cid="959127004">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/83250204/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="cstopery"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/83250204/" class="">cstopery</a>
+              <span class="pubtime">2015-07-25 10:56:17</span>
+          </h4>
+        </div>
+        
+        <p class="">八错</p>
+
+        <div class="operation_div" id="83250204">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=959127004#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="959127004" class="lnk-delete-comment" title="真的要删除cstopery的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="1009100595" data-cid="1009100595">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/panweigd/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u90878609-6.jpg" alt="潘南星"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/panweigd/" class="">潘南星</a>
+              <span class="pubtime">2015-10-22 22:22:10</span>
+          </h4>
+        </div>
+        
+        <div class="reply-quote">
+            <span class="short">哎，写的挺详细。让我了解了不少。嘿嘿，但我还是不太明白。
+我想问个问题：主机系统：win7
+  </span>
+            <span class="all">哎，写的挺详细。让我了解了不少。嘿嘿，但我还是不太明白。
+我想问个问题：主机系统：win7
+                         用的是校园网
+
+
+                      虚拟机系统：XP和server 2003
+                      不想用校园网，想用宽带连接。
+
+就是让主机继续用校园网，虚拟机用宽带连接，该怎么设置呢？就是相当于拥有两台主机吧。嘿嘿，急，希望哪位大牛能够教教我怎么设置，谢谢咯</span>
+        <a href="https://www.douban.com/group/topic/15558388/#" class="toggle-reply">
+            <span class="expaned">...</span>
+        </a><span class="pubdate"><a href="https://www.douban.com/people/65289769/">1213</a></span></div>
+        
+        <p class="">我的配置基本和你一样,主机旗舰版win7 ,校园网联网,虚拟机是win2003,然而我的虚拟机上不了网,显示网络线缆未连接,请问是什么原因,我该怎么配置</p>
+
+        <div class="operation_div" id="90878609">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=1009100595#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="1009100595" class="lnk-delete-comment" title="真的要删除潘南星的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="1009434085" data-cid="1009434085">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/58494936/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="CUO"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/58494936/" class="">CUO</a>
+              <span class="pubtime">2015-10-23 14:29:31</span>
+          </h4>
+        </div>
+        
+        <div class="reply-quote">
+            <span class="short">我用了桥接的  虚拟机上装了linux 最近想用ssh登录虚拟机的ssh发现登不上，很神奇的是我的linux</span>
+            <span class="all">我用了桥接的  虚拟机上装了linux 最近想用ssh登录虚拟机的ssh发现登不上，很神奇的是我的linux和windows7都可以上网，但是我的windows不可以ping虚拟机的linux，但linux可以ping我windows  求解</span>
+        <a href="https://www.douban.com/group/topic/15558388/#" class="toggle-reply">
+            <span class="expaned">...</span>
+        </a><span class="pubdate"><a href="https://www.douban.com/people/72274810/">Skipper</a></span></div>
+        
+        <p class="">遇到同样的问题，该怎么解决</p>
+
+        <div class="operation_div" id="58494936">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=1009434085#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="1009434085" class="lnk-delete-comment" title="真的要删除CUO的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="1016672724" data-cid="1016672724">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/137198805/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/user_normal.jpg" alt="狂怒"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/137198805/" class="">狂怒</a>
+              <span class="pubtime">2015-11-06 01:46:56</span>
+          </h4>
+        </div>
+        
+        <p class="">我的虚拟机网络设置,桥接网卡下面的界面名称没有值.   怎么解决呢?    就是网卡不显示出来.  显示的是未指定.</p>
+
+        <div class="operation_div" id="137198805">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=1016672724#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="1016672724" class="lnk-delete-comment" title="真的要删除狂怒的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+        
+
+<li class="clearfix comment-item" id="1212477546" data-cid="1212477546">
+    <div class="user-face">
+        <a href="https://www.douban.com/people/129551483/"><img class="pil" src="./VirtualBox虚拟机网络设置（四种方式）_files/u129551483-2.jpg" alt="风停了原来是你"></a>
+    </div>
+    <div class="reply-doc content" style="padding-left:0px;">
+        <div class="bg-img-green">
+          <h4>
+              <a href="https://www.douban.com/people/129551483/" class="">风停了原来是你</a>
+              <span class="pubtime">2016-09-24 22:42:20</span>
+          </h4>
+        </div>
+        
+        <p class="">确实不错，了解了</p>
+
+        <div class="operation_div" id="129551483">
+            <a href="https://www.douban.com/group/topic/15558388/?cid=1212477546#last" class="lnk-reply">回应</a>
+            <a rel="nofollow" href="javascript:void(0);" class="comment-vote lnk-fav">赞</a>
+            <div class="operation-more">
+                <a rel="nofollow" href="javascript:void(0);" data-cid="1212477546" class="lnk-delete-comment" title="真的要删除风停了原来是你的发言?">删除</a>
+            </div>
+        </div>
+
+        <!-- via  -->
+
+    </div>
+</li>
+
+    </ul>
+
+            
+
+
+            
+    
+    <h2>
+        你的回应
+            
+    </h2>
+
+    <span class="pl3" align="right">
+        回应请先
+        <a class="j a_show_login" href="https://www.douban.com/accounts/register?reason=discuss">登录</a>
+        , 或
+        <a class="j a_show_register" href="https://www.douban.com/accounts/register?reason=discuss">注册</a>
+    </span>
+    <div class="txd">
+        <form action="https://www.douban.com/group/topic/15558388/no_where_to_go">
+            <textarea readonly="" id="last" class="j a_show_login" name="rv_comment" rows="8" cols="54"></textarea><br>
+            <span class="bn-flat-hot rr">
+            <input name="submit_btn" type="submit" class="j a_show_login" value="加上去">
+            </span>
+            
+    <span>
+      <label class="pl share-label share-shuo">
+        <input type="checkbox" name="sync_to_mb">推荐到广播
+      </label>
+    </span>
+
+        </form>
+    </div>
+
+
+            
+    
+    
+
+    
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    <script>var POPUP_REG = true;</script>
+
+<script>
+Do(function() {
+    function deferred(){var t={done:[],fail:[]},o={done:function(i){return t.done.push(i),o},fail:function(i){return t.fail.push(i),o}};return{resolve:function(){for(var o,i=0;o=t.done[i++];)o.apply(this,arguments)},reject:function(){for(var o,i=0;o=t.fail[i++];)o.apply(this,arguments)},promise:o}}function asyncRequest(t,o,i){var e=deferred(),d=null,a=(i||"get").toLowerCase();return d=$.ajax({url:t,type:a,dataType:"json",data:"post"===a?$.extend(o,{ck:get_cookie("ck")}):o,error:function(t){e.reject(t)},success:function(t){e.resolve(t)}}),e.promise.abort=function(){d&&d.abort()},e.promise}var DOULIST_ADDITEM="/j/doulist/{doulist_id}/additem",DOULIST_EDITITEM="/j/doulist/{doulist_id}/edititem",DOULIST_COMMENT="/j/doulist/{doulist_id}/poke",DOULIST_CREATE="/j/doulist/add",DOULIST_LIST="/j/doulist/cat",DOULIST_SEARCH="/j/doulist/search",DOULIST_SEARCH_SELF="/j/doulist/search_user_doulists",DOULIST_GET_ITEM_INFO="/j/doulist/get_item_info",addTooltipToDoulistBtn=function(t){if(get_cookie("ck")){var o=/^https?:\/\/\w+\.douban\.com\/link2\/\?url=(\S+)$/i,i=function(t){var i=t.match(o);return i?decodeURIComponent(i[1]):t};$(document).delegate(".url-doulist-add","click",function(t){t.preventDefault();var o,e=$(this),d=i(e.data("url")),a=dui.Dialog({title:"添加到豆列",width:640,cls:"dialog-doulist dialog-tooltip-loading",content:'<div class="tooltip-text">内容加载中<i class="tooltip-loading-icon"></i></div>'}).open();a.node.find(".dui-dialog-close").click(function(t){o&&o.abort()}),o=asyncRequest(DOULIST_GET_ITEM_INFO,{url:d},"post").done(function(t){return t.r?void a.node.find(".tooltip-text").text(t.error):(t.cate=(t.kind||"")+"",t.picture="string"==typeof t.images?t.images:t.images&&t.images[0]||"",t.id=(t.id||"")+"",a.close(),void e.doulistDialog(t))}).fail(function(t){a.node.find(".tooltip-text").text("失败啦！再试一次吧")})});var e=85,d=!1,a="doulist-tooltip-hide",n=$('<div class="doulist-add-tooltip"><a class="url-doulist-add" ><i></i> 添加到豆列</a><div class="arrow"></div></div>'),s=n.find("a");n.addClass(a),n.appendTo($("body"));var l=function(t){d=setTimeout(function(){n.addClass(a)},e)};$(t).mouseenter(function(t){var o=$(this);n.css({top:o.offset().top-28,left:t.pageX-42}),s.data("url",o.attr("href")),clearTimeout(d),n.removeClass(a)}).mouseleave(l),n.mouseenter(function(){clearTimeout(d)}).mouseleave(l)}};
+
+    addTooltipToDoulistBtn('#link-report .topic-content a');
+
+    if (get_cookie('ck')) {
+        $.each($(".popular-bd .operation-more"), function(i, el){
+          if ($(el).find(".comment-report").length==0){
+            $(el).append('<div class="comment-report"><a rel="nofollow" href="javascript:void(0)">举报</a></div>');
+          }
+        });
+        $(".popular-bd").delegate(".comment-item", 'hover',
+            function () {
+              $(this).find(".comment-report").css('visibility', 'visible');
+            },
+            function () {
+              $(this).find(".comment-report").css('visibility', 'hidden');
+            }
+        ).delegate(".comment-report a", 'click', function (e) {
+            e.preventDefault();
+            var auditUrl = "https://www.douban.com/misc/audit_report?url=",
+                opt = "comment_id";
+            var obj = $(e.target).closest('.comment-item');
+            var cid = obj.data("cid");
+            var url = "https://www.douban.com/group/topic/15558388/?".concat(opt, '=', cid);
+            generate_report_dialog({report_url: url});
+        });
+    }
+});
+</script>
+
+        </div>
+        <div class="aside" style="position: fixed; left: 849.5px; top: 52px;">
+                
+    
+
+
+
+
+
+
+
+<div id="g-side-info" class="side-reg">
+  <div class="bd">
+      <div class="group-item">
+          <div class="pic">
+               <a href="https://www.douban.com/group/networks/?ref=sidebar"><img src="./VirtualBox虚拟机网络设置（四种方式）_files/g145884-1.jpg"></a>
+          </div>
+          <div class="info">
+              <div class="title">
+				  <a href="https://www.douban.com/group/networks/?ref=sidebar">网络工程</a>
+              </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft">
+      <div class="member-status">
+        <div class="ft-members">
+        <i>4252</i> 人聚集在这个小组<br>
+        </div>
+        <a href="https://www.douban.com/group/topic/15558388/#" class="j a_show_login lnk-selection">加入小组</a>
+      </div>
+  </div>
+</div>
+
+
+<script src="./VirtualBox虚拟机网络设置（四种方式）_files/dialog.js"></script>
+<link href="./VirtualBox虚拟机网络设置（四种方式）_files/dialog.css" rel="stylesheet" type="text/css">
+
+<script>
+
+  function generate_group_prompt_dialog(dui_config){
+    var prompt_dlg = dui.Dialog({
+        title: (dui_config.title? dui_config.title: '操作提示'),
+        content: (dui_config.content? dui_config.content: '操作内容'),
+        width: (dui_config.width? dui_config.width: 400),
+        buttons: [
+            {text: '去绑定', method: function() { window.location = dui_config.target; } },
+            {text: '取消', method: function() { prompt_dlg.close(); } }
+        ]
+    });
+    prompt_dlg.open();
+  }
+  /* common over */
+  $('.dialog-confirm').click(function(){
+    generate_group_prompt_dialog({content: '加入此小组需要绑定手机号', target: 'https://www.douban.com/accounts/phone/bind?ck=hjfn'});
+    return false;
+  });
+</script>
+
+
+
+    
+
+    
+    <!-- douban ad begin -->
+    <div id="dale_group_topic_new_top_right"></div>
+    <div id="dale_group_topic_new_top_right_large"></div>
+    <div id="dale_group_topic_new_top_right2"></div>
+    <!-- douban ad end -->
+
+      
+    
+    <div class="mod">
+        
+    <h2>
+        最新话题
+            
+            <span class="pl">&nbsp;(
+                
+                    <a href="https://www.douban.com/group/networks/#topics" target="_self">更多</a>
+                ) </span>
+    </h2>
+
+        <div class="topic-list">
+          <ul>
+                <li><a href="https://www.douban.com/group/topic/32665895/" title="网工大二女生一枚，对未来一片迷茫，求豆友指教">网工大二女生一枚，对未来一片迷茫，求豆友指教</a> &nbsp;
+                <span class="pl">(放克猴仔) </span></li>
+                <li><a href="https://www.douban.com/group/topic/97686561/" title="有想赚外快的网络工程师吗">有想赚外快的网络工程师吗</a> &nbsp;
+                <span class="pl">(Lam3AsFuck) </span></li>
+                <li><a href="https://www.douban.com/group/topic/96857289/" title="刚开始学习linux 有哪位大神可以提供点如何快速入门的建议 ?">刚开始学习linux 有哪位大神可以提供点如何快速入...</a> &nbsp;
+                <span class="pl">(💦衣服是缩水小的) </span></li>
+                <li><a href="https://www.douban.com/group/topic/94999489/" title="【华为招聘】行业解决方案设计/测试工程师">【华为招聘】行业解决方案设计/测试工程师</a> &nbsp;
+                <span class="pl">(生锈的发条) </span></li>
+                <li><a href="https://www.douban.com/group/topic/15558388/" title="VirtualBox虚拟机网络设置（四种方式）">VirtualBox虚拟机网络设置（四种方式）</a> &nbsp;
+                <span class="pl">() </span></li>
+        </ul>
+        </div>
+      </div>
+
+
+    <!-- douban app begin -->
+    
+
+<style>
+    .qrcode-app {
+        margin: 20px 0;
+    }
+    .qrcode-app a.download {
+        display: block;
+        width: 300px;
+        height: 80px;
+        background: url(/pics/qrcode_app4@2x.png) no-repeat;
+        background-size: contain;
+        background-image: -webkit-image-set(url(/pics/qrcode_app4.png) 1x, url(/pics/qrcode_app4@2x.png) 2x);
+        background-image: -moz-image-set(url(/pics/qrcode_app4.png) 1x, url(/pics/qrcode_app4@2x.png) 2x);
+        background-image: -ms-image-set(url(/pics/qrcode_app4.png) 1x, url(/pics/qrcode_app4@2x.png) 2x);
+        background-image: -o-image-set(url(/pics/qrcode_app4.png) 1x, url(/pics/qrcode_app4@2x.png) 2x);
+    }
+</style>
+<div class="qrcode-app">
+    <a class="download" href="https://www.douban.com/doubanapp/app?channel=Db_Homepage_Bar&amp;direct_dl=1" target="_blank">
+    </a>
+</div>
+
+    <!-- douban app end -->
+
+    <!-- douban ad begin -->
+    <div id="dale_group_topic_doublemint"></div>
+    
+<!-- douban ad begin -->
+<div id="dale_group_topic_new_bottom_right"></div>
+<script type="text/javascript">
+    (function (global) {
+        if(!document.getElementsByClassName) {
+            document.getElementsByClassName = function(className) {
+                return this.querySelectorAll("." + className);
+            };
+            Element.prototype.getElementsByClassName = document.getElementsByClassName;
+
+        }
+        var articles = global.document.getElementsByClassName('article'),
+            asides = global.document.getElementsByClassName('aside');
+
+        if (articles.length > 0 && asides.length > 0 && articles[0].offsetHeight >= asides[0].offsetHeight) {
+            (global.DoubanAdSlots = global.DoubanAdSlots || []).push('dale_group_topic_new_bottom_right');
+        }
+    })(this);
+</script>
+<!-- douban ad end -->
+
+    <!-- douban ad end -->
+
+        </div>
+        <div class="extra">
+            
+    
+<!-- douban ad begin -->
+<div id="dale_group_topic_bottom_super_banner"></div>
+<script type="text/javascript">
+    (function (global) {
+        var body = global.document.body,
+            html = global.document.documentElement;
+
+        var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        if (height >= 1200) {
+            (global.DoubanAdSlots = global.DoubanAdSlots || []).push('dale_group_topic_bottom_super_banner');
+        }
+    })(this);
+</script>
+<!-- douban ad end -->
+
+
+        </div>
+    </div>
+</div>
+
+        
+<div id="footer">
+    
+<span id="icp" class="fleft gray-link">
+    © 2005－2017 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="https://help.douban.com/group" target="_blank">帮助中心</a>
+    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+</div>
+
+    </div>
+    <script type="text/javascript" src="./VirtualBox虚拟机网络设置（四种方式）_files/69d66e1a37045eeb.js"></script>
+    
+
+
+<div class="back-to-top" style="left: 1169.5px; display: none;">
+    <a href="https://www.douban.com/group/topic/15558388/#" style="top: 40px;">↑回顶部</a>
+</div>
+<script>
+Do(function(){var h=$(window);var k=$(document);var l;var a=$(".back-to-top");var b=$(".aside");var g;var i=$("#content");var d=$.browser.msie&&($.browser.version|0)<7;var f=function(n){if(!f.cache){f.cache=[]}if(f.cache[n]){return}var m=new Date;(new Image()).src="/stat.html?source=group&action=back_top&iden="+n+"&month="+(m.getMonth()+1)+"&day="+m.getDate()+"&timestamp="+(+new Date);f.cache[n]=1};var e=function(){if(e.value){return e.value}return i.offset().top+i.find(".article").outerHeight()+30};h.load(function(){e.value=e()});var c=function(m){if(m+g>=e()){a.css({position:"absolute",bottom:"",top:e()-a.outerHeight()+40})}else{if(!d){a.css({position:"fixed",top:"",bottom:0})}}a.show().find("a").stop().animate({top:0});f("show")};var j=function(){a.hide().find("a").css("top",40)};h.resize(function(){g=h.height();a.css("left",b.offset().left+b.width()+20);l=k.height()/g>3?Math.max(2*g,$(".aside").height()):0}).trigger("resize");h.scroll((function(){var m;return function(){if(m){clearTimeout(m)}setTimeout(function(){if(l===0){return}var n=k.scrollTop();if(n>l){c(n)}else{j()}},100)}})());a.find("a").click(function(m){m.preventDefault();k.scrollTop(0);f("use")});if(d){h.scroll(function(){if(k.scrollTop()+g>=e()){return}a.css("top",k.scrollTop()+g-a.height()+40)})}});
+Do(function() {
+  // comment fav num
+  var commentsVotes = '{"c473351738":2}',
+      votes = $.parseJSON(commentsVotes),
+      voteId;
+  for (vote in votes) {
+      voteId = vote.slice(1);
+      $('li[data-cid="' + voteId + '"]').find('.comment-vote').append(' ('+ votes[vote] +')');
+  }
+
+  function removeComment(obj, cid){
+    $.post_withck("/j/group/topic/15558388/remove_comment",{cid:cid}, function(d){
+      d = $.parseJSON(d);
+      if(d.r == 0){
+        if(d.manager){
+          window.location = d.url;
+        }else{
+          location.reload();
+        }
+      }else{
+        alert(d.err_msg);
+      }
+    });
+  }
+
+  $('.reply-quote .toggle-reply').click(function(e) {
+    e.preventDefault();
+    var el = $(this);
+    el.prevAll('span').toggle();
+    el.find('span').toggle();
+  });
+
+$('.lnk-delete-comment').click(function(){
+    var o = $(this);
+    var comment = o.closest('.comment-item');
+    var cid = $(this).attr("data-cid");
+    var need_confirm = true;
+
+    if(need_confirm){
+      if(confirm($(this).attr('title'))){
+      removeComment(comment, cid);
+     }
+    }else{
+      removeComment(comment, cid);
+    }
+    return false;
+  });
+
+  $('.topic-reply').delegate('.lnk-fav', 'click', function() {
+      if (!get_cookie('ck')) {
+        $('.a_show_login').eq(0).trigger('click');
+        return false;
+      }
+      var o = $(this),
+          comment = o.closest('.comment-item'),
+          cid = comment.attr("data-cid"),
+          loadClass = 'start-processing';
+      if (o.hasClass(loadClass)) {
+          return;
+      }
+      o.addClass(loadClass);
+      $.post_withck('/j/group/topic/15558388/add_comment_vote', {cid:cid, start:$('#start').val()}, function(d){
+          d = $.parseJSON(d);
+          if (d.r === 0 || d.r === 1) {
+              var num = o.text().match(/\d+/) || 0;
+              num = parseInt(num, 10);
+              if (d.r === 0) {
+                num ++;
+              }
+              o.replaceWith(
+                  [
+                      '<span>已赞 (',
+                          num,
+                      ')</span>'
+                  ].join('')
+              );
+          }
+      });
+  });
+
+  /* common dialog generator */
+  function generate_group_prompt_dialog(dui_config){
+    var prompt_dlg = dui.Dialog({
+        cls: 'group-promote-dialog',
+        title: (dui_config.title? dui_config.title: '操作提示'),
+        content: (dui_config.content? dui_config.content: '操作内容'),
+        width: (dui_config.width? dui_config.width: 400),
+        buttons: [
+            {text: '确定', method: function(){} }
+        ]
+    });
+    var dui_dialog_ft_html = function(dui_config){
+        if(dui_config.callback){
+            $('.dui-dialog').delegate('.btn-ok', 'click', function(){
+                dui_config.callback();
+            });
+        }
+        $('.dui-dialog').delegate('.btn-cancel', 'click', function(){
+            $(".dui-dialog").hide();
+        });
+        return '<div><span class="dui-dialog-prompt"><label><input type="checkbox" ' + (dui_config.checked? 'checked=checked ': '') + '/>' + dui_config.prompt + '</label></span><span class="bn-flat btn-cancel">取消</span><span class="bn-flat btn-ok">确定</span></div>';
+    };
+    prompt_dlg.open();
+    prompt_dlg.node.find('.ft').html(dui_dialog_ft_html(dui_config));
+  }
+  /* common over */
+  $('.ban-dialog-confirm').click(function(){
+    var ban_action = function(){
+        var ban_url = $('.ban-dialog-confirm').attr('href');
+        var remove_topic_url = $('.remove-dialog-confirm').attr('href');
+        console.log(ban_url);
+        $.post(ban_url, {timestamp: (new Date()).getTime()}, function(d){
+            $('.ban-dialog-confirm').closest('span').addClass('pl').html('已封禁');
+            if($('.dui-dialog-prompt input').attr('checked')){
+                window.location = remove_topic_url + "&delete_all=1";
+            }
+        });
+        $('.dui-dialog').hide();
+    };
+    generate_group_prompt_dialog({content: '真的要把永久封禁？', prompt:'同时删除用户在本小组的所有发言和回应', checked: false, callback: ban_action});
+    return false;
+  });
+  $('.remove-dialog-confirm').click(function(){
+    var remove_action = function(){
+        var ban_url = $('.ban-dialog-confirm').attr('href');
+        var remove_topic_url = $('.remove-dialog-confirm').attr('href');
+        if($('.dui-dialog-prompt input').attr('checked')){
+            $.post(ban_url, {timestamp: (new Date()).getTime()},
+                function(r){
+                  window.location = remove_topic_url;
+            });
+        }else{
+            window.location = remove_topic_url;
+        }
+    };
+    generate_group_prompt_dialog({content: '真的要删除小组话题 VirtualBox虚拟机网络设置（四种方式）？', prompt:'同时封禁该成员', callback: remove_action});
+    return false;
+  });
+});
+</script>
+    <!-- douban ad begin -->
+    
+    
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = '//erebor.douban.com/',
+            userId = '',
+            browserId = '2CJi5hpo2tQ',
+            criteria = '1:145884|2:网络|2:思科|2:工程|2:通信|2:计算机|3:/group/topic/15558388/',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_group_special3', 'dale_group_special4', 'dale_group_topic_new_top_right', 'dale_group_topic_new_top_right2', 'dale_group_topic_new_top_right_large', 'dale_group_topic_left_bottom', 'dale_group_topic_doublemint'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'https://img3.doubanio.com/f/shire/99a1c905fb5a6d46d8e742d60199e3a99414a580/js/ad.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+    <!-- douban ad end -->
+
+    
+    
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=p+'://img3.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_setCampNameKey', 'dcn']);
+_gaq.push(['_setCampSourceKey', 'dcs']);
+_gaq.push(['_setCampMediumKey', 'dcm']);
+_gaq.push(['_setCampTermKey', 'dct']);
+_gaq.push(['_setCampContentKey', 'dcc']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]);
+    
+    _gaq.push(['_setCustomVar', 2, 'group', '网络工程', 3])
+    _gaq.push(['_setCustomVar', 3, 'tags', '网络|思科|工程|通信|计算机|', 3])
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+        _gaq.push(['_trackEvent', 'group tag', 'view', '网络', 0, true]);
+        _gaq.push(['_trackEvent', 'group tag', 'view', '思科', 0, true]);
+        _gaq.push(['_trackEvent', 'group tag', 'view', '工程', 0, true]);
+        _gaq.push(['_trackEvent', 'group tag', 'view', '通信', 0, true]);
+        _gaq.push(['_trackEvent', 'group tag', 'view', '计算机', 0, true]);
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+
+    <!-- dis1-docker-->
+
+            
+
+
+
+
+
+
+
+<div id="g-popup-reg" class="popup-reg" style="display:none;">
+  <div class="bd">
+  
+  <iframe src="./VirtualBox虚拟机网络设置（四种方式）_files/saved_resource.html" frameborder="0" scrolling="no"></iframe>
+    <a href="https://www.douban.com/group/topic/15558388/#" class="lnk-close">×</a>
+  </div>
+</div>
+
+<div id="landing-bar" style="">
+    <div class="bd">
+        <p>在这里发现跟你一样特别的人，并与之交流...</p>
+        <div class="operation">
+            <a href="" class="j a_show_register">注册</a>
+            <a href="" class="j a_show_login">登录</a>
+        </div>
+        
+        
+  
+  <div class="item item-3rd">
+    <label>
+    第三方登录：
+    </label>
+    <a target="_top" href="https://www.douban.com/accounts/connect/qq/?from=group&amp;redir=http%3A//www.douban.com/accounts/join_and_redir%3Fgroup_id%3D145884" class="item-qq"><img src="./VirtualBox虚拟机网络设置（四种方式）_files/connect_qq.png" title="QQ"></a>
+    <a target="_top" href="https://www.douban.com/accounts/connect/sina_weibo/?from=group&amp;redir=http%3A//www.douban.com/accounts/join_and_redir%3Fgroup_id%3D145884&amp;fallback=http://www.douban.com/group/networks/" class="item-weibo"><img src="./VirtualBox虚拟机网络设置（四种方式）_files/connect_sina_weibo.png" title="新浪微博"></a>
+  </div>
+
+        <a href="https://www.douban.com/group/topic/15558388/#" class="lnk-close">×</a>
+    </div>
+</div>
+
+
+<script>
+
+var login_url = 'https://accounts.douban.com/popup/login?source=group';
+var reg_url = 'https://accounts.douban.com/popup/login?source=group#popup_register';
+</script>
+
+
+
+
+
+
+
+
+  <script>_SPLITTEST=''</script>
+
+
+
+
+</body></html>

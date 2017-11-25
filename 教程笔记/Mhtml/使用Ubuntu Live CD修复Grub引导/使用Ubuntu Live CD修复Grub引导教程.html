@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+   <title>使用Ubuntu Live CD修复Grub引导教程</title>
+ 
+
+<!--<title>使用Ubuntu Live CD修复Grub引导教程 - 卡饭教程</title>-->
+<meta name="generator" content="WordPress 4.1">
+    <meta name="keywords" content="使用Ubuntu Live CD修复Grub引导教程">
+    <meta name="description" content="使用Ubuntu Live CD修复Grub引导教程 本文以 Ubuntu Live CD 修复 Grub 引导为例，已在 /dev/sda3 安装 Fedora。 首先制作 Ubuntu 启动 USB 复制代码 代码如下: sudo dd if=ubuntu-13.10-desktop-amd64.iso of=/dev/sdb #/dev/sdb 为 USB 盘符 1.使用启动 USB 进入 Ubuntu 试用环境 2.查看硬盘分区状况，获取 Linux 系统安装分区编号 复制代码 代码如下: sudo fdisk -l 查看输出结果，然后根据">
+  
+
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="stylesheet" href="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/style.css">
+<script src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/ca-pub-6527383233809815.js"></script><script async="" src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/adsbygoogle.js"></script>
+
+
+<style type="text/css">
+
+ 
+				
+				button,
+				input[type='reset'],
+				input[type='submit'],
+				input[type='button'],
+				.pagination span,
+				.paging-navigation .nav-previous a:hover, 
+				.paging-navigation .nav-next a:hover, 
+				.pagination a:hover,
+				.widget_categories li span,
+				.bbp-login-form .bbp-submit-wrapper,
+				.bbp-pagination-links span,
+				.kb-category-list h3 span.count,
+				#page-header,
+				.st_faq .entry-title.active .action,
+				.st_faq .entry-title:hover .action {
+				/* background:#86b854; */
+				background: #f8f8f8;
+				color: #363d40;
+				}
+				
+				
+				
+</style>
+<!--[if lt IE 9]><script src="https://kfwimg.ikafan.com/template/kafan/js/html5.js"></script><![endif]-->
+<!--[if (gte IE 6)&(lte IE 8)]><script src="https://kfwimg.ikafan.com/template/kafan/js/selectivizr-min.js"></script><![endif]-->
+<!-- base href="https://www.kafan.cn/edu/6025581.html" -->
+
+
+<script src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/a"></script></head>
+
+<body class="single single-st_kb postid-86">
+
+
+
+
+<!--<a href="http://www.zhipianyi.com" rel="nofollow" target="_blank" title="至便宜 精选好货，省钱省心"><img src="https://kfwimg.ikafan.com/thumb/zhipianyi2.gif" style="max-width:100%;display: block;margin:0 auto;"></a>-->
+<!--<a href="https://quan.kafan.cn/"  target="_blank" title="卡饭优惠券"><img src="//gw.alicdn.com/tps/TB1muZpOFXXXXaCXpXXXXXXXXXX-750-220.png" style="max-width:100%;display: block;margin:0 auto;"></a>-->
+<!-- <div class="container">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6527383233809815"
+     data-ad-slot="9526227080"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div> -->
+
+
+
+
+
+
+
+<!-- #breadcrumbs -->
+<div id="page-subnav" class="clearfix">
+<div class="container">
+<div id="breadcrumbs" style="padding: 0 15px;"><a href="http://www.kafan.cn/">首页</a><span class="sep">/</span><a href="https://www.kafan.cn/jc.php">卡饭教程</a><span class="sep">/</span>使用Ubuntu Live CD修复Grub引导教程</div></div>
+</div>
+<!-- /#breadcrumbs -->
+
+
+<!-- #primary -->
+<div id="primary" class="sidebar-right clearfix"> 
+<div class="container">
+<!--<div class="container topgg" style="margin: -10px 0 0 0;">-->
+<div style="margin: -10px auto 0 auto;">
+
+</div>
+
+  <!-- #content -->
+  <section id="content" role="main">
+    	    <article class="st_kb"> 
+      
+
+<!-- .entry-header -->
+<div class="entry-header">
+      <h1 class="entry-title">
+        使用Ubuntu Live CD修复Grub引导教程      </h1>
+
+</div>
+<!-- /.entry-header --> 
+<!-- .entry-content -->
+<div class="entry-content clearfix">
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-6527383233809815" data-ad-slot="2030410285"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:250px;height:250px;" frameborder="0" height="250" width="250"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+			<p>本文以 Ubuntu Live CD 修复 Grub 引导为例，已在 /dev/sda3 安装 Fedora。</p>
+<p><strong>首先制作 Ubuntu 启动 USB</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>sudo dd if=ubuntu-13.10-desktop-amd64.iso of=/dev/sdb #/dev/sdb 为 USB 盘符</p>
+<p><strong>1.使用启动 USB 进入 Ubuntu 试用环境</strong></p>
+<p><strong>2.查看硬盘分区状况，获取 Linux 系统安装分区编号</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>sudo fdisk -l</p>
+<p>查看输出结果，然后根据文件类型和分区大小来判定 Linux 系统安装在哪块硬盘和安装的分区。我的电脑是在 /dev/sda3 安装了 Fedora。</p>
+<p>或者，打开 Gparted 图形化工具来查看分区信息也可以。</p>
+<p>挂载 Fedora 安装分区</p>
+<p><strong>3.已知 Fedora 安装在了 /dev/sda3 上，所以我们可以用下面命令来挂载 Fedora 安装分区。你需要将 /dev/sda3 换成自己的 Linux 安装分区。</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>sudo mount /dev/sda3 /mnt</p>
+<p><strong>4.挂载其他所需的目录（使用 --bind）</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>sudo mount --bind /dev /mnt/dev<br>
+    sudo mount --bind /proc /mnt/proc<br>
+    sudo mount --bind /sys /mnt/sys</p>
+<p><strong>5.Chroot 到硬盘上的 Linux 系统</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>sudo chroot /mnt</p>
+<p><strong>6.安装&amp;更新 Grub</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>grub2-install /dev/sda<br>
+    grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+<p><strong>7.Grub 已经修复成功，我们还需要退出 chroot 环境、卸载已经挂载的设备与目录：</strong></p>
+<p>复制代码<br>
+    <br>代码如下:</p>
+<p>exit #退出 chroot 环境<br>
+    sudo umount /mnt/dev<br>
+    sudo umount /mnt/proc<br>
+    sudo umount /mnt/sys<br>
+    sudo umount /mnt</p>
+<p><strong>8.重启！</strong></p><!--<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-6527383233809815"
+     data-ad-slot="7731988288"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>-->
+
+<script async="" src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/adsbygoogle.js"></script>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; text-align: center; height: 163px;" data-ad-format="fluid" data-ad-layout="in-article" data-ad-client="ca-pub-6527383233809815" data-ad-slot="5072660992"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:163px;margin:0;padding:0;position:relative;visibility:visible;width:650px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:163px;margin:0;padding:0;position:relative;visibility:visible;width:650px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:650px;height:163px;" frameborder="0" height="163" width="650"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>		
+    </div>
+<!-- ./entry-content -->
+	
+</article>
+
+	<div id="comments" class="comments-area clearfix">       
+       <h3 id="comments-title"> 猜你喜欢</h3>
+
+		<ol class="commentlist">
+
+									<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/2198281.html" class="url">Ubuntu下使用Ubuntu Live CD 修复Grub引导</a> </cite><time pubdate="" datetime="12/12 02:33">12/12 02:33</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>由于安装了windows系统，导致Grub出现问题，很多人会选择重装Ubuntu系统，其实完全没有必要，只要将Grub进行修复就可以了，下面小编就给大家带来使用Ubuntu Live CD 修复Gru ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/6109016.html" class="url">修复grub引导菜单</a> </cite><time pubdate="" datetime="09/09 07:28">09/09 07:28</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>昨天装上了ubuntu8.04,和windows xp 一起又构成了双系统，运行得很好．手痒痒在windows下用ＰＭ格式化并合并了一个ext3到fat32的分区，然后就关机了．今天开机，郁闷，又出现 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/8644621.html" class="url">Ubuntu重装启动失败进入修复grub rescue模式的解决方案</a> </cite><time pubdate="" datetime="11/05 09:27">11/05 09:27</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>因为把Ubuntu从13.04升级到13.10后，鼠标出现了问题，一打开网页就不停的闪，而且好多东西都不一样了，又不好用，所以选择重装系统，重装的时候偏偏又重新分了区，然后装完了，一重启，悲剧了，进入 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/41600924.html" class="url">Ubuntu重装启动失败进入修复grub rescue模式</a> </cite><time pubdate="" datetime="11/07 06:31">11/07 06:31</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>因为把Ubuntu从13.04升级到13.10后，鼠标出现了问题，一打开网页就不停的闪，而且好多东西都不一样了，又不好用，所以选择重装系统，重装的时候偏偏又重新分了区，然后装完了，一重启，悲剧了，进入 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/64501486.html" class="url">怎么用大白菜工具修复系统引导</a> </cite><time pubdate="" datetime="06/28 20:10">06/28 20:10</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>1.将制作好的大白菜u盘启动盘插入usb接口(台式用户建议将u盘插在主机机箱后置的usb接口上),然后重启电脑 2.出现开机画面时,通过使用启动快捷键引导u盘启动进入到大白菜主菜单界面,选择" ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/5090561.html" class="url">小米电视dpi修复补丁使用教程</a> </cite><time pubdate="" datetime="06/16 09:56">06/16 09:56</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>很多朋友不会使用小米电视dpi修复补丁，下面小编和大家分享一下小米电视dpi修复补丁使用教程，有需要的朋友可以一起看看 打开补丁后，先输入电视的ip，以及选择操作1或2： &lt; 安装成功后，电视桌 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/9024802.html" class="url">usb宝盒u盘修复功能怎么用?usb宝盒u盘修复功能使用教程</a> </cite><time pubdate="" datetime="12/13 03:52">12/13 03:52</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>usb宝盒u盘修复怎么用?下文将为大家演示usb宝盒u盘修复功能使用教程，USB宝盒中有一个“U盘修复”功能，很多朋友不知道该如何使用，请看下文演示的步骤吧。 U盘是我们平时工作和生活中经常要用到的一 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/88805501.html" class="url">文本恢复转换器怎么用 word文档乱码修复工具使用教程</a> </cite><time pubdate="" datetime="05/04 17:32">05/04 17:32</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>文本常常因为某些格式不对显示乱码，文本恢复转换器怎么用?下面我们可以参考一下word文档乱码修复工具使用教程，一起来学一下吧。 文本恢复转换器怎么用 word文档乱码修复工具使用教程 word文档的最 ...</p>
+    </div>    
+  </article>
+
+  </li>
+							<li class="comment byuser comment-author-chris-mooney bypostauthor even thread-even depth-1" id="li-comment-3">
+  <article id="comment-3" class="comment">    
+    <header class="comment-meta comment-author vcard">
+	  <cite class="fn"><a href="https://www.kafan.cn/edu/86918614.html" class="url">Win7中注册表修复exe文件教程</a> </cite><time pubdate="" datetime="09/09 13:33">09/09 13:33</time>    </header>
+    <!-- .comment-meta -->
+    
+        <div class="comment-content clearfix">
+      <p>1.首先,需要打开win7系统的注册表编辑器窗口,同时按下win7电脑键盘上的win+R快捷键打开电脑的运行窗口,在打开的运行窗口中,输入regedit并单击回车,就可以打开注册表编辑器窗口了. 2. ...</p>
+    </div>    
+  </article>
+
+  </li>
+		  <article>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-6527383233809815" data-ad-slot="7731988288"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:336px;height:280px;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</article>
+			
+		</ol><!-- .commentlist -->
+			
+</div>
+    
+<!--//#include file="template/kafan/pinglun.php"-->
+
+
+</section>
+<!-- #content -->
+
+<aside id="sidebar" role="complementary">
+<!--<div id="categories-4" class="widget widget_categories clearfix">
+  
+  <form method="post" id="searchform" action="/search/" _lpchecked="1" style="
+    height: 15px;
+    float: left;  
+">
+             <input type="text" value="" name="keyword" id="keyword" title="search"><input type="submit" value="搜索" id="searchsubmit">
+  </form>
+</div>-->
+
+
+
+<!--<div id="categories-4" class="widget widget_categories clearfix">
+ad_block
+</div>-->
+
+<!--<div id="st_kb_categories_widget-2" class="boxed widget st_kb_categories_widget clearfix"> 
+        <h4 class="widget-title">热点关注</h4>		<ul>
+	<li class="cat-item cat-item-2"><a href="/topic/023ew36.html">win7win8哪个好</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/topic/w43q4vz.html">浏览器哪个好</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/topic/o43pm3m.html">去广告插件</a>
+</li>
+		</ul>
+		</div>-->
+		
+		
+
+<!--相关推荐开始-->
+
+<div id="categories-4" class="widget widget_categories clearfix">
+<h4 class="widget-title">猜你喜欢</h4>                            
+<ul>
+		
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/86918614.html">
+Win7中注册表修复exe文件教程</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/86910584.html">
+Win7中注册表修复exe文件的方法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/85918866.html">
+win7利用注册表修复错误exe文件的方法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/66562484.html">
+如何用注册表修复word文件关联关系</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/5619222.html">
+Win7使用注册表禁用控制面板图文教程</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/85601414.html">
+win7电脑中如何通过注册表修复游戏登陆问题?</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/69928014.html">
+Win7系统注册表受损的修复方法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/66964122.html">
+windows xp系统误修注册表导致exe格式文件打不开怎么办</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/85264511.html">
+如何将win7电脑注册表中的垃圾全部清理掉?</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/85512982.html">
+win7系统注册表打开的3种方法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/68002626.html">
+win7优化注册表解决电脑故障问题的方法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/69149586.html">
+Win7系统旗舰版Winmgmt.exe文件错误怎么办</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/61261501.html">
+Win7系统旗舰版Winmgmt.exe文件错误的解决办法</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/1464494.html">
+如何将Win7系统注册表直接锁定以便防止被篡改</a>               
+</li>
+	<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/84428542.html">
+WIN7系统注册表编辑器无法删除项目怎么回事</a>               
+</li>
+    </ul></div> 
+
+
+<!--相关推荐结束-->
+
+
+
+
+<div id="categories-4" class="widget widget_categories clearfix">
+<h4 class="widget-title">随机推荐</h4>                            
+<ul>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/925191.html">什么是固态硬盘 固态硬盘有什么优缺点</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/4909496.html">Win8.1系统下IE11无法输入网银密码的解决方法</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/8816596.html">iPad 上AVPlayer.OPlayer AVI视频加载字幕外挂的操作方法</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/8985521.html">U盘容量变成0MB和RAW格式故障怎么办</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/6600451.html">9550显卡超频后玩游戏死机问题</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/40258554.html">如何登录联想人工在线咨询</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/48894412.html">克隆WPS的个性化配置</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/45908804.html">Excel2013中多条件筛选如何使用?</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/42090842.html">新浪微博个人认证的方法</a> 
+</li>
+                
+<li class="cat-item cat-item-2">
+<a href="https://www.kafan.cn/edu/49880121.html">ie管理加载项自动弹出怎么回事?</a> 
+</li>
+</ul></div>
+<!--<div id="categories-4" class="widget widget_categories clearfix" style="padding: 10px 0 20px 0;text-align: center;border-bottom: 1px solid #E0E0E0;height: 250px;">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-6527383233809815"
+     data-ad-slot="3377355081"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</script></div>-->
+<div id="tag_cloud-2" class="widget widget_tag_cloud clearfix"><h4 class="widget-title">Topic</h4><div class="tagcloud">
+        <a href="https://www.kafan.cn/zt/mpv0prlp3d.html" title="outlook没有已发送邮件">outlook没有已发送邮件</a>        <a href="https://www.kafan.cn/zt/023ex5k5n6.html" title="win10的专业版开始打不开">win10的专业版开始打不开</a>        <a href="https://www.kafan.cn/zt/w43y4ekg3r.html" title="edge 浏览器插件">edge 浏览器插件</a>        <a href="https://www.kafan.cn/zt/q23my74m3m.html" title="wpsexcel套用表格样式怎么用">wpsexcel套用表格样式怎么用</a>        <a href="https://www.kafan.cn/zt/4enddg21n2.html" title="i5 4590支持什么主板">i5 4590支持什么主板</a>        <a href="https://www.kafan.cn/zt/5gvxo16qvr.html" title="win10桌面显示不全">win10桌面显示不全</a>        <a href="https://www.kafan.cn/zt/l5vr0x0lvq.html" title="怎么弄集赞">怎么弄集赞</a>        <a href="https://www.kafan.cn/zt/71nlrplenr.html" title="win10加密软件">win10加密软件</a>        <a href="https://www.kafan.cn/zt/j7njmkwrnp.html" title="qq绑定密保手机怎么解除">qq绑定密保手机怎么解除</a>        <a href="https://www.kafan.cn/zt/zy318px2nk.html" title="无法删除打印机驱动">无法删除打印机驱动</a>    </div>
+</div>
+
+</aside>
+
+</div>
+</div>
+<!-- /#primary -->
+
+<!-- #footer-bottom -->
+<!-- #footer-bottom -->
+<footer id="footer" class="clearfix">
+
+
+<div id="footer-widgets" class="clearfix">
+    <div class="container">
+        <div class="row">
+        	<div id="text-3" class="column col-third widget widget_text"><h4 class="widget-title"><span>关于卡饭教程</span></h4>			<div class="textwidget"><p>致力于解决软件选择与使用的问题.</p>
+<p>收集整理各类软件与安全教程，欢迎给我们投稿.</p>
+</div>
+		</div><div id="st_blog_widget-3" class="column col-third widget st_blog_widget"> 
+        <h4 class="widget-title"><span>猜你喜欢</span></h4>                            
+                <ul class="clearfix">
+						                  
+			<li class="clearfix">
+            <a href="https://www.kafan.cn/edu/8051802.html" rel="bookmark">无线路由器桥接技巧以及详细注意事项</a>
+<div class="entry-meta"><time datetime="11/02 13:13">11/02 13:13</time></div>
+            </li>                  
+			<li class="clearfix">
+            <a href="https://www.kafan.cn/edu/8688061.html" rel="bookmark">在购买u盘时如何辨别U盘是否为缩水U盘</a>
+<div class="entry-meta"><time datetime="05/27 00:43">05/27 00:43</time></div>
+            </li>                  
+			<li class="clearfix">
+            <a href="https://www.kafan.cn/edu/1668544.html" rel="bookmark">微信群消息怎么屏蔽 如何不接收微信群消息</a>
+<div class="entry-meta"><time datetime="07/28 10:57">07/28 10:57</time></div>
+            </li>                  
+			<li class="clearfix">
+            <a href="https://www.kafan.cn/edu/42199281.html" rel="bookmark">通过win7防火墙设置禁止别人访问本机端口</a>
+<div class="entry-meta"><time datetime="08/09 06:11">08/09 06:11</time></div>
+            </li>                  
+			<li class="clearfix">
+            <a href="https://www.kafan.cn/edu/49064206.html" rel="bookmark">解析笔记本液晶屏维护与保养方法汇总</a>
+<div class="entry-meta"><time datetime="07/31 20:31">07/31 20:31</time></div>
+            </li>                </ul>
+			</div>
+
+
+
+<div id="categories-3" class="column col-third widget widget_categories"><h4 class="widget-title"><span>使用帮助</span></h4>		<ul>
+	<li class="cat-item cat-item-2"><!--<a href="#" >如何查找教程</a>-->
+</li>
+	<li class="cat-item cat-item-3"><!--<a href="#" >提交未解决问题</a>-->
+</li>
+	<li class="cat-item cat-item-4"><!--<a href="#" >分享给朋友</a>-->
+</li>
+		</ul>
+</div>        </div>
+
+<!--<div id="categories-4" class="widget widget_categories clearfix" style="padding: 0;text-align: center;border: 0px;height: 250px;margin-bottom:15px;">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-6527383233809815"
+     data-ad-slot="5244336684"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>-->
+
+    </div>
+</div>
+
+
+<div id="footer-bottom" class="clearfix">
+<div class="container">
+    <small id="copyright" role="contentinfo">Copyright © KaFan.CN.</small>
+  
+
+    <nav id="footer-nav" role="navigation">
+    <ul id="menu-primary-nav-1" class="nav-footer clearfix"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-225"><a href="http://www.kafan.cn/" onclick="__gaTracker('send', 'event', 'outbound-widget-int', '/', 'Home');">Home</a></li>
+<!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-229"><a href="#">Features</a></li> -->
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-227"><a href="https://www.kafan.cn/jc.php">软件教程</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-228"><a href="http://bbs.kafan.cn/">论坛</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-228"><a href="https://quan.kafan.cn/">优惠券</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-224"><a href="http://s.kafan.cn/">软件推荐</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-226"><a href="http://www.kafan.cn/">联系我们</a></li>
+</ul>  </nav>
+  </div>
+</div>
+<div style="display:none">
+<script src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/z_stat.php" language="JavaScript"></script><script src="%E4%BD%BF%E7%94%A8Ubuntu%20Live%20CD%E4%BF%AE%E5%A4%8DGrub%E5%BC%95%E5%AF%BC%E6%95%99%E7%A8%8B_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=2376224" target="_blank" title="站长统计">站长统计</a>
+<script>
+var ac_referer = '' + document.referrer;
+try {ac_referer = '' + top.document.referrer} catch (ex) {ac_referer = '' + document.referrer}
+var ac_referer_raw = ac_referer;
+ac_referer = ac_referer.substring(0, 600);
+ac_referer = encodeURIComponent(ac_referer);
+var ac_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+var ac_script = document.createElement('script');
+ac_script.src = ac_protocol + document.domain + '/vlog/?ref=' + ac_referer;
+document.getElementsByTagName('head')[0].appendChild(ac_script);
+// document.writeln('<sc' + 'ript type="text/jav'+'ascr'+'ipt" src="' + ac_protocol + document.domain + '/vlog/?ref=' + ac_referer + '"></scr' + 'ipt>');
+</script>
+</div> 
+
+
+</footer> 
+<!-- /#footer-bottom -->
+
+
+<iframe style="display: none;" scrolling="no" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe style="display: none;" scrolling="no" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe style="display: none;" scrolling="no" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" frameborder="0"></iframe></body></html>

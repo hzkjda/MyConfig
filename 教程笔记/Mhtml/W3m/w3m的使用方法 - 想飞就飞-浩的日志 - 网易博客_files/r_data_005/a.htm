@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>网易个性化广告投放系统</title>
+<script type="text/javascript" src="../r_data_006/ad_data/jquery-1.js"></script>
+                        <style type="text/css">
+                .dm_ad_hover {
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 0px;
+                    right: 0px;
+                    width: 24px;
+                    height: 18px;
+                    overflow: hidden;
+                    line-height: 999px;
+                    background: url("https://img3.126.net/iad/ad/img/short.png") no-repeat scroll right top;
+                    z-index: 100;
+                }
+            </style>
+            <script type="text/javascript">
+    function sendHover(uuid, flight_id, ad_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'https://iad.g.163.com/wa/s',
+            data: {
+                'uuid': uuid,
+                'flight_id': flight_id,
+                'ad_id': ad_id
+            },
+            dataType: 'json',
+            success: function(info) {
+            }
+        });
+    }
+    
+    function sendClick(uuid, flight_id, ad_id) {
+        $.ajax({
+            type: 'GET',
+            url: 'https://iad.g.163.com/wa/c',
+            data: {
+                'uuid': uuid,
+                'flight_id': flight_id,
+                'ad_id': ad_id
+            },
+            dataType: 'json',
+            success: function(info) {
+            }
+        });
+    }
+    
+    var count = 0;
+    $(document).ready(function() {
+        $('body').click(function() {
+            var uuid = $('body').attr('data-uuid');
+            var flight_id = $('body').attr('data-flight_id');
+            var ad_id = $('body').attr('data-ad_id');
+            sendClick(uuid, flight_id, ad_id);
+        });
+        
+        $('body').hover(function() {
+            if(count == 0) {
+                var uuid = $('body').attr('data-uuid');
+                var flight_id = $('body').attr('data-flight_id');
+                var ad_id = $('body').attr('data-ad_id');
+                sendHover(uuid, flight_id, ad_id);
+            }
+            count++;
+        });
+    });
+</script>
+</head>
+<body class="adrec" data-uuid="82312937-f06f-45bd-8915-f31a28b3b1ef" data-flight_id="2472" data-ad_id="mat_4771" marginwidth="0" marginheight="0">
+    <a class="dm_ad_hover" target="_blank"></a>
+<a target="_blank" href="http://cps.kaola.com/cps/login?unionId=425134127131&amp;uid=&amp;trackingCode=&amp;targetUrl=http://www.kaola.com/activity/detail/27494.shtml"><img src="a_data/ad.jpe" alt="590X100" border="0" width="590" height="100"></a>
+
+
+</body></html>

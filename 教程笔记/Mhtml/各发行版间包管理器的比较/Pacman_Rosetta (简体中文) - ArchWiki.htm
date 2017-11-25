@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html class="client-js" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Pacman/Rosetta (简体中文) - ArchWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pacman/Rosetta_(简体中文)","wgTitle":"Pacman/Rosetta (简体中文)","wgCurRevisionId":477795,"wgRevisionId":477795,"wgArticleId":13530,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["简体中文","Package management (简体中文)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pacman/Rosetta_(简体中文)","wgRelevantArticleId":13530,"wgRequestId":"bbc3cd954ec5ffc69c78aaff","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","mediawiki.skinning.content.externallinks":"ready","skins.archlinux.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1p88237",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup"]);});</script>
+<link rel="stylesheet" href="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load.css">
+<script async="" src="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load_002.php"></script>
+<!--[if IE 6]><link rel="stylesheet" href="/skins/ArchLinux/IE60Fixes.css?303" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="/skins/ArchLinux/IE70Fixes.css?303" media="screen"/><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load_002.css">
+<style></style>
+<meta name="generator" content="MediaWiki 1.28.2">
+<link rel="shortcut icon" href="https://wiki.archlinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.archlinux.org/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<script src="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/load.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Pacman_Rosetta_简体中文 rootpage-Pacman skin-archlinux action-view feature-footer-v2">
+		<div id="archnavbar"><!-- Arch Linux global navigation bar -->
+			<div id="archnavbarlogo">
+				<p><a id="logo" href="https://www.archlinux.org/"></a></p>
+			</div>
+			<div id="archnavbarmenu">
+				<ul id="archnavbarlist">
+					<li id="anb-home"><a href="https://www.archlinux.org/">Home</a></li><li id="anb-packages"><a href="https://www.archlinux.org/packages/">Packages</a></li><li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li><li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li><li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li><li id="anb-security"><a href="https://security.archlinux.org/">Security</a></li><li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li><li id="anb-download"><a href="https://www.archlinux.org/download/">Download</a></li>				</ul>
+			</div>
+		</div><!-- #archnavbar -->
+
+		<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Pacman/Rosetta (简体中文)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ArchWiki</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="https://wiki.archlinux.org/index.php/Pacman" title="Pacman">Pacman</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a><b>本页面需要更新翻译，内容可能已经与英文脱节。要贡献翻译，请访问<a href="https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="ArchWiki Translation Team (简体中文)">简体中文翻译组</a>。</b><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="Pacman_Rosetta%20%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29%20-%20ArchWiki_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a></p>
+<div><b>附注:</b> <span style="color:red;">please use the first argument of the template to provide more detailed indications.</span></div>
+</div>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> 翻译状态： </strong>本文是英文页面 <a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta" title="Pacman/Rosetta">Pacman/Rosetta</a> 的<a href="https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="ArchWiki Translation Team (简体中文)">翻译</a>，最后翻译时间：2017-03-06，点击<a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php?title=Pacman%2FRosetta&amp;diff=0&amp;oldid=464653">这里</a>可以查看翻译后英文页面的改动。</div>
+<p>这个页面用表格展示一些流行的 Linux 发行版<a href="https://en.wikipedia.org/wiki/Package_manager" class="extiw" title="wikipedia:Package manager">包管理器</a>命令的对应关系。这是受到 <a rel="nofollow" class="external text" href="http://old-en.opensuse.org/Software_Management_Command_Line_Comparison">openSUSE's Software Management Command Line Comparison</a> 的启发而成的。
+</p>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDFFDD; border: thin solid #BBDDBB; overflow: hidden;"><strong> Tip: </strong>Arch 用户在临时处理其他发行版时可以用 <a rel="nofollow" class="external text" href="https://github.com/icy/pacapt">pacapt</a>，它是对其它包管理器的简单包装。</div>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Note: </strong>
+<ul><li> 这里描述的一些工具只针对特定版本的 pacman。其中的 -Qk 选项是在 pacman 4.1 中新实现的。</li>
+<li> 您可以在 <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=pkgfile">pkgfile</a></span> 中找到 <code>pkgfile</code> 命令。</li></ul>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C"><span class="tocnumber">1</span> <span class="toctext">基本操作</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E6.9F.A5.E8.AF.A2.E6.9F.90.E4.B8.AA.E5.8C.85.E7.9A.84.E4.BF.A1.E6.81.AF"><span class="tocnumber">2</span> <span class="toctext">查询某个包的信息</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.E6.9F.A5.E8.AF.A2.E5.8C.85.E5.88.97.E8.A1.A8"><span class="tocnumber">3</span> <span class="toctext">查询包列表</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#.E6.9F.A5.E8.AF.A2.E5.8C.85.E7.9A.84.E4.BE.9D.E8.B5.96.E5.85.B3.E7.B3.BB"><span class="tocnumber">4</span> <span class="toctext">查询包的依赖关系</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E7.AE.A1.E7.90.86.E8.BD.AF.E4.BB.B6.E6.BA.90"><span class="tocnumber">5</span> <span class="toctext">管理软件源</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Overrides"><span class="tocnumber">6</span> <span class="toctext">Overrides</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#.E6.A0.A1.E9.AA.8C.E5.92.8C.E4.BF.AE.E5.A4.8D"><span class="tocnumber">7</span> <span class="toctext">校验和修复</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.96.87.E4.BB.B6.E5.92.8C.E6.9E.84.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85"><span class="tocnumber">8</span> <span class="toctext">使用软件包文件和构建软件包</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#.E5.8F.82.E9.98.85"><span class="tocnumber">9</span> <span class="toctext">参阅</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C">基本操作</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">动作</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> 按名安装包 </td>
+<td>pacman -S</td>
+<td>dnf install </td>
+<td>apt install</td>
+<td>zypper install<br>zypper in</td>
+<td> emerge [-a]
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 按名移除包 </td>
+<td>pacman -Rs</td>
+<td>dnf remove </td>
+<td>apt remove</td>
+<td>zypper remove<br>zypper rm </td>
+<td>emerge -C
+</td></tr>
+<tr>
+<td> 通过软件名、描述、简短描述来搜索包。默认搜索域依工具不同而异。Mostly options bring tools on par. </td>
+<td>pacman -Ss</td>
+<td>dnf search </td>
+<td>apt search</td>
+<td>zypper search<br>zypper se [-s]</td>
+<td>emerge -S
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 升级包（安装已有包的更新版本） </td>
+<td>pacman -Syu</td>
+<td>dnf upgrade </td>
+<td>apt update; apt upgrade</td>
+<td>zypper update   zypper up</td>
+<td>emerge -u world
+</td></tr>
+<tr>
+<td> 升级包（更新命令的另一种形式，可以进行更复杂形式的更新，例如发行版升级。当通常的更新命令会忽略软件更新时——例如依赖改变——本命令可以进行这些更新） </td>
+<td>pacman -Syu</td>
+<td>dnf distro-sync </td>
+<td>apt full-upgrade</td>
+<td>zypper dup</td>
+<td>emerge -uDN world
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 清除本地缓存（可能允许通过选项控制要清除拿些东西；autoclean 只清除过时的信息） </td>
+<td>pacman -Sc<br>pacman -Scc  </td>
+<td>dnf clean all </td>
+<td>apt-get clean / apt-get autoclean / aptitude clean</td>
+<td> zypper clean </td>
+<td> eclean distfiles
+</td></tr>
+<tr>
+<td> 移除不再需要的依赖（例如当依赖某包的软件被移除） </td>
+<td>pacman -Qdtq | pacman -Rs -</td>
+<td>dnf autoremove</td>
+<td>apt-get autoremove </td>
+<td>zypper rm -u</td>
+<td>emerge --depclean
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 移除不再处于任何仓库中的包 </td>
+<td>pacman -Qm | pacman -Rs -</td>
+<td>package-cleanup  --orphans</td>
+<td>aptitude purge '~o'</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td> 将作为依赖安装的包指定为手动安装 </td>
+<td>pacman -D --asexplicit</td>
+<td>dnf mark install</td>
+<td>apt-mark manual</td>
+<td></td>
+<td>emerge --select
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 将包作为依赖安装 </td>
+<td>pacman -S --asdeps</td>
+<td>dnf install =&gt; dnf mark remove</td>
+<td>aptitude install '$package&amp;M'</td>
+<td></td>
+<td>emerge -1
+</td></tr>
+<tr>
+<td> 仅下载而不解包或安装 </td>
+<td>pacman -Sw</td>
+<td>dnf download</td>
+<td>apt-get install --download-only (into the package cache)<br>apt-get download (bypass the package cache)</td>
+<td> zypper --download-only </td>
+<td>emerge --fetchonly
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 启动一个 shell 以便在一个会话中输入多个命令 </td>
+<td></td>
+<td></td>
+<td>apt-config shell</td>
+<td>zypper shell </td>
+<td>
+</td></tr>
+<tr>
+<td> 查看日志 </td>
+<td>cat /var/log/pacman.log </td>
+<td>dnf history</td>
+<td>cat /var/log/dpkg.log</td>
+<td>cat /var/log/zypp/history </td>
+<td> located in /var/log/portage
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 获取当前系统所有软件包的状态 </td>
+<td>(see /var/lib/pacman/local)</td>
+<td>(see /var/lib/rpm/Packages)</td>
+<td>apt-cache stats</td>
+<td>n/a </td>
+<td>emerge --info
+</td></tr>
+<tr>
+<td> 包变更时发送邮件 </td>
+<td></td>
+<td></td>
+<td>apt-get install apt-listchanges</td>
+<td></td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E6.9F.90.E4.B8.AA.E5.8C.85.E7.9A.84.E4.BF.A1.E6.81.AF">查询某个包的信息</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> 显示包的全部或者部分信息。各种包管理工具默认显示的详细程度各不相同，但是可以通过设置选项使其一致。</td>
+<td>pacman -[S|Q]i </td>
+<td>dnf list, dnf info </td>
+<td>apt show / apt-cache policy</td>
+<td>zypper info      zypper if</td>
+<td>emerge -S; emerge -pv; eix
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 显示本地包信息，包括包名、版本、描述等。</td>
+<td>pacman -Qi </td>
+<td>rpm -qi </td>
+<td>dpkg -s / aptitude show</td>
+<td>zypper info; rpm -qi </td>
+<td>emerge -pv and emerge -S
+</td></tr>
+<tr>
+<td> 显示远程包信息，包括包名、版本、描述等。</td>
+<td>pacman -Si </td>
+<td>dnf info </td>
+<td>apt-cache show / aptitude show</td>
+<td>zypper info </td>
+<td>emerge -pv and emerge -S
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 显示本地包提供的文件。</td>
+<td>pacman -Ql </td>
+<td>rpm -ql</td>
+<td>dpkg -L</td>
+<td>rpm -Ql </td>
+<td>equery files
+</td></tr>
+<tr>
+<td> 显示远程包提供的文件。</td>
+<td>pkgfile -l</td>
+<td>dnf repoquery -l</td>
+<td>apt-file list $pattern</td>
+<td></td>
+<td>pfl
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 查询提供某个文件的包。</td>
+<td>pacman -Qo </td>
+<td>rpm -qf (installed only) or dnf provides (everything) </td>
+<td>dpkg -S / dlocate</td>
+<td>zypper search -f </td>
+<td>equery belongs
+</td></tr>
+<tr>
+<td> 列出包中的文件。其他更复杂的命令亦可以提供该功能。</td>
+<td>pacman -Ql <br>pkgfile -l </td>
+<td>dnf repoquery -l </td>
+<td>dpkg-query -L </td>
+<td> rpm -ql </td>
+<td>equery files
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 查出文件是由哪一个包提供的，主要是为了检索特定文件。其他工具亦可通过搜索命令提供该功能。</td>
+<td>pkgfile</td>
+<td>dnf provides </td>
+<td>apt-file search</td>
+<td>zypper what-provides zypper wp</td>
+<td> equery belongs (only installed packages); pfl
+</td></tr>
+<tr>
+<td> 在所有包中查找包含指定文件的包。auto-apt 提供该功能。</td>
+<td>pkgfile -s</td>
+<td>dnf provides </td>
+<td>apt-file search</td>
+<td>zypper search -f </td>
+<td>equery belongs
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 显示包的更新日志。</td>
+<td>pacman -Qc</td>
+<td>rpm -q --changelog</td>
+<td>apt-get changelog</td>
+<td>rpm -q --changelog</td>
+<td>equery changes -f
+</td></tr>
+<tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E5.8C.85.E5.88.97.E8.A1.A8">查询包列表</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> Search for package(s) by searching the expression in name, 
+description, short description. What exact fields are being searched by 
+default varies in each tool. Mostly options bring tools on par. </td>
+<td>pacman -Ss </td>
+<td>dnf search </td>
+<td>apt search</td>
+<td>zypper search   zypper se [-s]</td>
+<td>emerge -S
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Lists packages which have an update available. Note: Some provide 
+special commands to limit the output to certain installation sources, 
+others use options. </td>
+<td>pacman -Qu </td>
+<td>dnf list updates, dnf check-update </td>
+<td>apt-get upgrade -&gt; n</td>
+<td>zypper list-updates  zypper patch-check (just for patches) </td>
+<td>emerge -uDNp world
+</td></tr>
+<tr>
+<td> Display a list of all packages in all installation sources that are
+ handled by the packages management. Some tools provide options or 
+additional commands to limit the output to a specific installation 
+source. </td>
+<td>pacman -Sl </td>
+<td>dnf list available</td>
+<td>apt-cache dumpavail  apt-cache dump (Cache only)  apt-cache pkgnames</td>
+<td>zypper packages </td>
+<td>emerge -ep world
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Generates a list of installed packages </td>
+<td> pacman -Q </td>
+<td> dnf list installed </td>
+<td>dpkg --list | grep ^i </td>
+<td> zypper search --installed-only </td>
+<td>emerge -ep world
+</td></tr>
+<tr>
+<td> List packages that are installed but are not available in any installation source (anymore). </td>
+<td>pacman -Qm</td>
+<td>dnf list extras </td>
+<td> deborphan </td>
+<td>zypper se -si | grep 'System Packages'</td>
+<td>eix-test-obsolete
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> List packages that were recently added to one of the installation sources, i.e. which are new to it. </td>
+<td>(none)</td>
+<td>dnf list recent </td>
+<td>aptitude search '~N' / aptitude forget-new</td>
+<td>n/a</td>
+<td>eix-diff
+</td></tr>
+<tr>
+<td> List installed local packages along with version</td>
+<td>pacman -Q</td>
+<td>rpm -qa</td>
+<td>dpkg -l</td>
+<td>zypper search -s; rpm -qa </td>
+<td>emerge -e world
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Search locally installed package for names or descriptions </td>
+<td>pacman -Qs</td>
+<td>rpm -qa '*&lt;str&gt;*' </td>
+<td>aptitude search '~i(~n $name|~d $description)'</td>
+<td></td>
+<td>eix -S -I
+</td></tr>
+<tr>
+<td> List packages not required by any other package</td>
+<td>pacman -Qt</td>
+<td>package-cleanup --all --leaves</td>
+<td>deborphan -anp1</td>
+<td></td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> List packages installed explicitly (not as dependencies)</td>
+<td>pacman -Qe</td>
+<td></td>
+<td>apt-mark showmanual</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td> List packages installed automatically (as dependencies)</td>
+<td>pacman -Qd</td>
+<td></td>
+<td>apt-mark showauto</td>
+<td></td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E5.8C.85.E7.9A.84.E4.BE.9D.E8.B5.96.E5.85.B3.E7.B3.BB">查询包的依赖关系</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> Display packages which require X to be installed, aka show reverse dependencies.</td>
+<td>pacman -Sii</td>
+<td>dnf repoquery --alldeps --whatrequires </td>
+<td>apt-cache rdepends / aptitude search ~D$pattern</td>
+<td>zypper search --requires </td>
+<td> equery depends
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Display packages which conflict with given expression (often package). Search can be used as well to mimic this function.</td>
+<td></td>
+<td>dnf repoquery --conflicts</td>
+<td>aptitude search '~C$pattern'</td>
+<td> </td>
+<td>
+</td></tr>
+<tr>
+<td> List all packages which are required for the given package, aka show dependencies. </td>
+<td>pacman -[S|Q]i</td>
+<td>dnf repoquery --requires</td>
+<td>apt-cache depends / apt-cache show</td>
+<td>zypper info --requires </td>
+<td> emerge -ep
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> List what the current package provides </td>
+<td></td>
+<td>dnf provides </td>
+<td>dpkg -s / aptitude show</td>
+<td>zypper info --provides </td>
+<td>equery files
+</td></tr>
+<tr>
+<td> List all packages that require a particular package </td>
+<td></td>
+<td>dnf repoquery --alldeps --whatrequires</td>
+<td>aptitude search ~D{depends,recommends,suggests}:$pattern / aptitude why</td>
+<td>zypper search --requires </td>
+<td>equery depends -a
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Display all packages that the specified packages obsoletes. </td>
+<td></td>
+<td>dnf list obsoletes </td>
+<td>apt-cache show</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td> Generates an output suitable for processing with dotty for the given package(s). </td>
+<td></td>
+<td></td>
+<td>apt-cache dotty </td>
+<td>n/a</td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E7.AE.A1.E7.90.86.E8.BD.AF.E4.BB.B6.E6.BA.90">管理软件源</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> Installation sources management </td>
+<td>${EDITOR} /etc/pacman.conf</td>
+<td>${EDITOR} /etc/yum.repos.d/${REPO}.repo</td>
+<td>${EDITOR} /etc/apt/sources.list</td>
+<td>${EDITOR} /etc/zypp/repos.d/${REPO}.repo </td>
+<td>layman
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Add an installation source to the system. Some tools provide 
+additional commands for certain sources, others allow all types of 
+source URI for the add command. Again others, like apt and dnf force 
+editing a sources list. apt-cdrom is a special command, which offers 
+special options design for CDs/DVDs as source. </td>
+<td>/etc/pacman.conf</td>
+<td>/etc/yum.repos.d/*.repo</td>
+<td>apt-cdrom add</td>
+<td>zypper service-add </td>
+<td>layman, overlays
+</td></tr>
+<tr>
+<td> Refresh the information about the specified installation source(s) or all installation sources. </td>
+<td>pacman -Sy (<a href="https://wiki.archlinux.org/index.php/System_maintenance#Partial_upgrades_are_unsupported" title="System maintenance">always upgrade the whole system afterwards</a>) </td>
+<td>dnf clean expire-cache &amp;&amp; dnf check-update </td>
+<td>apt-get update</td>
+<td>zypper refresh   zypper ref</td>
+<td>emerge --sync;layman -S
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Prints a list of all installation sources including important information like URI, alias etc. </td>
+<td>cat /etc/pacman.d/mirrorlist</td>
+<td>cat /etc/yum.repos.d/*</td>
+<td>apt-cache policy</td>
+<td>zypper service-list </td>
+<td>layman -l
+</td></tr>
+<tr>
+<td> Disable an installation source for an operation </td>
+<td></td>
+<td>dnf --disablerepo=</td>
+<td></td>
+<td></td>
+<td>emerge package::repo-to-use
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Download packages from a different version of the distribution than the one installed. </td>
+<td></td>
+<td>dnf --releasever= </td>
+<td>apt-get install -t release package/ apt-get install package/release (deps not covered)</td>
+<td></td>
+<td>echo "category/package ~amd64" &gt;&gt; /etc/portage/package.keywords &amp;&amp; emerge package
+</td></tr>
+<tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Overrides">Overrides</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> 增加包锁定规则来保持其当前状态不被改变 </td>
+<td>/etc/pacman.conf<br>modify IgnorePkg array</td>
+<td>dnf.conf &lt;--”exclude” option (add/amend)</td>
+<td>apt-mark hold pkg</td>
+<td>Put package name in /etc/zypp/locks, or zypper al</td>
+<td>/etc/portage/package.mask
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 删除包锁定规则 </td>
+<td>remove package from IgnorePkg line in /etc/pacman.conf</td>
+<td> </td>
+<td>apt-mark unhold pkg</td>
+<td>Remove package name from /etc/zypp/locks or zypper rl</td>
+<td>/etc/portage/package.mask (or package.unmask)
+</td></tr>
+<tr>
+<td> 列出所有锁定规则 </td>
+<td>cat /etc/pacman.conf</td>
+<td> </td>
+<td>/etc/apt/preferences </td>
+<td>View /etc/zypp/locks or zypper ll</td>
+<td>cat /etc/portage/package.mask
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Set the priority of the given package to avoid upgrade, force 
+downgrade or to overwrite any default behavior. Can also be used to 
+prefer a package version from a certain installation source. </td>
+<td>${EDITOR} /etc/pacman.conf<br>Modify HoldPkg and/or IgnorePkg arrays</td>
+<td></td>
+<td>/etc/apt/preferences, apt-cache policy</td>
+<td> zypper mr -p </td>
+<td> ${EDITOR} /etc/portage/package.keywords<br>Add a line with =category/package-version
+</td></tr>
+<tr>
+<td> Remove a previously set priority </td>
+<td></td>
+<td></td>
+<td>/etc/apt/preferences </td>
+<td>zypper mr -p </td>
+<td> ${EDITOR} /etc/portage/package.keywords<br>remove offending line
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Show a list of set priorities. </td>
+<td></td>
+<td></td>
+<td>apt-cache policy  /etc/apt/preferences </td>
+<td>zypper lr -p </td>
+<td> cat /etc/portage/package.keywords
+</td></tr>
+<tr>
+<td> Ignores problems that priorities may trigger. </td>
+<td></td>
+<td></td>
+<td></td>
+<td>n/a</td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E6.A0.A1.E9.AA.8C.E5.92.8C.E4.BF.AE.E5.A4.8D">校验和修复</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> Verify single package</td>
+<td>pacman -Qk[k]</td>
+<td>rpm -V</td>
+<td>debsums</td>
+<td>rpm -V</td>
+<td>equery check
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Verify all packages</td>
+<td>pacman -Qk[k]</td>
+<td>rpm -Va</td>
+<td>debsums</td>
+<td>rpm -Va</td>
+<td>equery check
+</td></tr>
+<tr>
+<td> Reinstall given Package - Will reinstall the given package without dependency hassle. </td>
+<td>pacman -S</td>
+<td>dnf reinstall</td>
+<td>apt install --reinstall</td>
+<td>zypper install --force</td>
+<td>emerge [-a]
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Verify dependencies of the complete system. Used if installation process was forcefully killed. </td>
+<td>pacman -Dk</td>
+<td>dnf repoquery --requires </td>
+<td>apt-get check</td>
+<td>zypper verify </td>
+<td> emerge -uDN world
+</td></tr>
+<tr>
+<td> Use some magic to fix broken dependencies in a system </td>
+<td> pacman dep level - pacman -Dk, shared lib level - findbrokenpkgs or lddd</td>
+<td>dnf repoquery --unsatisfied</td>
+<td>apt-get --fix-broken<br>aptitude install</td>
+<td>zypper verify </td>
+<td>revdep-rebuild
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 为包系统增加一个检查点以便未来回滚 </td>
+<td></td>
+<td>(unnecessary, done on every transaction)</td>
+<td></td>
+<td>n/a</td>
+<td>
+</td></tr>
+<tr>
+<td> 删除系统中的一个检查点 </td>
+<td>N/A</td>
+<td>N/A</td>
+<td></td>
+<td>n/a</td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 提供所有系统检查点的列表 </td>
+<td>N/A</td>
+<td>dnf history list</td>
+<td></td>
+<td>n/a </td>
+<td>
+</td></tr>
+<tr>
+<td> 将所有包滚回特定日期或检查点 </td>
+<td>N/A</td>
+<td>dnf history rollback</td>
+<td></td>
+<td>n/a </td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 撤销特定改动 </td>
+<td>N/A</td>
+<td>dnf history undo</td>
+<td></td>
+<td>n/a</td>
+<td></td>
+<td>
+</td></tr>
+<tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.96.87.E4.BB.B6.E5.92.8C.E6.9E.84.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85">使用软件包文件和构建软件包</span></h2>
+<table>
+<tbody><tr>
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SLES/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr>
+<tr>
+<td> Query a package supplied on the command line rather than an entry in the package management database</td>
+<td>pacman -Qp</td>
+<td>rpm -qp</td>
+<td>dpkg -I</td>
+<td></td>
+<td>
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> List the contents of a package file</td>
+<td>pacman -Qpl</td>
+<td>rpmls rpm -qpl</td>
+<td>dpkg -c</td>
+<td>rpm -qpl</td>
+<td>
+</td></tr>
+<tr>
+<td> Installs local package file, e.g. app.rpm and uses the installation sources to resolve dependencies </td>
+<td>pacman -U</td>
+<td>dnf install </td>
+<td>apt install</td>
+<td>zypper in</td>
+<td>emerge
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Updates package(s) with local packages and uses the installation sources to resolve dependencies </td>
+<td>pacman -U</td>
+<td>dnf upgrade </td>
+<td>debi</td>
+<td></td>
+<td>emerge</td>
+<td>
+</td></tr>
+<tr>
+<td> Add a local package to the local package cache mostly for debugging purposes. </td>
+<td>cp $filename /var/cache/pacman/pkg/</td>
+<td></td>
+<td>apt-cache add </td>
+<td>n/a</td>
+<td> cp $filename /usr/portage/distfiles
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> 解包 </td>
+<td>tar -Jxvf</td>
+<td>rpm2cpio | cpio -vid</td>
+<td>dpkg-deb -x</td>
+<td>rpm2cpio | cpio -vid</td>
+<td>tar -jxvf
+</td></tr>
+<tr>
+<td> 安装/移除包以适合构建依赖（使用源码包中的信息） </td>
+<td>automatic</td>
+<td>dnf builddep</td>
+<td>apt-get build-dep </td>
+<td>zypper si -d</td>
+<td>emerge -o
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Display the source package to the given package name(s) </td>
+<td></td>
+<td>dnf repoquery -s</td>
+<td>apt-cache showsrc </td>
+<td>n/a</td>
+<td>
+</td></tr>
+<tr>
+<td> Downloads the corresponding source package(s) to the given package name(s) </td>
+<td> Use <a href="https://wiki.archlinux.org/index.php/ABS" class="mw-redirect" title="ABS">ABS</a> &amp;&amp; makepkg -o </td>
+<td>dnf download --source</td>
+<td>apt-get source / debcheckout</td>
+<td>zypper source-install</td>
+<td>emerge --fetchonly
+</td></tr>
+<tr style="background:#e4e4e4">
+<td> Build a package</td>
+<td>makepkg -s</td>
+<td>rpmbuild -ba (normal)<br>mock (in chroot)</td>
+<td>debuild</td>
+<td>rpmbuild -ba; build; osc build </td>
+<td>ebuild; quickpkg
+</td></tr>
+<tr>
+<td> Check for possible packaging issues</td>
+<td>namcap</td>
+<td>rpmlint </td>
+<td>lintian</td>
+<td>rpmlint </td>
+<td>repoman
+</td></tr>
+<tr style="background:#e4e4e4">
+<td style="background:#f0f0f0;"><b><font color="#707070">Action</font></b>
+</td>
+<td style="background:#f0f0f0;"><b>Arch</b>
+</td>
+<td style="background:#f0f0f0;"><b>Red Hat/Fedora</b>
+</td>
+<td style="background:#f0f0f0;"><b>Debian/Ubuntu</b>
+</td>
+<td style="background:#f0f0f0;"><b>SUSE/openSUSE</b>
+</td>
+<td style="background:#f0f0f0;"><b>Gentoo</b>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id=".E5.8F.82.E9.98.85">参阅</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://dnf.readthedocs.org/en/latest/cli_vs_yum.html">Changes in DNF CLI compared to Yum</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20170528041702
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.017 seconds
+Real time usage: 0.017 seconds
+Preprocessor visited node count: 227/1000000
+Preprocessor generated node count: 723/1000000
+Post‐expand include size: 4694/2097152 bytes
+Template argument size: 2419/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.779      1 - -total
+ 39.56%    1.495      2 - Template:META_Box_Blue
+ 34.76%    1.313      3 - Template:META_Box
+ 28.29%    1.069      1 - Template:Note
+ 26.22%    0.991      1 - Template:Translateme_(简体中文)
+ 24.21%    0.915      1 - Template:TranslationStatus_(简体中文)
+ 18.63%    0.704      1 - Template:META_Message
+ 16.91%    0.639      1 - Template:Tip
+ 10.24%    0.387      1 - Template:META_Box_Green
+  7.01%    0.265      1 - Template:Pkg
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:13530-0!*!0!!en!5!* and timestamp 20170528041702 and revision id 477795
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;oldid=477795">https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_(简体中文)&amp;oldid=477795</a>"</div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.archlinux.org/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://wiki.archlinux.org/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" title="Category:简体中文">简体中文</a></li><li><a href="https://wiki.archlinux.org/index.php/Category:Package_management_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="Category:Package management (简体中文)">Package management (简体中文)</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.archlinux.org/index.php?title=Talk:Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [Alt+Shift+t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Pacman%2FRosetta+%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Pacman%2FRosetta+%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://wiki.archlinux.org/index.php/Main_page" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage-description"><a href="https://wiki.archlinux.org/index.php/Main_page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li>
+											<li id="n-categories"><a href="https://wiki.archlinux.org/index.php/Table_of_contents">Categories</a></li>
+											<li id="n-portal"><a href="https://wiki.archlinux.org/index.php/Getting_involved" title="Various ways Archers can contribute to the community">Getting involved</a></li>
+											<li id="n-currentevents"><a href="https://wiki.archlinux.org/index.php/ArchWiki:News" title="The latest lowdown on the wiki">Wiki news</a></li>
+											<li id="n-randompage"><a href="https://wiki.archlinux.org/index.php/Special:Random" title="Load a random page [Alt+Shift+x]" accesskey="x">Random page</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/index.php" id="searchform">
+					<input name="title" value="Special:Search" type="hidden">
+					<input name="search" placeholder="Search ArchWiki" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off" type="search">
+					<input name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton" type="submit">&nbsp;
+						<input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit">
+				</form>
+
+							</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-interaction" role="navigation">
+		<h3>interaction</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-help"><a href="https://wiki.archlinux.org/index.php/Category:Help" title="Wiki navigation, reading, and editing help">Help</a></li>
+											<li id="n-Contributing"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Contributing">Contributing</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li>
+											<li id="n-Recent-talks"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges?namespace=0&amp;invert=1" rel="nofollow">Recent talks</a></li>
+											<li id="n-newpages"><a href="https://wiki.archlinux.org/index.php/Special:NewPages">New pages</a></li>
+											<li id="n-Statistics"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Statistics">Statistics</a></li>
+											<li id="n-Reports"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Reports">Reports</a></li>
+											<li id="n-Requests"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests">Requests</a></li>
+									</ul>
+					</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.archlinux.org/index.php/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;printable=yes" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;oldid=477795" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;action=info" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+				<div id="p-lang" class="portlet" role="navigation">
+				<h3>In other languages</h3>
+
+				<div class="pBody">
+					<ul>
+													<li class="interlanguage-link interwiki-en"><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta" title="Pacman/Rosetta – English" hreflang="en" class="interlanguage-link-target" lang="en">English</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta_%28Espa%C3%B1ol%29" title="Pacman/Rosetta – español" hreflang="es" class="interlanguage-link-target" lang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="https://wiki.archlinuxjp.org/index.php/Pacman_%E6%AF%94%E8%BC%83%E8%A1%A8" title="Pacman 比較表 – 日本語" hreflang="ja" class="interlanguage-link-target" lang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta_%28%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8%29" title="Pacman/Rosetta – српски / srpski" hreflang="sr" class="interlanguage-link-target" lang="sr">Српски / srpski</a></li>
+											</ul>
+
+									</div>
+			</div>
+				</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<ul id="f-list">
+									<li id="lastmod"> This page was last modified on 20 May 2017, at 06:08.</li>
+									<li id="copyright">Content is available under <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+									<li id="privacy"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy" class="mw-redirect" title="ArchWiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="https://wiki.archlinux.org/index.php/ArchWiki:About" title="ArchWiki:About">About ArchWiki</a></li>
+									<li id="disclaimer"><a href="https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer" title="ArchWiki:General disclaimer">Disclaimers</a></li>
+									<li id="mobileview"><a href="https://wiki.archlinux.org/index.php?title=Pacman/Rosetta_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":35});});</script>
+
+<div style="display: none; font-size: 11.4667px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body><!-- Cached/compressed 20170528041702 --></html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://www.jianshu.com/p/bcbe916f97e1 -->
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript" src="./Vim入门基础 - 简书_files/1255494d3a"></script><script src="./Vim入门基础 - 简书_files/nr-998.min.js"></script><script src="./Vim入门基础 - 简书_files/push.js"></script><script async="" src="./Vim入门基础 - 简书_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":22,"applicationTime":107,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="description" content="图片来自：http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html公司新员工学习有用到，Vim官网的手册又太大而全，而网上各方资料要么不全面，要么不够基础。在网上搜集各方资料，按照自己的框架整理一份Vim...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb">
+  <meta property="qc:admins" content="104102651453316562112116375">
+  <meta property="qc:admins" content="11635613706305617">
+  <meta property="qc:admins" content="1163561616621163056375">
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4">
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI">
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/bcbe916f97e1">
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/203932">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="Vim入门基础" property="twitter:title">
+  <meta content="图片来自：http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html公司新员工学习有用到，Vim官网的手册又太大而全，而网上各方资料要么不全面，要么不够基础。在网上搜集各方资料，按照自己的框架整理一份Vim..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/bcbe916f97e1" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="Vim入门基础">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/bcbe916f97e1">
+  <meta property="og:description" content="图片来自：http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html公司新员工学习有用到，Vim官网的手册又太大而全，而网上各方...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/203932">
+  <meta property="al:ios:app_store_id" content="888237539">
+  <meta property="al:ios:app_name" content="简书">
+
+  <meta property="al:android:url" content="jianshu://notes/203932">
+  <meta property="al:android:package" content="com.jianshu.haruki">
+  <meta property="al:android:app_name" content="简书">
+  <!-- End -->
+
+  <title>Vim入门基础 - 简书</title>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="nQ7OXL+aiuPza0ZfWmU02CS8izbR6amVeAxAqJG7uE11giQNkK5Fe33Kadfotw0GyaE99/4wle0neapvbHyB7w==">
+  <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" media="all" href="./Vim入门基础 - 简书_files/web-e63a00a814a6730f89e5.css">
+  
+  <link rel="stylesheet" media="all" href="./Vim入门基础 - 简书_files/entry-e63a00a814a6730f89e5.css">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if IE 8]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/57.png" sizes="57x57">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/72.png" sizes="72x72">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/76.png" sizes="76x76">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/114.png" sizes="114x114">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/120.png" sizes="120x120">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/apple-touch-icons/152.png" sizes="152x152">
+</head>
+
+  <body lang="zh-CN" class="reader-black-font">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="http://www.jianshu.com/"><img src="./Vim入门基础 - 简书_files/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo"></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册 -->
+      <a class="btn sign-up" href="http://www.jianshu.com/sign_up">注册</a>
+      <a class="btn log-in" href="http://www.jianshu.com/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div class="style-mode" id="view-mode-ctrl"> <a class="style-mode-btn"><i class="iconfont ic-navigation-mode"></i></a> <div class="popover-modal" style="left: 0px; display: none;"> <div class="meta"> <i class="iconfont ic-navigation-night"></i><span>夜间模式</span> </div> <div class="switch day-night-group"> <a class="switch-btn">开</a> <a class="switch-btn active">关</a> </div> <hr> <div class="switch font-family-group"> <a class="switch-btn font-song">宋体</a> <a class="switch-btn font-hei active">黑体</a> </div> <div class="switch"> <a class="switch-btn active">简</a> <a class="switch-btn">繁</a> </div> </div> </div>
+    <div class="container">
+      <div class="row">
+        <ul class="nav navbar-nav">
+            <li class="">
+              <a href="http://www.jianshu.com/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+          <li class="">
+            <a class="app-download-btn" href="http://www.jianshu.com/apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+          </li>
+          <li class="search">
+            <form target="_blank" action="http://www.jianshu.com/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+              <input type="text" name="q" id="q" value="" placeholder="搜索" class="search-input">
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+              <!-- <div id="navbar-trending-search"></div> -->
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div class="post">
+    <div class="article">
+        <h1 class="title">Vim入门基础</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="http://www.jianshu.com/u/e5a7655ca554">
+            <img thumbnail="144x144" src="./Vim入门基础 - 简书_files/93c724141664" alt="93c724141664">
+</a>          <div class="info">
+            <span class="tag">作者</span>
+            <span class="name"><a href="http://www.jianshu.com/u/e5a7655ca554">甲鱼</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow" href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-follow"></i><span>关注</span> </a> 
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <span class="publish-time">2014.07.22 16:50</span>
+              <span class="wordage">字数 7237 </span>
+            <span class="views-count">阅读 29925</span><span class="comments-count">评论 22</span><span class="likes-count">喜欢 236</span></div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+        <!-- -->
+
+        <!-- 文章内容 -->
+        <div class="show-content">
+          <p><img src="./Vim入门基础 - 简书_files/14142737-eaf681b3f8d04c5085d0c6efdd85684f.jpg" alt=""><br>图片来自： <a href="http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html" target="_blank" rel="nofollow">http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html</a></p>
+<blockquote>
+<p>公司新员工学习有用到，Vim官网的手册又太大而全，而网上各方资料要么不全面，要么不够基础。在网上搜集各方资料，按照自己的框架整理一份Vim入门基础教程，分享出来。特点是偏向基础，但对入门者来说足够全面，而且结构框架清晰。<br>另外，参考资料众多，没有一一标出来，如果作者看到，请联系我确认一下是否参考了你的资料，我会在文中标注出来。</p>
+</blockquote>
+<h2>1. 简介</h2>
+<p>Vim（Vi[Improved]）编辑器是功能强大的跨平台文本文件编辑工具，继承自Unix系统的Vi编辑器，支持Linux/Mac OS X/Windows系统，利用它可以建立、修改文本文件。进入Vim编辑程序，可以在终端输入下面的命令：</p>
+<pre class="hljs gams"><code class="gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$vim</span> [filename]</span></code></pre>
+<p>其中<code>filename</code>是要编辑器的文件的路径名。如果文件不存在，它将为你建立一个新文件。Vim编辑程序有三种操作模式，分别称为 <strong>编辑模式</strong>、<strong>插入模式</strong> 和 <strong>命令模式</strong>，当运行Vim时，首先进入编辑模式。</p>
+<h2>2. 编辑模式</h2>
+<p>Vim编辑方式的主要用途是在被编辑的文件中移动光标的位置。一旦光标移到到所要的位置，就可以进行剪切和粘贴正文块，删除正文和插入新的正文。当完成所有的编辑工作后，需要保存编辑器结果，退出编辑程序回到终端，可以发出<code>ZZ</code>命令，连续按两次大写的<code>Z</code>键。</p>
+<h3>2.1 跳转</h3>
+<p>如果键盘上有上、下、左、右箭头的导航键，就由这些键来完成光标的移动。另外，可以用下面的键完成同样的 <strong>按字符移动</strong> 功能：</p>
+<pre class="hljs matlab"><code class="matlab">k                上移；
+<span class="hljs-built_in">j</span>                下移；
+h                左移；
+l                右移。</code></pre>
+<p>上面这４个键将光标位置每次移动一行或一个 <strong>字符</strong> 。Vim还提供稍大范围移动光标的命令：</p>
+<pre class="hljs stylus"><code class="stylus">ctrl+f        在文件中前移一页（相当于 page down）；
+ctrl+<span class="hljs-selector-tag">b</span>        在文件中后移一页（相当于 page up）；</code></pre>
+<p>更大范围的移动：</p>
+<pre class="hljs excel"><code class="excel">*          当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；
+#          当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；
+(/)        移动到 前/后 句 的开始；
+{/}        跳转到 当前/下一个 段落 的开始。
+g_         到本行最后一个不是 blank 字符的位置。
+fa         到下一个为 a 的字符处，你也可以fs到下一个为s的字符。
+<span class="hljs-built_in">t</span>,         到逗号前的第一个字符。逗号可以变成其它字符。
+<span class="hljs-number">3</span>fa        在当前行查找第三个出现的 a。
+F/<span class="hljs-built_in">T</span>        和 f 和 <span class="hljs-built_in">t</span> 一样，只不过是相反方向;
+gg         将光标定位到文件第一行起始位置；
+G          将光标定位到文件最后一行起始位置；
+NG或Ngg    将光标定位到第 <span class="hljs-built_in">N</span> 行的起始位置。</code></pre>
+<p>在屏幕中找到需要的 <strong>一页</strong> 时，可以用下面的命令快速移动光标：</p>
+<pre class="hljs nginx"><code class="nginx"><span class="hljs-attribute">H</span>                将光标移到屏幕上的起始行（或最上行）；
+M                将光标移到屏幕中间；
+L                将光标移到屏幕最后一行。</code></pre>
+<p>同样需要注意字母的大小写。<code>H</code> 和 <code>L</code> 命令还可以加数字。如 <code>2H</code> 表示将光标移到屏幕的第２行，<code>3L</code> 表示将光标移到屏幕的倒数第3行。<br>当将光标移到所要的行是，<strong>行内移动</strong> 光标可以用下面的命令来实现：</p>
+<pre class="hljs nginx"><code class="nginx"><span class="hljs-attribute">w</span>                右移光标到下一个字的开头；
+e                右移光标到一个字的末尾；
+b                左移光标到前一个字的开头；
+<span class="hljs-number">0</span>                数字０，左移光标到本行的开始；
+$                右移光标，到本行的末尾；<span class="hljs-regexp">
+^</span>                移动光标，到本行的第一个非空字符。</code></pre>
+<h3>2.2 搜索匹配</h3>
+<p>和许多先进的编辑器一样，Vim 提供了强大的字符串搜索功能。要查找文件中指定字或短语出现的位置，可以用Vim直接进行搜索，而不必以手工方式进行。搜索方法是：键入字符 <code>/</code> ，后面跟以要搜索的字符串，然后按回车键。编辑程序执行正向搜索（即朝文件末尾方向），并在找到指定字符串后，将光标停到该字符串的开头；键入 <code>n</code> 命令可以继续执行搜索，找出这一字符串下次出现的位置。用字符 <code>?</code> 取代 <code>/</code> ，可以实现反向搜索（朝文件开头方向）。例如：</p>
+<pre class="hljs armasm"><code class="armasm">/<span class="hljs-keyword">str1 </span>               正向搜索字符串 <span class="hljs-keyword">str1；
+</span>n                    继续搜索，找出 <span class="hljs-keyword">str1 </span>字符串下次出现的位置；
+N                    继续搜索，找出 <span class="hljs-keyword">str1 </span>字符串上一次出现的位置；
+?<span class="hljs-keyword">str2 </span>               反向搜索字符串 <span class="hljs-keyword">str2 </span>。</code></pre>
+<p>无论搜索方向如何，当到达文件末尾或开头时，搜索工作会循环到文件的另一端并继续执行。<br>Vim中执行搜索匹配最强大的地方是结合 <strong>正则表达式</strong> 来搜索，后续将会介绍。</p>
+<h3>2.3 替换和删除</h3>
+<p>Vim常规的删除命令是 <code>d</code>、 <code>x</code> (前者删除 <code>行</code> ，后者删除 <code>字符</code> ),结合Vim的其他特性可以实现基础的删除功能。将光标定位于文件内指定位置后，可以用其他字符来替换光标所指向的字符，或从当前光标位置删除一个或多个字符或一行、多行。例如：</p>
+<pre class="hljs lsl"><code class="lsl">rc                 用 c 替换光标所指向的当前字符；
+nrc                用 c 替换光标所指向的前 n 个字符；
+<span class="hljs-number">5</span>rA                用 A 替换光标所指向的前 <span class="hljs-number">5</span> 个字符；
+x                  删除光标所指向的当前字符；
+nx                 删除光标所指向的前 n 个字符；
+<span class="hljs-number">3</span>x                 删除光标所指向的前 <span class="hljs-number">3</span> 个字符；
+dw                 删除光标右侧的字；
+ndw                删除光标右侧的 n 个字；
+<span class="hljs-number">3</span>dw                删除光标右侧的 <span class="hljs-number">3</span> 个字；
+db                 删除光标左侧的字；
+ndb                删除光标左侧的 n 个字；
+<span class="hljs-number">5</span>db                删除光标左侧的 <span class="hljs-number">5</span> 个字；
+dd                 删除光标所在行，并去除空隙；
+ndd                删除（剪切） n 行内容，并去除空隙；
+<span class="hljs-number">3</span>dd                删除（剪切） <span class="hljs-number">3</span> 行内容，并去除空隙；</code></pre>
+<p>其他常用的删除命令有：</p>
+<pre class="hljs elixir"><code class="elixir">d<span class="hljs-variable">$ </span>               从当前光标起删除字符直到行的结束；
+d<span class="hljs-number">0</span>                从当前光标起删除字符直到行的开始；
+J                 删除本行的回车符（CR），并和下一行合并。</code></pre>
+<p>Vim常规的替换命令有 <code>c</code> 和 <code>s</code> ，结合Vim的其他特性可以实现基础的替换功能，不过替换命令执行以后，通常会由 <strong>编辑模式</strong> 进入 <strong>插入模式</strong> ：</p>
+<pre class="hljs excel"><code class="excel">s                用输入的正文替换光标所指向的字符；
+S                删除当前行，并进入编辑模式；
+ns               用输入的正文替换光标右侧 <span class="hljs-built_in">n</span> 个字符；
+nS               删除当前行在内的 <span class="hljs-built_in">n</span> 行，并进入编辑模式；
+cw               用输入的正文替换光标右侧的字；
+cW               用输入的正文替换从光标到行尾的所有字符（同 c$ )；
+ncw              用输入的正文替换光标右侧的 <span class="hljs-built_in">n</span> 个字；
+cb               用输入的正文替换光标左侧的字；
+ncb              用输入的正文替换光标左侧的 <span class="hljs-built_in">n</span> 个字；
+cd               用输入的正文替换光标的所在行；
+ncd              用输入的正文替换光标下面的 <span class="hljs-built_in">n</span> 行；
+c$               用输入的正文替换从光标开始到本行末尾的所有字符；
+<span class="hljs-symbol">c0</span>               用输入的正文替换从本行开头到光标的所有字符。</code></pre>
+<h3>2.4 复制粘贴</h3>
+<p>从正文中删除的内容（如字符、字或行）并没有真正丢失，而是被剪切并复制到了一个内存缓冲区中。用户可将其粘贴到正文中的指定位置。完成这一操作的命令是：</p>
+<pre class="hljs stylus"><code class="stylus"><span class="hljs-selector-tag">p</span>               小写字母 p，将缓冲区的内容粘贴到光标的后面；
+P               大写字母 P，将缓冲区的内容粘贴到光标的前面。</code></pre>
+<p>如果缓冲区的内容是字符或字，直接粘贴在光标的前面或后面；如果缓冲区的内容为整行正文，执行上述粘贴命令将会粘贴在当前光标所在行的上一行或下一行。<br>注意上述两个命令中字母的大小写。Vim 编辑器经常以一对大、小写字母（如 <code>p</code> 和 <code>P</code>）来提供一对相似的功能。通常，小写命令在光标的后面进行操作，大写命令在光标的前面进行操作。</p>
+<p>有时需要复制一段正文到新位置，同时保留原有位置的内容。这种情况下，首先应当把指定内容复制（而不是剪切）到内存缓冲区。完成这一操作的命令是：</p>
+<pre class="hljs lsl"><code class="lsl">yy              复制当前行到内存缓冲区；
+nyy             复制 n 行内容到内存缓冲区；
+<span class="hljs-number">5</span>yy             复制 <span class="hljs-number">5</span> 行内容到内存缓冲区；
+“+y             复制 <span class="hljs-number">1</span> 行到操作系统的粘贴板；
+“+nyy           复制 n 行到操作系统的粘贴板。</code></pre>
+<h3>2.5 撤销和重复</h3>
+<p>在编辑文档的过程中，为消除某个错误的编辑命令造成的后果，可以用撤消命令。另外，如果用户希望在新的光标位置重复前面执行过的编辑命令，可用重复命令。</p>
+<pre class="hljs asciidoc"><code class="asciidoc">u               撤消前一条命令的结果；
+<span class="hljs-bullet">.               </span>重复最后一条修改正文的命令。</code></pre>
+<h2>3. 插入模式</h2>
+<h3>3.1 进入插入模式</h3>
+<p>在编辑模式下正确定位光标之后，可用以下命令切换到插入模式：</p>
+<pre class="hljs stylus"><code class="stylus"><span class="hljs-selector-tag">i</span>            在光标左侧插入正文
+<span class="hljs-selector-tag">a</span>            在光标右侧插入正文
+o            在光标所在行的下一行增添新行
+O            在光标所在行的上一行增添新行
+I            在光标所在行的开头插入
+A            在光标所在行的末尾插入</code></pre>
+<h3>3.2 退出插入模式</h3>
+<p>退出插入模式的方法是，按 <code>ESC</code> 键或组合键 <code>Ctrl+[</code> ，退出插入模式之后，将会进入编辑模式 。</p>
+<h2>4. 命令模式</h2>
+<p>在Vim的命令模式下，可以使用复杂的命令。在编辑模式下键入 <code>:</code> ，光标就跳到屏幕最后一行，并在那里显示冒号，此时已进入命令模式。命令模式又称 <strong>末行模式</strong> ，用户输入的内容均显示在屏幕的最后一行，按回车键，Vim 执行命令。</p>
+<h3>4.1 打开、保存、退出</h3>
+<p>在已经启动的Vim中打开一个文件需要用 <strong><code>:e</code></strong> 命令：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:e</span> path_to_file/filename</code></pre>
+<p>保存当前编辑的文件需要用 <strong><code>:w</code></strong> 命令（单词 <code>write</code> 的缩写）：</p>
+<pre class="hljs clojure"><code class="clojure"><span class="hljs-symbol">:w</span></code></pre>
+<p>将当前文件另存为 <code>file_temp</code> 则：</p>
+<pre class="hljs css"><code class="css"><span class="hljs-selector-pseudo">:w</span> <span class="hljs-selector-tag">file_temp</span></code></pre>
+<p>在编辑模式下可以用 <code>ZZ</code> 命令退出Vim编辑程序，该命令保存对正文所作的修改，覆盖原始文件。如果只需要退出编辑程序，而不打算保存编辑的内容，可用下面的命令：</p>
+<pre class="hljs stylus"><code class="stylus">: <span class="hljs-selector-tag">q</span>                在未作修改的情况下退出；
+: q!               放弃所有修改，退出编辑程序。</code></pre>
+<p>保存并退出则可以讲两条命令结合起来使用（注意命令顺序，先保存，后退出）：</p>
+<pre class="hljs clojure"><code class="clojure"><span class="hljs-symbol">:wq</span></code></pre>
+<h3>4.2 行号与文件</h3>
+<p>编辑中的每一行正文都有自己的行号，用下列命令可以移动光标到指定行（效果与 <strong>编辑模式</strong> 下的 <code>ngg</code> 或 <code>nG</code> 相同）：</p>
+<pre class="hljs excel"><code class="excel"><span class="hljs-symbol">:</span> <span class="hljs-built_in">n</span>             将光标移到第 <span class="hljs-built_in">n</span> 行</code></pre>
+<p>命令模式下，可以规定命令操作的行号范围。数值用来指定绝对行号；字符“.”表示光标所在行的行号；字符符“$”表示正文最后一行的行号；简单的表达式，例如“.+5”表示当前行往下的第 5 行。例如：</p>
+<pre class="hljs gams"><code class="gams">:<span class="hljs-number">345</span>                  将光标移到第 <span class="hljs-number">345</span> 行
+:<span class="hljs-number">345</span>w <span class="hljs-keyword">file</span>            将第 <span class="hljs-number">345</span> 行写入 <span class="hljs-keyword">file</span> 文件
+:<span class="hljs-number">3</span>,<span class="hljs-number">5</span>w <span class="hljs-keyword">file</span>            将第 <span class="hljs-number">3</span> 行至第 <span class="hljs-number">5</span> 行写入 <span class="hljs-keyword">file</span> 文件
+:<span class="hljs-number">1</span>,.w <span class="hljs-keyword">file</span>            将第 <span class="hljs-number">1</span> 行至当前行写入 <span class="hljs-keyword">file</span> 文件
+:.,<span class="hljs-symbol">$</span>w <span class="hljs-keyword">file</span>            将当前行至最后一行写入 <span class="hljs-keyword">file</span> 文件
+:.,.+<span class="hljs-number">5</span>w <span class="hljs-keyword">file</span>          从当前行开始将 <span class="hljs-number">6</span> 行内容写入 <span class="hljs-keyword">file</span> 文件
+:<span class="hljs-number">1</span>,<span class="hljs-symbol">$</span>w <span class="hljs-keyword">file</span>            将所有内容写入 <span class="hljs-keyword">file</span> 文件，相当于 :w <span class="hljs-keyword">file</span> 命令</code></pre>
+<p>在命令模式下，允许从文件中读取正文，或将正文写入文件。例如：</p>
+<pre class="hljs livecodeserver"><code class="livecodeserver">:w                 将编辑的内容写入原始文件，用来保存编辑的中间结果
+:wq                将编辑的内容写入原始文件并退出编辑程序（相当于 ZZ 命令）
+:w <span class="hljs-built_in">file</span>            将编辑的内容写入 <span class="hljs-built_in">file</span> 文件，保持原有文件的内容不变
+:<span class="hljs-keyword">a</span>,bw <span class="hljs-built_in">file</span>         将第 <span class="hljs-keyword">a</span> 行至第 b 行的内容写入 <span class="hljs-built_in">file</span> 文件
+:r <span class="hljs-built_in">file</span>            读取 <span class="hljs-built_in">file</span> 文件的内容，插入当前光标所在行的后面
+:e <span class="hljs-built_in">file</span>            编辑新文件 <span class="hljs-built_in">file</span> 代替原有内容
+:f <span class="hljs-built_in">file</span>            将当前文件重命名为 <span class="hljs-built_in">file</span>
+:f                 打印当前文件名称和状态，如文件的行数、光标所在的行号等</code></pre>
+<h3>4.3 字符串搜索</h3>
+<p>在 <strong>编辑模式</strong> 讲过字符串的搜索，此处的 <strong>命令模式</strong> 也可以进行字符串搜索，给出一个字符串，可以通过搜索该字符串到达指定行。如果希望进行正向搜索，将待搜索的字符串置于两个 <code>/</code> 之间；如果希望反向搜索，则将字符串放在两个 <code>?</code> 之间。例如：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:/str/</span>                  正向搜索，将光标移到下一个包含字符串 str 的行
+<span class="hljs-symbol">:</span>?str?                  反向搜索，将光标移到上一个包含字符串 str 的行
+<span class="hljs-symbol">:/str/w</span> file            正向搜索，并将第一个包含字符串 str 的行写入 file 文件
+<span class="hljs-symbol">:/str1/</span>,<span class="hljs-regexp">/str2/w</span> file    正向搜索，并将包含字符串 str1 的行至包含字符串 str2 的行写</code></pre>
+<h3>4.4 Vim中的正则表达式</h3>
+<p>当给Vim指定搜索字符串时，可以包含具有特殊含义的字符。包含这些特殊字符的搜索字符串称为正则表达式（Regular Expressions）。例如，要搜索一行正文，这行正文的开头包含 <code>struct</code> 字。下面的命令做不到这一点：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:/struct/</span></code></pre>
+<p>因为它只找出在行中任意位置包含 <code>struct</code>的第一行，并不一定在行的开始包含 <code>struct</code> 。解决问题的办法是在搜索字符串前面加上特殊字符^：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:/^struct/</span></code></pre>
+<p><code>^</code> 字符比较每行开头的字符串。所以上面的命令表示：找出以字符串 <code>struct</code> 开头的行。<br>也可以用类似办法在搜索字符串后面加上表示行的末尾的特殊字符 <code>$</code> 来找出位于行末尾的字：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:/^struct/</span></code></pre>
+<p>下表给出大多数特殊字符和它们的含义：</p>
+<pre class="hljs armasm"><code class="armasm">^                放在字符串前面，匹配行首的字；
+$                放在字符串后面，匹配行尾的字；
+\&lt;               匹配一个字的字头；
+\&gt;               匹配一个字的字尾；
+.                匹配任何单个正文字符；
+[<span class="hljs-keyword">str] </span>           匹配 <span class="hljs-keyword">str </span>中的任何单个字符；
+[^<span class="hljs-keyword">str] </span>          匹配任何不在 <span class="hljs-keyword">str </span>中的单个字符；
+[a-<span class="hljs-keyword">b] </span>           匹配 a 到 <span class="hljs-keyword">b </span>之间的任一字符；
+*                匹配前一个字符的 <span class="hljs-number">0</span> 次或多次出现；
+\                转义后面的字符。</code></pre>
+<p>简单介绍这么多，正则表达式知识可以参考<br>《正则表达式30分钟入门》:<a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="nofollow"></a><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="nofollow">http://deerchao.net/tutorials/regex/regex.htm</a><br>另外，进阶的Vim正则表达式还有对Magic 模式的介绍，可以参考<br>《Vim正则表达式详解》:<br><a href="http://blog.csdn.net/salc3k/article/details/8222397" target="_blank" rel="nofollow"></a><a href="http://blog.csdn.net/salc3k/article/details/8222397" target="_blank" rel="nofollow">http://blog.csdn.net/salc3k/article/details/8222397</a></p>
+<h3>4.5 正文替换</h3>
+<p>利用 <code>:s</code> 命令可以实现字符串的替换。具体的用法包括：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:%s/str1/str2/</span>        用字符串 str2 替换行中首次出现的字符串 str1
+<span class="hljs-symbol">:s/str1/str2/g</span>        用字符串 str2 替换行中所有出现的字符串 str1
+<span class="hljs-symbol">:</span>.,<span class="hljs-variable">$ </span>s/str1/str2/g    用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1
+<span class="hljs-symbol">:</span><span class="hljs-number">1</span>,<span class="hljs-variable">$ </span>s/str1/str2/g    用字符串 str2 替换正文中所有出现的字符串 str1
+<span class="hljs-symbol">:g/str1/s//str2/g</span>     功能同上
+<span class="hljs-symbol">:m</span>,ns/str1/str2/g     将从m行到n行的str1替换成str2</code></pre>
+<p>从上述替换命令可以看到：<br>1.     <code>g</code> 放在命令末尾，表示对搜索字符串的每次出现进行替换,不止匹配每行中的第一次出现；不加 <code>g</code>，表示只对搜索字符串的首次出现进行替换；<code>g</code> 放在命令开头，表示对正文中所有包含搜索字符串的行进行替换操作;<br>2.     <code>s</code> 表示后面跟着一串替换的命令；<br>3.     <code>%</code> 表示替换范围是所有行，即全文。</p>
+<p>另外一个实用的命令，在Vim中统计当前文件中字符串 <code>str1</code> 出现的次数，可用替换命令的变形：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:%s/str1/&amp;/gn</span></code></pre>
+<h3>4.6 删除正文</h3>
+<p>在命令模式下，同样可以删除正文中的内容。例如：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:d</span>                              删除光标所在行
+<span class="hljs-symbol">:</span><span class="hljs-number">3</span>d                             删除 <span class="hljs-number">3</span> 行
+<span class="hljs-symbol">:</span>.,<span class="hljs-variable">$d</span>                           删除当前行至正文的末尾
+<span class="hljs-symbol">:/str1/</span>,<span class="hljs-regexp">/str2/d</span>                 删除从字符串 str1 到 str2 的所有行
+<span class="hljs-symbol">:g/^</span>\(.*\)<span class="hljs-variable">$\</span>n\<span class="hljs-number">1</span><span class="hljs-variable">$/</span>d              删除连续相同的行，保留最后一行
+<span class="hljs-symbol">:g/</span>\%(^\<span class="hljs-number">1</span><span class="hljs-variable">$\</span>n\)\@&lt;=\(.*\)<span class="hljs-variable">$/</span>d     删除连续相同的行，保留最开始一行
+<span class="hljs-symbol">:g/^</span>\s*<span class="hljs-variable">$\</span>n\s*<span class="hljs-variable">$/</span>d                删除连续多个空行，只保留一行空行
+<span class="hljs-symbol">:</span><span class="hljs-number">5</span>,<span class="hljs-number">20</span>s/^<span class="hljs-comment">#//g                    删除5到20行开头的 # 注释</span></code></pre>
+<p>总之，Vim的初级删除命令是用 <code>d</code> ，高级删除命令可以用 <strong>正则替换</strong> 的方式执行。</p>
+<h3>4.7 恢复文件</h3>
+<p>Vim 在编辑某个文件时，会另外生成一个临时文件，这个文件的名称通常以 <code>.</code> 开头，并以 <code>.swp</code> 结尾。Vim 在正常退出时，该文件被删除，若意外退出，而没有保存文件的最新修改内容，则可以使用恢复命令 <code>:recover</code> 来恢复文件，也可以在启动Vim时用 <code>-r</code> 选项。</p>
+<h3>4.8 选项设置</h3>
+<p>为控制不同的编辑功能，Vim 提供了很多内部选项。利用 <code>:set</code> 命令可以设置选项。基本语法为：</p>
+<pre class="hljs cmake"><code class="cmake">:<span class="hljs-keyword">set</span> <span class="hljs-keyword">option</span>         设置选项 <span class="hljs-keyword">option</span></code></pre>
+<p>常见的功能选项包括：</p>
+<pre class="hljs excel"><code class="excel">autoindent        设置该选项，则正文自动缩进
+ignorecase        设置该选项，则忽略规则表达式中大小写字母的区别
+number            设置该选项，则显示正文行号
+ruler             设置该选项，则在屏幕底部显示光标所在行、列的位置
+tabstop           设置按 Tab 键跳过的空格数。例如 <span class="hljs-symbol">:se</span><span class="hljs-built_in">t</span> tabstop=<span class="hljs-built_in">n</span>，<span class="hljs-built_in">n</span> 默认值为 <span class="hljs-number">8</span>
+mk                将选项保存在当前目录的 .exrc 文件中</code></pre>
+<h3>4.9 Shell切换</h3>
+<p>当处于编辑的对话过程中时，可能需要执行一些Linux命令。如果需要保存当前的结果，退出编辑程序，再执行所需的Linux命令，然后再回头继续编辑过程，就显得十分累赘。如果能在编辑的环境中运行Linux命令就要省事得多。在Vim中，可以用下面的命令来做到这一点：</p>
+<pre class="hljs mipsasm"><code class="mipsasm">:!<span class="hljs-keyword">shell_command </span>  执行完 <span class="hljs-keyword">shell_command </span>后回到Vim</code></pre>
+<p>这称为Shell切换。它允许执行任何可以在标准的Shell提示符下执行的命令。当这条命令执行完毕，控制返回给编辑程序。又可以继续编辑对话过程。</p>
+<h3>4.10 分屏与标签页</h3>
+<h4>分屏</h4>
+<p>普通的Vim模式，打开一个Vim程序只能查看一个文件，如果想同时查看多个文件，就需要用到Vim分屏与标签页功能。<br>Vim的分屏，主要有两种方式：上下分屏（水平分屏）和左右分屏（垂直分屏），在命令模式分别敲入以下命令即可：</p>
+<pre class="hljs asciidoc"><code class="asciidoc"><span class="hljs-meta">:split（可用缩写 :sp）</span>            上下分屏；
+<span class="hljs-meta">:vsplit（可用缩写 :vsp）</span>          左右分屏。</code></pre>
+<p>另外，也可以在终端里启动vim时就开启分屏操作：</p>
+<pre class="hljs gams"><code class="gams"><span class="hljs-function"><span class="hljs-title">vim</span></span> -On file1 file2...   打开 file1 和 file2 ，垂直分屏
+<span class="hljs-function"><span class="hljs-title">vim</span></span> -on file1 file2...   打开 file1 和 file2 ，水平分屏</code></pre>
+<p>理论上，一个Vim窗口，可以分为多个Vim屏幕，切换屏幕需要用键盘快捷键，命令分别有：</p>
+<pre class="hljs matlab"><code class="matlab">Ctrl+w+h            切换到当前分屏的左边一屏；
+Ctrl+w+l            切换到当前分屏的右边一屏；
+Ctrl+w+<span class="hljs-built_in">j</span>            切换到当前分屏的下方一屏；
+Ctrl+w+k            切换到当前分屏的上方一屏。</code></pre>
+<p>即键盘上的<code>h,j,k,l</code> 四个Vim专用方向键，配合<code>Ctrl</code>键和<code>w</code>键（<code>window</code>的缩写），就能跳转到目标分屏。另外，也可以直接按 <code>Ctrl+w+w</code> 来跳转分屏，不过跳转方向则是在当前Vim窗口所有分屏中，按照<code>逆时针</code>方向跳转。<br>下面是改变尺寸的一些操作，主要是高度，对于宽度你可以使用 <code>[Ctrl+W &lt;]</code> 或是 <code>[Ctrl+W &gt;]</code> ，但这可能需要最新的版本才支持。</p>
+<pre class="hljs tp"><code class="tp">Ctrl+<span class="hljs-keyword">W</span> =            让所有的屏都有一样的高度；
+Ctrl+<span class="hljs-keyword">W</span> +            增加高度；
+Ctrl+<span class="hljs-keyword">W</span> -            减少高度。</code></pre>
+<h4>标签页</h4>
+<p>Vim的标签（Tab）页，类似浏览器的标签页，一个标签页打开一个Vim的窗口，一个Vim的窗口可以支持N个分屏。<br>在Vim中新建一个标签的命令是：</p>
+<pre class="hljs clojure"><code class="clojure"><span class="hljs-symbol">:tabnew</span></code></pre>
+<p>如果要在新建标签页的同时打开一个文件，则可以在命令后面直接附带文件路径：</p>
+<pre class="hljs css"><code class="css"><span class="hljs-selector-pseudo">:tabnew</span> <span class="hljs-selector-tag">filename</span></code></pre>
+<p>Vim中的每个标签页有一个唯一的数字序号，第一个标签页的序号是<code>0</code>，从左向右依次加一。关于标签页有一系列操作命令，简介如下：</p>
+<pre class="hljs vim"><code class="vim">:<span class="hljs-keyword">tN</span>[ext]                跳转到上一个匹配的标签
+:<span class="hljs-keyword">tabN</span>[ext]              跳到上一个标签页
+:<span class="hljs-keyword">tabc</span>[lose]             关闭当前标签页
+:<span class="hljs-keyword">tabdo</span>                  为每个标签页执行命令
+:<span class="hljs-keyword">tabe</span>[dit]              在新标签页里编辑文件
+:<span class="hljs-keyword">tabf</span>[ind]              寻找 <span class="hljs-string">'path'</span> 里的文件，在新标签页里编辑之
+:<span class="hljs-keyword">tabfir</span>[<span class="hljs-keyword">st</span>]             转到第一个标签页
+:<span class="hljs-keyword">tabl</span>[ast]              转到最后一个标签页
+:<span class="hljs-keyword">tabm</span>[ove]  <span class="hljs-keyword">N</span>           把标签页移到序号为<span class="hljs-keyword">N</span>位置
+:<span class="hljs-keyword">tabnew</span> [filename]      在新标签页里编辑文件
+:<span class="hljs-keyword">tabn</span>[ext]              转到下一个标签页
+:<span class="hljs-keyword">tabo</span>[nly]              关闭所有除了当前标签页以外的所有标签页
+:<span class="hljs-keyword">tabp</span>[revious]          转到前一个标签页
+:<span class="hljs-keyword">tabr</span>[ewind]            转到第一个标签页</code></pre>
+<h3>4.11 与外部工具集成</h3>
+<p>Vim可以与许多外部程序集成，功能十分强大，比如 <code>diff</code> , <code>ctags</code> , <code>sort</code> , <code>xxd</code> 等等，下面选取几个简单介绍一下。</p>
+<h4>diff</h4>
+<p>Linux命令 <code>diff</code> 用来对比两个文件的内容，不过对比结果显示在终端里，可读性比较差。结合Vim，在终端里可以直接输入命令 <code>vimdiff</code>，后面跟两个文件名作为参数：</p>
+<pre class="hljs nginx"><code class="nginx"><span class="hljs-attribute">vimdiff</span> file1 file2</code></pre>
+<p>即可在Vim里分屏显示两个文件内容的对比结果，对文件内容差异部分进行高亮标记，还可以同步滚动两个文件内容，更可以实时修改文件内容，方便程度和用户体验大大提高。</p>
+<pre class="hljs stylus"><code class="stylus">vimdiff <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span> <span class="hljs-selector-tag">b</span>.txt</code></pre>
+<p>如果直接给 <code>-d</code> 选项是一样的 </p>
+<pre class="hljs stylus"><code class="stylus">vim -d <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span> <span class="hljs-selector-tag">b</span>.txt</code></pre>
+<p>除了在终端里开启vimdiff 功能，也可以在打开Vim后，在Vim的命令模式输入相关命令来开启 <code>vimdiff</code> 功能：</p>
+<pre class="hljs css"><code class="css"><span class="hljs-selector-pseudo">:diffsplit</span> <span class="hljs-selector-tag">abc</span><span class="hljs-selector-class">.txt</span></code></pre>
+<p>如果你现在已经开启了一个文件，想Vim帮你区分你的文件跟 <code>abc.txt</code> 有什么区别，可以在Vim中用 <code>diffsplit</code> 的方式打开第二个文件，这个时 候Vim会用 <code>split</code>（分<strong>上下</strong>两屏）的方式开启第二个文件，并且通过颜色，<code>fold</code>来显示两个文件的区别<br>这样Vim就会用颜色帮你区分开2个文件的区别。如果文件比较大（源码）重复的部分会帮你折叠起来。</p>
+<pre class="hljs css"><code class="css"><span class="hljs-selector-pseudo">:diffpatch</span> <span class="hljs-selector-tag">filename</span></code></pre>
+<p>通过 <code>:diffpatch</code> 你的patch的文件名，就可以以当前文件加上你的patch来显示。vim会split一个新的屏，显示patch后的信息并且用颜色标明区别。<br>如果不喜欢上下对比，喜欢左右（比较符合视觉）可以在前面加 <code>vert</code> ，例如：</p>
+<pre class="hljs vim"><code class="vim">:<span class="hljs-keyword">vert</span> <span class="hljs-keyword">diffsplit</span> <span class="hljs-keyword">abc</span>.txt
+:<span class="hljs-keyword">vert</span> <span class="hljs-keyword">diffpatch</span> <span class="hljs-keyword">abc</span>.txt</code></pre>
+<p>看完diff，用 <code>:only</code> 回到原本编辑的文件，觉得diff的讨厌颜色还是在哪里，只要用 <code>:diffoff</code> 关闭就好了。<br>还有个常用的diff中的就是 <code>:diffu</code> ,这个是 <code>:diffupdate</code> 的简写，更新的时候用。<br>Vim的<code>diff</code>功能显示效果如下所示：<br><img src="./Vim入门基础 - 简书_files/屏幕快照-2014-05-28-下午9.26.59.png" alt=""></p>
+<blockquote>
+<p>图片来自 <a href="http://blog.mc-zone.me/article/285" target="_blank" rel="nofollow">http://blog.mc-zone.me/article/285</a> </p>
+</blockquote>
+<h4>sort</h4>
+<p>Linux命令 <code>sort</code> 可以对文本内容进行按行中的字符比较、排序，但在终端里使用 <code>sort</code> 命令处理文件，并不能实时查看文件内容。具体用法请自查手册。</p>
+<h4>xxd</h4>
+<p><code>vim+xxd</code> 是Linux下最常用的二进制文本编辑工具，<code>xxd</code>其实是Vim外部的一个转换程序，随Vim一起发布，在Vim里调用它来编辑二进制文本非常方便。<br>首先以二进制模式在终端里打开一个文件：</p>
+<pre class="hljs stylus"><code class="stylus">vim -<span class="hljs-selector-tag">b</span> filename</code></pre>
+<p>Vim 的 <code>-b</code> 选项是告诉 Vim 打开的是一个二进制文件，不指定的话，会在后面加上 <code>0x0a</code> ，即一个换行符。<br>然后在Vim的命令模式下键入：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:%</span>!xxd</code></pre>
+<p>即可看到二进制模式显示出来的文本，看起来像这样：</p>
+<pre class="hljs maxima"><code class="maxima"> <span class="hljs-number">0000000</span>: 1f8b <span class="hljs-number">0808</span> 39d7 173b <span class="hljs-number">0203</span> <span class="hljs-number">7474</span> <span class="hljs-number">002b</span> <span class="hljs-number">4e49</span>  ....<span class="hljs-number">9</span>..;..tt.+NI 
+ <span class="hljs-number">0000010</span>: 4b2c <span class="hljs-number">8660</span> eb9c ecac c462 eb94 345e <span class="hljs-number">2e30</span>  K,......b..<span class="hljs-number">4</span>^.<span class="hljs-number">0</span> 
+ <span class="hljs-number">0000020</span>: 373b <span class="hljs-number">2731</span> <span class="hljs-number">0b22</span> <span class="hljs-number">0ca6</span> c1a2 d669 <span class="hljs-number">1035</span> 39d9  <span class="hljs-number">7</span>;'<span class="hljs-number">1</span>.<span class="hljs-string">".....i.59</span></code></pre>
+<p>然后就可以在二进制模式下编辑该文件，编辑后保存，然后用下面命令从二进制模式转换到普通模式：</p>
+<pre class="hljs elixir"><code class="elixir"><span class="hljs-symbol">:%</span>!xxd -r</code></pre>
+<p>另外，也可以调整二进制的显示模式，默认是 <strong>2</strong> 个字节为一组，可以通过 <code>g</code> 参数调整每组字节数：</p>
+<pre class="hljs gcode"><code class="gcode">:<span class="hljs-meta">%</span>!xxd -g <span class="hljs-number">1</span>         表示每<span class="hljs-number">1</span>个字节为<span class="hljs-number">1</span>组 
+:<span class="hljs-meta">%</span>!xxd -g <span class="hljs-number">2</span>         表示每<span class="hljs-number">2</span>个字节为<span class="hljs-number">1</span>组<span class="hljs-comment">(默认)</span> 
+:<span class="hljs-meta">%</span>!xxd -g <span class="hljs-number">4</span>         表示每<span class="hljs-number">4</span>个字节为<span class="hljs-number">1</span>组</code></pre>
+<h2>5. Vim配置</h2>
+<p>最初安装的Vim功能、特性支持比较少，用起来比较费劲，想要稍微“好用”一点，需做一些初步的配置。Vim的配置主要分为Vim本身特性的配置和外部插件的配置两部分。<br>Vim的配置是通常是存放在用户主目录的 <code>.vimrc</code> 的隐藏文件中的。就Vim本身特性来说，基础的配置有编程语言语法高亮、缩进设置、行号显示、搜索高亮、TAB键设置、字体设置、Vim主题设置等等，稍微高级一些的有编程语言缩进、自动补全设置等，具体配置项可以自行查资料，全面详细的配置项介绍可以参考：<br>《Vim Options》：<br><a href="http://vimcdoc.sourceforge.net/doc/options.html#%27completeopt%27" target="_blank" rel="nofollow"></a><a href="http://vimcdoc.sourceforge.net/doc/options.html#%27completeopt%27" target="_blank" rel="nofollow">http://vimcdoc.sourceforge.net/doc/options.html#%27completeopt%27</a></p>
+<h2>6. Vim插件</h2>
+<p>Vim“编辑器之神”的称号并不是浪得虚名，然而，这个荣誉的背后，或许近半的功劳要归功于强大的插件支持特性，以及社区开发的各种各样功能强大的插件。</p>
+<p>平时开发人员常用插件主要是目录（文件）查看和管理、编程语言缩进与自动补全、编程语言Docs支持、函数跳转、项目管理等等，简单配置可以参考下面：</p>
+<p>《Vim插件简单介绍》：<br><a href="http://blog.segmentfault.com/xuelang/1190000000630547" target="_blank" rel="nofollow"></a><a href="http://blog.segmentfault.com/xuelang/1190000000630547" target="_blank" rel="nofollow">http://blog.segmentfault.com/xuelang/1190000000630547</a></p>
+<p>《手把手教你把Vim改装成一个IDE编程环境(图文)》：<br><a href="http://blog.csdn.net/wooin/article/details/1858917" target="_blank" rel="nofollow"></a><a href="http://blog.csdn.net/wooin/article/details/1858917" target="_blank" rel="nofollow">http://blog.csdn.net/wooin/article/details/1858917</a></p>
+<p>《将Vim改造为强大的IDE》：<br><a href="http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html" target="_blank" rel="nofollow"></a><a href="http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html" target="_blank" rel="nofollow">http://www.cnblogs.com/zhangsf/archive/2013/06/13/3134409.html</a></p>
+<p>当然，这些插件都是拜Vim本身的插件支持特性所赐。Vim为了支持丰富的第三方插件，自身定义了一套简单的脚本开发语言，供程序员自行开发自己所需要的插件，插件开发介绍可以参考：</p>
+<p>《Writing Vim Plugins》：<br><a href="http://stevelosh.com/blog/2011/09/writing-vim-plugins/" target="_blank" rel="nofollow"></a><a href="http://stevelosh.com/blog/2011/09/writing-vim-plugins/" target="_blank" rel="nofollow">http://stevelosh.com/blog/2011/09/writing-vim-plugins/</a> </p>
+<h2>7. Vim完整文档</h2>
+<ol>
+<li>Vim官方文档：<a href="http://vimdoc.sourceforge.net/" target="_blank" rel="nofollow"></a><a href="http://vimdoc.sourceforge.net/" target="_blank" rel="nofollow">http://vimdoc.sourceforge.net/</a>
+</li>
+<li>Vim中文用户手册7_3.pdf ：<a href="http://pan.baidu.com/s/1jGzbTBo" target="_blank" rel="nofollow"></a><a href="http://pan.baidu.com/s/1jGzbTBo" target="_blank" rel="nofollow">http://pan.baidu.com/s/1jGzbTBo</a>  </li>
+</ol>
+
+        </div>
+        <!--  -->
+
+        <div class="show-foot">
+          <a class="notebook" href="http://www.jianshu.com/nb/106296">
+            <i class="iconfont ic-search-notebook"></i> <span>技术</span>
+</a>          <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+            © 著作权归作者所有
+          </div>
+          <div class="modal-wrap" data-report-note="">
+            <a id="report-modal">举报文章</a>
+          </div>
+        </div>
+    </div>
+
+      <div class="support-author"> <p>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</p> <div class="btn btn-pay">打赏支持</div> <div class="supporter"> <ul class="support-list"> <li> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/VajA4V"><img src="./Vim入门基础 - 简书_files/5c8c02d4eeb4"></a>  </li> </ul>  </div>   </div>
+
+    <div class="meta-bottom">
+      <div class="btn like-group"> <div class="btn-like"> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-like"></i>喜欢</a>  </div> <div class="modal-wrap"> <a>236</a> </div> </div> 
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/203932/weibo/image_f01d0a37173f.jpeg&#39;, &#39;推荐 @甲鱼Netwalker 的文章《Vim入门基础》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+          <a class="share-circle" data-toggle="tooltip" href="http://cwb.assets.jianshu.io/notes/images/203932/weibo/image_f01d0a37173f.jpeg" target="_blank" data-original-title="下载长微博图片">
+            <i class="iconfont ic-picture"></i>
+          </a>
+        <a class="share-circle more-share" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 甲鱼 的文章《Vim入门基础》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 甲鱼 的文章《Vim入门基础》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/bcbe916f97e1&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;title=&#39;+e(&#39;Vim入门基础&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title="">更多分享</a>
+      </div>
+    </div>
+    <div class="comment-list" id="vue_comment"> <form class="new-comment"> <a class="avatar"><img src="./Vim入门基础 - 简书_files/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png"></a> <div class="sign-container"> <a class="btn btn-sign" href="http://www.jianshu.com/sign_in">登录</a> <span>后发表评论</span> </div> </form>  <div class="normal-comment-list" id="normal-comment-list"> <div class="top"> <span>22条评论</span> <a class="author-only">只看作者</a> <a class="close-btn" style="display: none;">关闭评论</a> <div class="pull-right"> <a class="active">按时间正序</a><a>按时间倒序</a><a>按喜欢排序</a> </div> </div>   <div class="comment" id="comment-45663"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/dbcfb50f4adf"><img src="./Vim入门基础 - 简书_files/e236981ef229.jpg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/dbcfb50f4adf">yisuoyanyu111</a>  <div class="meta"> <span>2楼 · 2014.07.23 15:47</span> </div> </div> </div> <div class="comment-wrap"> <p>干货要西！！！！！！！</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-46239"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/124f4014a474"><img src="./Vim入门基础 - 简书_files/a848433fc1c2"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/124f4014a474">天天天蓝</a>  <div class="meta"> <span>3楼 · 2014.07.25 13:41</span> </div> </div> </div> <div class="comment-wrap"> <p>非常不错，适合练手</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-59062"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/a4fb9a255d2a"><img src="./Vim入门基础 - 简书_files/8b004ef122e6"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/a4fb9a255d2a">生年寅丙总耳</a>  <div class="meta"> <span>4楼 · 2014.09.12 01:08</span> </div> </div> </div> <div class="comment-wrap"> <p>入门级吗！看得头晕眼花的，都感觉不比man  vi来的差。。。<br>我记得刚学的时候，有找到个类似五笔字根表那样的VI秘籍。。。一张图内，别提有多直观了～</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list"> <div class="sub-comment" id="comment-2495476"> <p><a target="_blank" href="http://www.jianshu.com/u/5a06139733ec">benvirus</a>：<a href="http://www.jianshu.com/users/a4fb9a255d2a" class="maleskine-author" target="_blank" data-user-slug="a4fb9a255d2a">@生年寅丙总耳</a> 找出来贴上来</p> <div class="sub-tool-group"> <span>2016.05.23 09:09</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> <div class="sub-comment more-comment">  <a class="add-comment-btn" href="http://www.jianshu.com/sign_in"><i class="iconfont ic-subcomment"></i><span>添加新评论</span></a>     </div>  </div> </div><div class="comment" id="comment-448985"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/62a10bd23f5d"><img src="./Vim入门基础 - 简书_files/d9819d51e991.JPG"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/62a10bd23f5d">飞矢</a>  <div class="meta"> <span>5楼 · 2015.07.24 14:36</span> </div> </div> </div> <div class="comment-wrap"> <p>漏掉了视图模式 <img src="./Vim入门基础 - 简书_files/interrobang.png" alt=":interrobang:" title=":interrobang:" class="emoji" width="20" height="20"> </p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list"> <div class="sub-comment" id="comment-449008"> <p><a target="_blank" href="http://www.jianshu.com/u/e5a7655ca554">甲鱼</a>：<a href="http://www.jianshu.com/users/62a10bd23f5d" class="maleskine-author" target="_blank" data-user-slug="62a10bd23f5d">@飞矢</a> 好像是…谢谢指出，不过，过去这么久，懒得补上去了 <img src="./Vim入门基础 - 简书_files/joy.png" alt=":joy:" title=":joy:" class="emoji" width="20" height="20"> </p> <div class="sub-tool-group"> <span>2015.07.24 14:59</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div><div class="sub-comment" id="comment-449016"> <p><a target="_blank" href="http://www.jianshu.com/u/62a10bd23f5d">飞矢</a>：<a href="http://www.jianshu.com/users/e5a7655ca554" class="maleskine-author" target="_blank" data-user-slug="e5a7655ca554">@甲鱼</a> 额，好吧，除了没有视图模式，你的文章对我还是很有帮助的，thx</p> <div class="sub-tool-group"> <span>2015.07.24 15:04</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div><div class="sub-comment" id="comment-454803"> <p><a target="_blank" href="http://www.jianshu.com/u/e5a7655ca554">甲鱼</a>：<a href="http://www.jianshu.com/users/62a10bd23f5d" class="maleskine-author" target="_blank" data-user-slug="62a10bd23f5d">@飞矢</a> 不客气，非常高兴能帮到你 :-)</p> <div class="sub-tool-group"> <span>2015.07.28 10:12</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> <div class="sub-comment more-comment">  <a class="add-comment-btn" href="http://www.jianshu.com/sign_in"><i class="iconfont ic-subcomment"></i><span>添加新评论</span></a>     </div>  </div> </div><div class="comment" id="comment-1193178"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/1794122caec9"><img src="./Vim入门基础 - 简书_files/d78232022d44.jpeg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/1794122caec9">会发光的二极管</a>  <div class="meta"> <span>6楼 · 2016.01.09 15:18</span> </div> </div> </div> <div class="comment-wrap"> <p>谢谢你，很用心。</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-1233835"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/74d0a9cd1f8a"><img src="./Vim入门基础 - 简书_files/e0197f3edf81"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/74d0a9cd1f8a">code4a</a>  <div class="meta"> <span>7楼 · 2016.01.14 20:59</span> </div> </div> </div> <div class="comment-wrap"> <p>很详细</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-1712170"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/3WXQPg"><img src="./Vim入门基础 - 简书_files/a8f4d0fe8ab8"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/3WXQPg">百毒</a>  <div class="meta"> <span>8楼 · 2016.03.14 11:13</span> </div> </div> </div> <div class="comment-wrap"> <p>请问有时会看到诸如 &lt;C-x&gt; 这样的快捷键，这是什么意思，要怎么按出来呢？</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>1人赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list"> <div class="sub-comment" id="comment-2495510"> <p><a target="_blank" href="http://www.jianshu.com/u/5a06139733ec">benvirus</a>：<a href="http://www.jianshu.com/users/3WXQPg" class="maleskine-author" target="_blank" data-user-slug="3WXQPg">@百毒</a> Ctrl＋C</p> <div class="sub-tool-group"> <span>2016.05.23 09:12</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div><div class="sub-comment" id="comment-2514203"> <p><a target="_blank" href="http://www.jianshu.com/u/3WXQPg">百毒</a>：<a href="http://www.jianshu.com/users/5a06139733ec" class="maleskine-author" target="_blank" data-user-slug="5a06139733ec">@benvirus</a> 谢谢！</p> <div class="sub-tool-group"> <span>2016.05.24 17:16</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> <div class="sub-comment more-comment">  <a class="add-comment-btn" href="http://www.jianshu.com/sign_in"><i class="iconfont ic-subcomment"></i><span>添加新评论</span></a>     </div>  </div> </div><div class="comment" id="comment-1904224"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/ab6fc1013bc6"><img src="./Vim入门基础 - 简书_files/3b3673bbaaf8.jpg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/ab6fc1013bc6">奔跑的小草</a>  <div class="meta"> <span>9楼 · 2016.04.02 01:46</span> </div> </div> </div> <div class="comment-wrap"> <p>给力给力</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-2163119"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/c3a1b774643b"><img src="./Vim入门基础 - 简书_files/12-aeeea4bedf10f2a12c0d50d626951489.jpg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/c3a1b774643b">_鳕鱼君</a>  <div class="meta"> <span>11楼 · 2016.04.25 13:46</span> </div> </div> </div> <div class="comment-wrap"> <p>感谢！很有帮助！</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-2165840"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/c3a1b774643b"><img src="./Vim入门基础 - 简书_files/12-aeeea4bedf10f2a12c0d50d626951489.jpg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/c3a1b774643b">_鳕鱼君</a>  <div class="meta"> <span>12楼 · 2016.04.25 17:50</span> </div> </div> </div> <div class="comment-wrap"> <p>可以转载吗</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list"> <div class="sub-comment" id="comment-3112685"> <p><a target="_blank" href="http://www.jianshu.com/u/e5a7655ca554">甲鱼</a>：<a href="http://www.jianshu.com/users/c3a1b774643b" class="maleskine-author" target="_blank" data-user-slug="c3a1b774643b">@_鳕鱼君</a> 可以转载，只需注明来源和原作者 <img src="./Vim入门基础 - 简书_files/smile.png" alt=":smile:" title=":smile:" class="emoji" width="20" height="20"> </p> <div class="sub-tool-group"> <span>2016.07.14 10:49</span> <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> <div class="sub-comment more-comment">  <a class="add-comment-btn" href="http://www.jianshu.com/sign_in"><i class="iconfont ic-subcomment"></i><span>添加新评论</span></a>     </div>  </div> </div><div class="comment" id="comment-2554369"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/c3d495d8f155"><img src="./Vim入门基础 - 简书_files/2bca67293327"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/c3d495d8f155">君子以诺</a>  <div class="meta"> <span>13楼 · 2016.05.28 00:58</span> </div> </div> </div> <div class="comment-wrap"> <p>炒鸡好！！！我就要用这个</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>1人赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-4959069"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/96b6ca892def"><img src="./Vim入门基础 - 简书_files/d0f6d27bab6c.jpg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/96b6ca892def">巴图鲁</a>  <div class="meta"> <span>14楼 · 2016.10.19 21:10</span> </div> </div> </div> <div class="comment-wrap"> <p>不错</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-5329107"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/273be11a4080"><img src="./Vim入门基础 - 简书_files/f6d2e18ec532"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/273be11a4080">尤涅克斯</a>  <div class="meta"> <span>15楼 · 2016.11.03 19:46</span> </div> </div> </div> <div class="comment-wrap"> <p>厉害</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-5803495"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/6a6032588388"><img src="./Vim入门基础 - 简书_files/895af729f16f.jpeg"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/6a6032588388">ForrestDouble</a>  <div class="meta"> <span>16楼 · 2016.11.20 16:07</span> </div> </div> </div> <div class="comment-wrap"> <p>每天都多看一遍有很多收获。</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div><div class="comment" id="comment-5946006"> <div> <div class="author"> <a class="avatar" target="_blank" href="http://www.jianshu.com/u/511ac7046a92"><img src="./Vim入门基础 - 简书_files/fe0809e3f1f8.png"></a> <div class="info"> <a class="name" target="_blank" href="http://www.jianshu.com/u/511ac7046a92">honjow</a>  <div class="meta"> <span>17楼 · 2016.11.25 21:43</span> </div> </div> </div> <div class="comment-wrap"> <p>很齐全很不错</p> <div class="tool-group"> <a href="http://www.jianshu.com/sign_in"> <i class="iconfont ic-zan"></i> <span>赞</span>  </a>  <a href="http://www.jianshu.com/sign_in"><i class="iconfont ic-comment"></i><span>回复</span></a>     </div> </div> </div> <div class="sub-comment-list hide">   </div> </div> <div class="comments-placeholder" style="display: none;"> <div class="author"> <div class="avatar"></div> <div class="info"> <div class="name"></div> <div class="meta"></div> </div> </div> <div class="text"></div> <div class="text animation-delay"></div> <div class="tool-group"> <i class="iconfont ic-zan-active"></i><div class="zan"></div> <i class="iconfont ic-list-comments"></i><div class="zan"></div> </div> </div>  </div>   </div>
+  </div>
+
+  <div class="side-tool">
+    <ul>
+      <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部">
+        <a href="http://www.jianshu.com/p/bcbe916f97e1#"><i class="iconfont ic-backtop"></i></a>
+      </li>
+      <li data-share-note="" data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="分享文章">
+        <a data-toggle="popover" data-placement="left" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/203932/weibo/image_f01d0a37173f.jpeg&#39;, &#39;推荐 @甲鱼Netwalker 的文章《Vim入门基础》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-weibo&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到微博&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 甲鱼 的文章《Vim入门基础》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 甲鱼 的文章《Vim入门基础》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/bcbe916f97e1&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/bcbe916f97e1&#39;)+&#39;&amp;title=&#39;+e(&#39;Vim入门基础&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title=""><i class="iconfont ic-share"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="js-included-collections"></div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"windows","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"uuid":"c0c03829-f597-4b82-bdd4-1947575bcdba"},"note":{"id":203932,"slug":"bcbe916f97e1","user_id":25685,"notebook_id":106296,"commentable":true,"likes_count":236,"views_count":29925,"public_wordage":7237,"comments_count":22}}</script>
+    
+    <script src="./Vim入门基础 - 简书_files/babel-polyfill-e63a00a814a6730f89e5.js"></script>
+    <script src="./Vim入门基础 - 简书_files/web-base-e63a00a814a6730f89e5.js"></script>
+<script src="./Vim入门基础 - 简书_files/web-e63a00a814a6730f89e5.js"></script>
+    
+    <script src="./Vim入门基础 - 简书_files/entry-e63a00a814a6730f89e5.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div style="display:none">
+  <script src="./Vim入门基础 - 简书_files/z_stat.php" language="JavaScript"></script><script src="./Vim入门基础 - 简书_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1258679142" target="_blank" title="站长统计">站长统计</a>
+</div>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+
+<div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-top.png&quot;);"></div></div></body></html>

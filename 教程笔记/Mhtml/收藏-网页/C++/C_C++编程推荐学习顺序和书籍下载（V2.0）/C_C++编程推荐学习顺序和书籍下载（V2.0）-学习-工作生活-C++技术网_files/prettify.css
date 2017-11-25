@@ -1,0 +1,32 @@
+.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:2px;border:1px solid #888}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+
+pre.prettyprint {
+    border: 1px solid #eeeeee;
+    border-left: 3px dashed #666688;
+    
+    margin-left: 2px;
+    margin-right:8px;
+    margin-top:4px;
+    margin-bottom:4px;
+    padding-left:4px;
+    font-size: 14px;
+    display: block;
+    font-family: "Verdana","Tahoma", "Courier New", Courier, monospace;
+    white-space: pre-wrap;
+    /*background-color:#eeeeff;*/
+    line-height:18px;
+    color:#252525;
+}
+
+pre.prettyprint lang-cpp{
+    /*没起作用*/
+	border: 0;
+	border-left: 3px solid rgb(255, 255, 0);
+	margin-left: 1em;
+	padding: 0.5em;
+	font-size: 110%;
+	display: block;
+	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	margin: 1em 0px;
+	background-color:#999999;
+}
