@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=HTYFB
+Comment=
+Exec=/home/wu/.local/HTYFB/HTYFB
+Icon=/home/wu/.local/HTFB/icon.png
+Path=/home/wu/.local/HTYFB
+Terminal=false
+Type=Application
+MimeType=
+Categories=
