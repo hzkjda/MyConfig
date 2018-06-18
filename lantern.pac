@@ -3,7 +3,7 @@
  * GFWList Last-Modified: 2018-06-01 09:32:13
  */
 
-var proxy = 'http 127.0.0.1:53125';
+var proxy = 'HTTP 127.0.0.1:53125';
 var rules = [
     [
         [],
